@@ -43,7 +43,7 @@ public class SearchManageForm extends javax.swing.JFrame {
         SearchTable = new javax.swing.JTable();
         Footer = new javax.swing.JPanel();
         MaterialBTN = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        TotalBL = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -196,9 +196,9 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextField1.setText("All records: 30");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        TotalBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TotalBL.setText("All records: 30");
+        TotalBL.addActionListener(this::TotalBLActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -214,9 +214,9 @@ public class SearchManageForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TotalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
             .addComponent(Footer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -228,7 +228,7 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TotalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -243,9 +243,9 @@ public class SearchManageForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackBTNActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TotalBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalBLActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TotalBLActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,9 +285,9 @@ public class SearchManageForm extends javax.swing.JFrame {
     private javax.swing.JTextField SearchMaterrialTF;
     private javax.swing.JTable SearchTable;
     private javax.swing.JPanel SearchbyPannel;
+    private javax.swing.JTextField TotalBL;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

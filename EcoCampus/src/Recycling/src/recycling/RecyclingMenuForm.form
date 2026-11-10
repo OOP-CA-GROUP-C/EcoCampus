@@ -144,6 +144,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Search &amp; Manage Records"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchManageRecordsBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="SummaryBTN">
       <Properties>
@@ -158,6 +161,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Record History"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SummaryBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
@@ -170,7 +176,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Exit"/>
+        <Property name="text" type="java.lang.String" value="Exit To Main Menu"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

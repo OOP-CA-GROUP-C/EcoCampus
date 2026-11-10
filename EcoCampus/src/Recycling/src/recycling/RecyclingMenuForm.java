@@ -80,16 +80,18 @@ public class RecyclingMenuForm extends javax.swing.JFrame {
         SearchManageRecordsBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SearchManageRecordsBTN.setForeground(new java.awt.Color(255, 255, 255));
         SearchManageRecordsBTN.setText("Search & Manage Records");
+        SearchManageRecordsBTN.addActionListener(this::SearchManageRecordsBTNActionPerformed);
 
         SummaryBTN.setBackground(new java.awt.Color(0, 153, 51));
         SummaryBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SummaryBTN.setForeground(new java.awt.Color(255, 255, 255));
         SummaryBTN.setText("Record History");
+        SummaryBTN.addActionListener(this::SummaryBTNActionPerformed);
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Exit");
+        jButton1.setText("Exit To Main Menu");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,12 +128,26 @@ public class RecyclingMenuForm extends javax.swing.JFrame {
 
     private void AddRecordBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddRecordBTNActionPerformed
         // TODO add your handling code here:
+        new AddRecyclingForm().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_AddRecordBTNActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void SearchManageRecordsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchManageRecordsBTNActionPerformed
+        // TODO add your handling code here:
+        new SearchManageForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_SearchManageRecordsBTNActionPerformed
+
+    private void SummaryBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SummaryBTNActionPerformed
+        // TODO add your handling code here:
+        new RecyclingSummaryForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_SummaryBTNActionPerformed
 
     /**
      * @param args the command line arguments
