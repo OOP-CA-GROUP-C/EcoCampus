@@ -28,21 +28,102 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Header2 = new javax.swing.JPanel();
+        HeadingLB2 = new javax.swing.JLabel();
+        DefineHeaderLB2 = new javax.swing.JLabel();
+        BackBTN = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Header2.setBackground(new java.awt.Color(27, 94, 32));
+
+        HeadingLB2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        HeadingLB2.setForeground(new java.awt.Color(255, 255, 255));
+        HeadingLB2.setText("Recycling Summary");
+
+        DefineHeaderLB2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        DefineHeaderLB2.setForeground(new java.awt.Color(255, 255, 255));
+        DefineHeaderLB2.setText("Totals by material");
+
+        BackBTN.setBackground(new java.awt.Color(40, 110, 45));
+        BackBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackBTN.setForeground(new java.awt.Color(255, 255, 255));
+        BackBTN.setText("Back");
+        BackBTN.addActionListener(this::BackBTNActionPerformed);
+
+        javax.swing.GroupLayout Header2Layout = new javax.swing.GroupLayout(Header2);
+        Header2.setLayout(Header2Layout);
+        Header2Layout.setHorizontalGroup(
+            Header2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Header2Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(Header2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Header2Layout.createSequentialGroup()
+                        .addComponent(DefineHeaderLB2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Header2Layout.createSequentialGroup()
+                        .addComponent(HeadingLB2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BackBTN)
+                        .addGap(38, 38, 38))))
+        );
+        Header2Layout.setVerticalGroup(
+            Header2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Header2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(Header2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HeadingLB2)
+                    .addComponent(BackBTN))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DefineHeaderLB2)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Plastic", "4", "10.0", "100"},
+                {"Paper", "3", "5.5", "27"},
+                {"Metal", "1", "2.0", "60"},
+                {"TOTAL", "10", "23.5", "247"},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Material", "Records", "Weight (kg)", "Points"
+            }
+        ));
+        jTable1.setRowHeight(25);
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(Header2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Header2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBTNActionPerformed
+        // TODO add your handling code here:
+        new RecyclingMenuForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BackBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +151,17 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackBTN;
+    private javax.swing.JLabel DefineHeaderLB;
+    private javax.swing.JLabel DefineHeaderLB1;
+    private javax.swing.JLabel DefineHeaderLB2;
+    private javax.swing.JPanel Header;
+    private javax.swing.JPanel Header1;
+    private javax.swing.JPanel Header2;
+    private javax.swing.JLabel HeadingLB;
+    private javax.swing.JLabel HeadingLB1;
+    private javax.swing.JLabel HeadingLB2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
