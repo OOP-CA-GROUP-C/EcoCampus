@@ -72,10 +72,11 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Plastic", "4", "10.0", "100"},
-                {"Paper", "3", "5.5", "27"},
-                {"Metal", "1", "2.0", "60"},
-                {"TOTAL", "10", "23.5", "247"},
+                {"Plastic", "", "", ""},
+                {"Paper", "", "", ""},
+                {"Metal", "", "", ""},
+                {"TOTAL", "", "", ""},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {

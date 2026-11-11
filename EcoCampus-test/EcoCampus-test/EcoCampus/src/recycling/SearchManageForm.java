@@ -142,8 +142,10 @@ public class SearchManageForm extends javax.swing.JFrame {
         SearchTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         SearchTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Plasitc", "2.5", "25"},
-                {"2", "Paper", "1.0", "5"},
+                {"", "", "", ""},
+                {"", "", "", ""},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
