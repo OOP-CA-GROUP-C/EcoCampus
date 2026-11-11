@@ -233,7 +233,7 @@
     <Container class="javax.swing.JPanel" name="headerPL1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dc" green="ea" red="dc" type="rgb"/>
+          <Color blue="5e" green="49" red="34" type="rgb"/>
         </Property>
       </Properties>
 
@@ -302,8 +302,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Back to Main Menu"/>
+            <Property name="text" type="java.lang.String" value="Back "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backMainBTNActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

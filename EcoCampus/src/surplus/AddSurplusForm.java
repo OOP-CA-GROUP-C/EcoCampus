@@ -114,7 +114,7 @@ public class AddSurplusForm extends javax.swing.JFrame {
 
         foodTitleTF1.setText("Enter food title");
 
-        headerPL1.setBackground(new java.awt.Color(220, 234, 220));
+        headerPL1.setBackground(new java.awt.Color(52, 73, 94));
 
         saveListingBTN.setBackground(new java.awt.Color(51, 102, 0));
         saveListingBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -128,7 +128,8 @@ public class AddSurplusForm extends javax.swing.JFrame {
         backMainBTN.setBackground(new java.awt.Color(100, 100, 100));
         backMainBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         backMainBTN.setForeground(new java.awt.Color(255, 255, 255));
-        backMainBTN.setText("Back to Main Menu");
+        backMainBTN.setText("Back ");
+        backMainBTN.addActionListener(this::backMainBTNActionPerformed);
 
         javax.swing.GroupLayout headerPL1Layout = new javax.swing.GroupLayout(headerPL1);
         headerPL1.setLayout(headerPL1Layout);
@@ -347,6 +348,12 @@ public class AddSurplusForm extends javax.swing.JFrame {
     private void pickupDeadlineTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pickupDeadlineTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pickupDeadlineTFActionPerformed
+
+    private void backMainBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMainBTNActionPerformed
+        // TODO add your handling code here:
+        new SurplusMenu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backMainBTNActionPerformed
 
     /**
      * @param args the command line arguments

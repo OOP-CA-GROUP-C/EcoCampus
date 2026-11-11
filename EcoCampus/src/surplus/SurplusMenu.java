@@ -4,6 +4,8 @@
  */
 package surplus;
 
+import main.MainMenu;
+
 /**
  *
  * @author HP
@@ -148,7 +150,8 @@ public class SurplusMenu extends javax.swing.JFrame {
 
     private void exitMainMenuBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMainMenuBTNActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        new MainMenu().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_exitMainMenuBTNActionPerformed
 
     /**
