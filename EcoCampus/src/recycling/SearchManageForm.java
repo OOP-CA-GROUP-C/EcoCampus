@@ -161,7 +161,7 @@ public class SearchManageForm extends javax.swing.JFrame {
         SearchTable.setShowGrid(true);
         trackerTB.setViewportView(SearchTable);
 
-        footerPL.setBackground(new java.awt.Color(27, 94, 32));
+        footerPL.setBackground(new java.awt.Color(52, 73, 94));
 
         materialDeleteBTN.setBackground(new java.awt.Color(0, 153, 153));
         materialDeleteBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -182,18 +182,18 @@ public class SearchManageForm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footerPLLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(materialDeleteBTN)
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addComponent(backBTN)
-                .addGap(30, 30, 30))
+                .addGap(34, 34, 34))
         );
         footerPLLayout.setVerticalGroup(
             footerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPLLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
                 .addGroup(footerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(materialDeleteBTN)
                     .addComponent(backBTN))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         totalBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -216,8 +216,8 @@ public class SearchManageForm extends javax.swing.JFrame {
                                 .addComponent(totalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(47, Short.MAX_VALUE))
-            .addComponent(footerPL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(footerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,8 +229,9 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addComponent(trackerTB, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(footerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(footerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();

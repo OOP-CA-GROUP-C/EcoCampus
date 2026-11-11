@@ -4,6 +4,8 @@
  */
 package reuse;
 
+import reuse.ReuseMenu;
+
 /**
  *
  * @author HP
@@ -31,19 +33,19 @@ public class ItemListForm extends javax.swing.JFrame {
         headerPL = new javax.swing.JPanel();
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
+        sidebarPL = new javax.swing.JPanel();
         filterLBL = new javax.swing.JLabel();
         searchCB = new javax.swing.JComboBox<>();
         searchBTN = new javax.swing.JButton();
         showAllBTN = new javax.swing.JButton();
+        showContactBTN = new javax.swing.JButton();
+        markUnavailableBTN = new javax.swing.JButton();
+        backBTN = new javax.swing.JButton();
         itemSP = new javax.swing.JScrollPane();
         itemTable = new javax.swing.JTable();
         extraDetailsPL = new javax.swing.JPanel();
         itemDetailsLBL = new javax.swing.JLabel();
         detailsHintLBL = new javax.swing.JLabel();
-        headerPL1 = new javax.swing.JPanel();
-        showContactBTN = new javax.swing.JButton();
-        markUnavailableBTN = new javax.swing.JButton();
-        backMainBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,20 +80,74 @@ public class ItemListForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        filterLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        filterLBL.setText("Filter by Category:");
+        sidebarPL.setBackground(new java.awt.Color(220, 234, 220));
+
+        filterLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        filterLBL.setText("Filter by Category");
 
         searchCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Textbook", "Novel", "Jacket", "Footwear" }));
 
-        searchBTN.setBackground(new java.awt.Color(51, 153, 0));
-        searchBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        searchBTN.setBackground(new java.awt.Color(27, 94, 32));
+        searchBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         searchBTN.setForeground(new java.awt.Color(255, 255, 255));
         searchBTN.setText("Search");
 
-        showAllBTN.setBackground(new java.awt.Color(102, 153, 0));
-        showAllBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        showAllBTN.setBackground(new java.awt.Color(27, 94, 32));
+        showAllBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         showAllBTN.setForeground(new java.awt.Color(255, 255, 255));
         showAllBTN.setText("Show All");
+
+        showContactBTN.setBackground(new java.awt.Color(27, 94, 32));
+        showContactBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        showContactBTN.setForeground(new java.awt.Color(255, 255, 255));
+        showContactBTN.setText("Show Contact Info");
+
+        markUnavailableBTN.setBackground(new java.awt.Color(0, 153, 153));
+        markUnavailableBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        markUnavailableBTN.setForeground(new java.awt.Color(255, 255, 255));
+        markUnavailableBTN.setText("Mark Unavailable");
+
+        backBTN.setBackground(new java.awt.Color(100, 100, 100));
+        backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        backBTN.setForeground(new java.awt.Color(255, 255, 255));
+        backBTN.setText("Back");
+        backBTN.addActionListener(this::backBTNActionPerformed);
+
+        javax.swing.GroupLayout sidebarPLLayout = new javax.swing.GroupLayout(sidebarPL);
+        sidebarPL.setLayout(sidebarPLLayout);
+        sidebarPLLayout.setHorizontalGroup(
+            sidebarPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidebarPLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sidebarPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(filterLBL)
+                    .addComponent(searchCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(searchBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(showAllBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(showContactBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(markUnavailableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(backBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        sidebarPLLayout.setVerticalGroup(
+            sidebarPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidebarPLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(filterLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(searchCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showAllBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(showContactBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(markUnavailableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(backBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -143,7 +199,7 @@ public class ItemListForm extends javax.swing.JFrame {
         extraDetailsPL.setBackground(new java.awt.Color(234, 236, 234));
         extraDetailsPL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        itemDetailsLBL.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        itemDetailsLBL.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         itemDetailsLBL.setText("Item Details");
 
         detailsHintLBL.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -170,96 +226,41 @@ public class ItemListForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        headerPL1.setBackground(new java.awt.Color(220, 234, 220));
-
-        showContactBTN.setBackground(new java.awt.Color(51, 51, 51));
-        showContactBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        showContactBTN.setForeground(new java.awt.Color(255, 255, 255));
-        showContactBTN.setText("Show Contact Info");
-
-        markUnavailableBTN.setBackground(new java.awt.Color(0, 153, 153));
-        markUnavailableBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        markUnavailableBTN.setForeground(new java.awt.Color(255, 255, 255));
-        markUnavailableBTN.setText("Mark Unavailable");
-
-        backMainBTN.setBackground(new java.awt.Color(100, 100, 100));
-        backMainBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        backMainBTN.setForeground(new java.awt.Color(255, 255, 255));
-        backMainBTN.setText("Back to Main Menu");
-        backMainBTN.addActionListener(this::backMainBTNActionPerformed);
-
-        javax.swing.GroupLayout headerPL1Layout = new javax.swing.GroupLayout(headerPL1);
-        headerPL1.setLayout(headerPL1Layout);
-        headerPL1Layout.setHorizontalGroup(
-            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPL1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(showContactBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(markUnavailableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(backMainBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-        headerPL1Layout.setVerticalGroup(
-            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPL1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(showContactBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(markUnavailableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backMainBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(headerPL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(sidebarPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(itemSP)
-                    .addComponent(extraDetailsPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(filterLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchCB, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(showAllBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(itemSP, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                    .addComponent(extraDetailsPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(filterLBL)
-                    .addComponent(searchCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(showAllBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(itemSP, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(extraDetailsPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(headerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sidebarPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(itemSP, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(extraDetailsPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMainBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMainBTNActionPerformed
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
         new ReuseMenu().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backMainBTNActionPerformed
+    }//GEN-LAST:event_backBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,12 +288,11 @@ public class ItemListForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backMainBTN;
+    private javax.swing.JButton backBTN;
     private javax.swing.JLabel detailsHintLBL;
     private javax.swing.JPanel extraDetailsPL;
     private javax.swing.JLabel filterLBL;
     private javax.swing.JPanel headerPL;
-    private javax.swing.JPanel headerPL1;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
     private javax.swing.JLabel itemDetailsLBL;
@@ -303,5 +303,6 @@ public class ItemListForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> searchCB;
     private javax.swing.JButton showAllBTN;
     private javax.swing.JButton showContactBTN;
+    private javax.swing.JPanel sidebarPL;
     // End of variables declaration//GEN-END:variables
 }
