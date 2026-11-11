@@ -25,56 +25,83 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="headerPL" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="titleLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="titleTF" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
-                  <Component id="categoryLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="categoryCB" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
-                  <Component id="conditionLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="conditionCB" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
-                  <Component id="contactLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="contactTF" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="exitReuseMenuBTN" min="-2" pref="209" max="-2" attributes="0"/>
+                  <Component id="addClothesBTN" min="-2" pref="209" max="-2" attributes="0"/>
+                  <Component id="addBookBTN" min="-2" pref="209" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="extraDetailsPL" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="299" max="32767" attributes="0"/>
           </Group>
-          <Component id="headerPL1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="headerPL" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="titleLBL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="titleTF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="categoryLBL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="categoryCB" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="conditionLBL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="conditionCB" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="contactLBL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="contactTF" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="extraDetailsPL" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="headerPL1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="addBookBTN" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="addClothesBTN" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="exitReuseMenuBTN" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="92" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JButton" name="addBookBTN">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Add Books"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBookBTNActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="addClothesBTN">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Add clothes"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addClothesBTNActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="exitReuseMenuBTN">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Exit To Reuse Menu"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitReuseMenuBTNActionPerformed"/>
+      </Events>
+    </Component>
     <Container class="javax.swing.JPanel" name="headerPL">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -85,11 +112,17 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="headingLBL" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="headingLBL1" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+                          <Component id="headingLBL" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="313" max="-2" attributes="0"/>
+                          <Component id="defineHeaderBL" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -97,12 +130,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="headingLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="headingLBL1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <Component id="headingLBL" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="defineHeaderBL" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -116,392 +148,19 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="EcoCampus |"/>
+            <Property name="text" type="java.lang.String" value="Reuse Tracker"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="headingLBL1">
+        <Component class="javax.swing.JLabel" name="defineHeaderBL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="24" style="0"/>
+              <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Add Reuse Item"/>
+            <Property name="text" type="java.lang.String" value="Add item"/>
           </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Component class="javax.swing.JLabel" name="titleLBL">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Item Title:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="titleTF">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Enter item title"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="categoryLBL">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Category:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="categoryCB">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Textbook"/>
-            <StringItem index="1" value="Novel"/>
-            <StringItem index="2" value="Jacket"/>
-            <StringItem index="3" value="Footwear"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="conditionLBL">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Condition:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="conditionCB">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="New"/>
-            <StringItem index="1" value="Like New"/>
-            <StringItem index="2" value="Good"/>
-            <StringItem index="3" value="Fair"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="contactLBL">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Contact Info:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="contactTF">
-    </Component>
-    <Container class="javax.swing.JPanel" name="extraDetailsPL">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ea" green="ec" red="ea" type="rgb"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder roundedCorners="true"/>
-          </Border>
-        </Property>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="extraDetailsLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bookHeadLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="authorLBL" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="subjectLBL" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="editionLBL" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="genreLBL" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="hardbackCHK" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="authorTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="subjectTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="editionTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="genreTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="clothingHeadLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="sizeLBL" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="hoodedCHK" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="waterproofCHK" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="shoeSizeLBL" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="typeLBL" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="sizeTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="shoeSizeTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="typeTF" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="extraDetailsLBL" min="-2" pref="28" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bookHeadLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="clothingHeadLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="authorLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="authorTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="sizeLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="sizeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="subjectLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="subjectTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="hoodedCHK" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editionLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="editionTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="waterproofCHK" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="genreLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="genreTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="shoeSizeLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="shoeSizeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="hardbackCHK" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="typeLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="typeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="extraDetailsLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Category Specific Details"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="bookHeadLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Books"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="clothingHeadLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Clothing"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="authorLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Author:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="authorTF">
-        </Component>
-        <Component class="javax.swing.JLabel" name="subjectLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Subject:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="subjectTF">
-        </Component>
-        <Component class="javax.swing.JLabel" name="editionLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Edition:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="editionTF">
-        </Component>
-        <Component class="javax.swing.JLabel" name="genreLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Genre:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="genreTF">
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="hardbackCHK">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Hardback"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="sizeLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Size:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="sizeTF">
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="hoodedCHK">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Hooded"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="waterproofCHK">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Waterproof"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="shoeSizeLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Shoe Size:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="shoeSizeTF">
-        </Component>
-        <Component class="javax.swing.JLabel" name="typeLBL">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Type:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="typeTF">
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="headerPL1">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dc" green="ea" red="dc" type="rgb"/>
-        </Property>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="saveItemBTN" min="-2" pref="180" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="clearFormBTN" min="-2" pref="180" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="backMainBTN" min="-2" pref="180" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="saveItemBTN" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="clearFormBTN" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="backMainBTN" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JButton" name="saveItemBTN">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="66" red="33" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="16" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Save Item"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="clearFormBTN">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Clear Form"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="backMainBTN">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="64" green="64" red="64" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="16" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Back to Main Menu"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backMainBTNActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

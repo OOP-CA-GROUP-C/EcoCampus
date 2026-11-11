@@ -32,13 +32,13 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
         Body = new javax.swing.JPanel();
-        textMaterialBL = new javax.swing.JLabel();
+        textMaterialLBL = new javax.swing.JLabel();
         materialCB = new javax.swing.JComboBox<>();
-        textWeightBL = new javax.swing.JLabel();
+        textWeightLBL = new javax.swing.JLabel();
         weightTF = new javax.swing.JTextField();
-        textPointsBL = new javax.swing.JLabel();
+        textPointsLBL = new javax.swing.JLabel();
         pointsTF = new javax.swing.JTextField();
-        autoCalcBL = new javax.swing.JLabel();
+        autoCalcLBL = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         saveRecordBTN = new javax.swing.JButton();
         clearBTN = new javax.swing.JButton();
@@ -80,27 +80,27 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         Body.setBackground(new java.awt.Color(235, 245, 235));
         Body.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
 
-        textMaterialBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        textMaterialBL.setText("Material:");
+        textMaterialLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textMaterialLBL.setText("Material:");
 
         materialCB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         materialCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plastic", "Paper", "Can" }));
         materialCB.addActionListener(this::materialCBActionPerformed);
 
-        textWeightBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        textWeightBL.setText("Weight (kg):");
+        textWeightLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textWeightLBL.setText("Weight (kg):");
 
         weightTF.setActionCommand("<Not Set>");
 
-        textPointsBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        textPointsBL.setText("Points:");
+        textPointsLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textPointsLBL.setText("Points:");
 
         pointsTF.setEditable(false);
         pointsTF.addActionListener(this::pointsTFActionPerformed);
 
-        autoCalcBL.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        autoCalcBL.setForeground(new java.awt.Color(153, 153, 153));
-        autoCalcBL.setText("Auto-Calculated");
+        autoCalcLBL.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        autoCalcLBL.setForeground(new java.awt.Color(153, 153, 153));
+        autoCalcLBL.setText("Auto-Calculated");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
@@ -109,9 +109,9 @@ public class AddRecyclingForm extends javax.swing.JFrame {
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textPointsBL)
-                    .addComponent(textWeightBL)
-                    .addComponent(textMaterialBL))
+                    .addComponent(textPointsLBL)
+                    .addComponent(textWeightLBL)
+                    .addComponent(textMaterialLBL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(materialCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,7 +119,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                     .addGroup(BodyLayout.createSequentialGroup()
                         .addComponent(pointsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(autoCalcBL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(autoCalcLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         BodyLayout.setVerticalGroup(
@@ -127,19 +127,22 @@ public class AddRecyclingForm extends javax.swing.JFrame {
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textMaterialBL)
+                    .addComponent(textMaterialLBL)
                     .addComponent(materialCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textWeightBL)
+                    .addComponent(textWeightLBL)
                     .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textPointsBL)
-                    .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pointsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(autoCalcBL)))
-                .addGap(39, 39, 39))
+                    .addGroup(BodyLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(autoCalcLBL))
+                    .addGroup(BodyLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textPointsLBL)
+                            .addComponent(pointsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(36, 36, 36))
         );
 
         jPanel1.setBackground(new java.awt.Color(235, 245, 235));
@@ -171,9 +174,9 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addComponent(saveRecordBTN)
                 .addGap(52, 52, 52)
                 .addComponent(clearBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addComponent(backBTN)
-                .addGap(54, 54, 54))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,7 +263,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Body;
-    private javax.swing.JLabel autoCalcBL;
+    private javax.swing.JLabel autoCalcLBL;
     private javax.swing.JButton backBTN;
     private javax.swing.JButton clearBTN;
     private javax.swing.JPanel headerPL;
@@ -270,9 +273,9 @@ public class AddRecyclingForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> materialCB;
     private javax.swing.JTextField pointsTF;
     private javax.swing.JButton saveRecordBTN;
-    private javax.swing.JLabel textMaterialBL;
-    private javax.swing.JLabel textPointsBL;
-    private javax.swing.JLabel textWeightBL;
+    private javax.swing.JLabel textMaterialLBL;
+    private javax.swing.JLabel textPointsLBL;
+    private javax.swing.JLabel textWeightLBL;
     private javax.swing.JTextField weightTF;
     // End of variables declaration//GEN-END:variables
 }

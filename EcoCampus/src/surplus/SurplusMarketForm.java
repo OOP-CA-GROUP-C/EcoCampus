@@ -32,15 +32,15 @@ public class SurplusMarketForm extends javax.swing.JFrame {
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
         FilterLBL = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        filterCB = new javax.swing.JComboBox<>();
         searchBTN = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        availableBTN = new javax.swing.JButton();
         headerPL1 = new javax.swing.JPanel();
         claimSelectedBTN = new javax.swing.JButton();
         deleteBTN = new javax.swing.JButton();
         backMainBTN = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        marketPlaceTB = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(640, 430));
@@ -79,17 +79,17 @@ public class SurplusMarketForm extends javax.swing.JFrame {
         FilterLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         FilterLBL.setText("Filter by Category:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prepared Meal", "Bakery Pack", "Grocery Pack", " " }));
+        filterCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prepared Meal", "Bakery Pack", "Grocery Pack", " " }));
 
         searchBTN.setBackground(new java.awt.Color(51, 153, 0));
         searchBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchBTN.setForeground(new java.awt.Color(255, 255, 255));
         searchBTN.setText("Search");
 
-        jButton2.setBackground(new java.awt.Color(102, 153, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Show Available");
+        availableBTN.setBackground(new java.awt.Color(102, 153, 0));
+        availableBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        availableBTN.setForeground(new java.awt.Color(255, 255, 255));
+        availableBTN.setText("Show Available");
 
         headerPL1.setBackground(new java.awt.Color(52, 73, 94));
 
@@ -133,7 +133,7 @@ public class SurplusMarketForm extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        marketPlaceTB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -178,7 +178,7 @@ public class SurplusMarketForm extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(marketPlaceTB);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,11 +193,11 @@ public class SurplusMarketForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(FilterLBL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filterCB, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(availableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -208,9 +208,9 @@ public class SurplusMarketForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FilterLBL)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filterCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(availableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -253,17 +253,17 @@ public class SurplusMarketForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FilterLBL;
+    private javax.swing.JButton availableBTN;
     private javax.swing.JButton backMainBTN;
     private javax.swing.JButton claimSelectedBTN;
     private javax.swing.JButton deleteBTN;
+    private javax.swing.JComboBox<String> filterCB;
     private javax.swing.JPanel headerPL;
     private javax.swing.JPanel headerPL1;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable marketPlaceTB;
     private javax.swing.JButton searchBTN;
     // End of variables declaration//GEN-END:variables
 }

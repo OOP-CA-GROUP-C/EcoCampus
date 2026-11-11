@@ -30,251 +30,65 @@ public class AddItemForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        addBookBTN = new javax.swing.JButton();
+        addClothesBTN = new javax.swing.JButton();
+        exitReuseMenuBTN = new javax.swing.JButton();
         headerPL = new javax.swing.JPanel();
         headingLBL = new javax.swing.JLabel();
-        headingLBL1 = new javax.swing.JLabel();
-        titleLBL = new javax.swing.JLabel();
-        titleTF = new javax.swing.JTextField();
-        categoryLBL = new javax.swing.JLabel();
-        categoryCB = new javax.swing.JComboBox<>();
-        conditionLBL = new javax.swing.JLabel();
-        conditionCB = new javax.swing.JComboBox<>();
-        contactLBL = new javax.swing.JLabel();
-        contactTF = new javax.swing.JTextField();
-        extraDetailsPL = new javax.swing.JPanel();
-        extraDetailsLBL = new javax.swing.JLabel();
-        bookHeadLBL = new javax.swing.JLabel();
-        clothingHeadLBL = new javax.swing.JLabel();
-        authorLBL = new javax.swing.JLabel();
-        authorTF = new javax.swing.JTextField();
-        subjectLBL = new javax.swing.JLabel();
-        subjectTF = new javax.swing.JTextField();
-        editionLBL = new javax.swing.JLabel();
-        editionTF = new javax.swing.JTextField();
-        genreLBL = new javax.swing.JLabel();
-        genreTF = new javax.swing.JTextField();
-        hardbackCHK = new javax.swing.JCheckBox();
-        sizeLBL = new javax.swing.JLabel();
-        sizeTF = new javax.swing.JTextField();
-        hoodedCHK = new javax.swing.JCheckBox();
-        waterproofCHK = new javax.swing.JCheckBox();
-        shoeSizeLBL = new javax.swing.JLabel();
-        shoeSizeTF = new javax.swing.JTextField();
-        typeLBL = new javax.swing.JLabel();
-        typeTF = new javax.swing.JTextField();
-        headerPL1 = new javax.swing.JPanel();
-        saveItemBTN = new javax.swing.JButton();
-        clearFormBTN = new javax.swing.JButton();
-        backMainBTN = new javax.swing.JButton();
+        defineHeaderBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        addBookBTN.setBackground(new java.awt.Color(0, 153, 51));
+        addBookBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addBookBTN.setForeground(new java.awt.Color(255, 255, 255));
+        addBookBTN.setText("Add Books");
+        addBookBTN.addActionListener(this::addBookBTNActionPerformed);
+
+        addClothesBTN.setBackground(new java.awt.Color(0, 153, 51));
+        addClothesBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addClothesBTN.setForeground(new java.awt.Color(255, 255, 255));
+        addClothesBTN.setText("Add clothes");
+        addClothesBTN.addActionListener(this::addClothesBTNActionPerformed);
+
+        exitReuseMenuBTN.setBackground(new java.awt.Color(102, 102, 102));
+        exitReuseMenuBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exitReuseMenuBTN.setForeground(new java.awt.Color(255, 255, 255));
+        exitReuseMenuBTN.setText("Exit To Reuse Menu");
+        exitReuseMenuBTN.addActionListener(this::exitReuseMenuBTNActionPerformed);
 
         headerPL.setBackground(new java.awt.Color(27, 94, 32));
 
         headingLBL.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         headingLBL.setForeground(new java.awt.Color(255, 255, 255));
-        headingLBL.setText("EcoCampus |");
+        headingLBL.setText("Reuse Tracker");
 
-        headingLBL1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        headingLBL1.setForeground(new java.awt.Color(255, 255, 255));
-        headingLBL1.setText("Add Reuse Item");
+        defineHeaderBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        defineHeaderBL.setForeground(new java.awt.Color(255, 255, 255));
+        defineHeaderBL.setText("Add item");
 
         javax.swing.GroupLayout headerPLLayout = new javax.swing.GroupLayout(headerPL);
         headerPL.setLayout(headerPLLayout);
         headerPLLayout.setHorizontalGroup(
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPLLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(headingLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(headingLBL1)
+                .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPLLayout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(headingLBL))
+                    .addGroup(headerPLLayout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(defineHeaderBL)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headerPLLayout.setVerticalGroup(
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPLLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(headingLBL)
-                    .addComponent(headingLBL1))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        titleLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titleLBL.setText("Item Title:");
-
-        titleTF.setText("Enter item title");
-
-        categoryLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        categoryLBL.setText("Category:");
-
-        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Textbook", "Novel", "Jacket", "Footwear" }));
-
-        conditionLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        conditionLBL.setText("Condition:");
-
-        conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "New", "Like New", "Good", "Fair" }));
-
-        contactLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        contactLBL.setText("Contact Info:");
-
-        extraDetailsPL.setBackground(new java.awt.Color(234, 236, 234));
-        extraDetailsPL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        extraDetailsLBL.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        extraDetailsLBL.setText("Category Specific Details");
-
-        bookHeadLBL.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        bookHeadLBL.setText("Books");
-
-        clothingHeadLBL.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        clothingHeadLBL.setText("Clothing");
-
-        authorLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        authorLBL.setText("Author:");
-
-        subjectLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        subjectLBL.setText("Subject:");
-
-        editionLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        editionLBL.setText("Edition:");
-
-        genreLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        genreLBL.setText("Genre:");
-
-        hardbackCHK.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        hardbackCHK.setText("Hardback");
-
-        sizeLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        sizeLBL.setText("Size:");
-
-        hoodedCHK.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        hoodedCHK.setText("Hooded");
-
-        waterproofCHK.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        waterproofCHK.setText("Waterproof");
-
-        shoeSizeLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        shoeSizeLBL.setText("Shoe Size:");
-
-        typeLBL.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        typeLBL.setText("Type:");
-
-        javax.swing.GroupLayout extraDetailsPLLayout = new javax.swing.GroupLayout(extraDetailsPL);
-        extraDetailsPL.setLayout(extraDetailsPLLayout);
-        extraDetailsPLLayout.setHorizontalGroup(
-            extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(extraDetailsPLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(extraDetailsLBL)
-                    .addGroup(extraDetailsPLLayout.createSequentialGroup()
-                        .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bookHeadLBL)
-                            .addComponent(authorLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(genreLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hardbackCHK))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(clothingHeadLBL)
-                            .addComponent(sizeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hoodedCHK)
-                            .addComponent(waterproofCHK)
-                            .addComponent(shoeSizeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(typeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sizeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(shoeSizeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(typeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        extraDetailsPLLayout.setVerticalGroup(
-            extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(extraDetailsPLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(extraDetailsLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(headingLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookHeadLBL)
-                    .addComponent(clothingHeadLBL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(authorLBL)
-                    .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sizeLBL)
-                    .addComponent(sizeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(subjectLBL)
-                    .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hoodedCHK))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editionLBL)
-                    .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(waterproofCHK))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(genreLBL)
-                    .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(shoeSizeLBL)
-                    .addComponent(shoeSizeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hardbackCHK)
-                    .addComponent(typeLBL)
-                    .addComponent(typeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        headerPL1.setBackground(new java.awt.Color(220, 234, 220));
-
-        saveItemBTN.setBackground(new java.awt.Color(51, 102, 0));
-        saveItemBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        saveItemBTN.setForeground(new java.awt.Color(255, 255, 255));
-        saveItemBTN.setText("Save Item");
-
-        clearFormBTN.setBackground(new java.awt.Color(204, 204, 204));
-        clearFormBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        clearFormBTN.setText("Clear Form");
-
-        backMainBTN.setBackground(new java.awt.Color(100, 100, 100));
-        backMainBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        backMainBTN.setForeground(new java.awt.Color(255, 255, 255));
-        backMainBTN.setText("Back to Main Menu");
-        backMainBTN.addActionListener(this::backMainBTNActionPerformed);
-
-        javax.swing.GroupLayout headerPL1Layout = new javax.swing.GroupLayout(headerPL1);
-        headerPL1.setLayout(headerPL1Layout);
-        headerPL1Layout.setHorizontalGroup(
-            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPL1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(saveItemBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(clearFormBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backMainBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-        headerPL1Layout.setVerticalGroup(
-            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPL1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveItemBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearFormBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backMainBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(defineHeaderBL)
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,56 +97,46 @@ public class AddItemForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(titleLBL)
-                    .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(categoryLBL)
-                    .addComponent(categoryCB, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(conditionLBL)
-                    .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contactLBL)
-                    .addComponent(contactTF, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(extraDetailsPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(headerPL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(245, 245, 245)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(exitReuseMenuBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addClothesBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addBookBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(299, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(titleLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(categoryLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(categoryCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(conditionLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(contactLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(contactTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(extraDetailsPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(headerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(addBookBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(addClothesBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(exitReuseMenuBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 92, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMainBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMainBTNActionPerformed
+    private void addBookBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookBTNActionPerformed
+        // TODO add your handling code here:
+        new AddBookForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_addBookBTNActionPerformed
+
+    private void addClothesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClothesBTNActionPerformed
+        // TODO add your handling code here:
+        new AddClothesForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_addClothesBTNActionPerformed
+
+    private void exitReuseMenuBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitReuseMenuBTNActionPerformed
         // TODO add your handling code here:
         new ReuseMenu().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backMainBTNActionPerformed
+    }//GEN-LAST:event_exitReuseMenuBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,41 +164,11 @@ public class AddItemForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel authorLBL;
-    private javax.swing.JTextField authorTF;
-    private javax.swing.JButton backMainBTN;
-    private javax.swing.JLabel bookHeadLBL;
-    private javax.swing.JComboBox<String> categoryCB;
-    private javax.swing.JLabel categoryLBL;
-    private javax.swing.JButton clearFormBTN;
-    private javax.swing.JLabel clothingHeadLBL;
-    private javax.swing.JComboBox<String> conditionCB;
-    private javax.swing.JLabel conditionLBL;
-    private javax.swing.JLabel contactLBL;
-    private javax.swing.JTextField contactTF;
-    private javax.swing.JLabel editionLBL;
-    private javax.swing.JTextField editionTF;
-    private javax.swing.JLabel extraDetailsLBL;
-    private javax.swing.JPanel extraDetailsPL;
-    private javax.swing.JLabel genreLBL;
-    private javax.swing.JTextField genreTF;
-    private javax.swing.JCheckBox hardbackCHK;
+    private javax.swing.JButton addBookBTN;
+    private javax.swing.JButton addClothesBTN;
+    private javax.swing.JLabel defineHeaderBL;
+    private javax.swing.JButton exitReuseMenuBTN;
     private javax.swing.JPanel headerPL;
-    private javax.swing.JPanel headerPL1;
     private javax.swing.JLabel headingLBL;
-    private javax.swing.JLabel headingLBL1;
-    private javax.swing.JCheckBox hoodedCHK;
-    private javax.swing.JButton saveItemBTN;
-    private javax.swing.JLabel shoeSizeLBL;
-    private javax.swing.JTextField shoeSizeTF;
-    private javax.swing.JLabel sizeLBL;
-    private javax.swing.JTextField sizeTF;
-    private javax.swing.JLabel subjectLBL;
-    private javax.swing.JTextField subjectTF;
-    private javax.swing.JLabel titleLBL;
-    private javax.swing.JTextField titleTF;
-    private javax.swing.JLabel typeLBL;
-    private javax.swing.JTextField typeTF;
-    private javax.swing.JCheckBox waterproofCHK;
     // End of variables declaration//GEN-END:variables
 }
