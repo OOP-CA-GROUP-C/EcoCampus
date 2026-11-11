@@ -4,7 +4,8 @@
  */
 package main;
 
-import recycling.RecyclingMenuForm;
+import recycling.RecyclingMenu;
+import reuse.ReuseMenu;
 import surplus.SurplusMenu;
 
 /**
@@ -38,7 +39,7 @@ public class MainMenu extends javax.swing.JFrame {
         recycleBTN = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         headerPL1 = new javax.swing.JPanel();
-        backMainBTN = new javax.swing.JButton();
+        exitBTN = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         foodBTN = new javax.swing.JButton();
@@ -95,11 +96,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         headerPL1.setBackground(new java.awt.Color(52, 73, 94));
 
-        backMainBTN.setBackground(new java.awt.Color(153, 153, 153));
-        backMainBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        backMainBTN.setForeground(new java.awt.Color(255, 255, 255));
-        backMainBTN.setText("Back ");
-        backMainBTN.addActionListener(this::backMainBTNActionPerformed);
+        exitBTN.setBackground(new java.awt.Color(153, 153, 153));
+        exitBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        exitBTN.setForeground(new java.awt.Color(255, 255, 255));
+        exitBTN.setText("EXIT");
+        exitBTN.addActionListener(this::exitBTNActionPerformed);
 
         javax.swing.GroupLayout headerPL1Layout = new javax.swing.GroupLayout(headerPL1);
         headerPL1.setLayout(headerPL1Layout);
@@ -107,14 +108,14 @@ public class MainMenu extends javax.swing.JFrame {
             headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPL1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backMainBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         headerPL1Layout.setVerticalGroup(
             headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPL1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(backMainBTN)
+                .addComponent(exitBTN)
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
@@ -234,10 +235,10 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMainBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMainBTNActionPerformed
+    private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_backMainBTNActionPerformed
+    }//GEN-LAST:event_exitBTNActionPerformed
 
     private void foodBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodBTNActionPerformed
         // TODO add your handling code here:
@@ -247,12 +248,13 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void reuseBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reuseBTNActionPerformed
         // TODO add your handling code here:
-        
+        new ReuseMenu().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_reuseBTNActionPerformed
 
     private void recycleBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recycleBTNActionPerformed
         // TODO add your handling code here:
-        new RecyclingMenuForm().setVisible(true);
+        new RecyclingMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_recycleBTNActionPerformed
 
@@ -282,7 +284,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backMainBTN;
+    private javax.swing.JButton exitBTN;
     private javax.swing.JButton foodBTN;
     private javax.swing.JPanel headerPL1;
     private javax.swing.JLabel jLabel1;

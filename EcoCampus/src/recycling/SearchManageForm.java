@@ -31,9 +31,8 @@ public class SearchManageForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         headerPL = new javax.swing.JPanel();
-        headingBL = new javax.swing.JLabel();
-        defineHeaderBL = new javax.swing.JLabel();
-        backBTN = new javax.swing.JButton();
+        headingLBL = new javax.swing.JLabel();
+        headingLBL1 = new javax.swing.JLabel();
         searchbyPL = new javax.swing.JPanel();
         searchMaterialBL = new javax.swing.JLabel();
         materialSearchBTN = new javax.swing.JButton();
@@ -43,6 +42,7 @@ public class SearchManageForm extends javax.swing.JFrame {
         SearchTable = new javax.swing.JTable();
         footerPL = new javax.swing.JPanel();
         materialDeleteBTN = new javax.swing.JButton();
+        backBTN = new javax.swing.JButton();
         totalBL = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -62,19 +62,13 @@ public class SearchManageForm extends javax.swing.JFrame {
 
         headerPL.setBackground(new java.awt.Color(27, 94, 32));
 
-        headingBL.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        headingBL.setForeground(new java.awt.Color(255, 255, 255));
-        headingBL.setText("Recycling Tracker");
+        headingLBL.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        headingLBL.setForeground(new java.awt.Color(255, 255, 255));
+        headingLBL.setText("EcoCampus |");
 
-        defineHeaderBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        defineHeaderBL.setForeground(new java.awt.Color(255, 255, 255));
-        defineHeaderBL.setText("Select a record, then delete it if needed");
-
-        backBTN.setBackground(new java.awt.Color(40, 110, 45));
-        backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        backBTN.setForeground(new java.awt.Color(255, 255, 255));
-        backBTN.setText("Back");
-        backBTN.addActionListener(this::backBTNActionPerformed);
+        headingLBL1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        headingLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        headingLBL1.setText("Recycle Tracker");
 
         javax.swing.GroupLayout headerPLLayout = new javax.swing.GroupLayout(headerPL);
         headerPL.setLayout(headerPLLayout);
@@ -82,25 +76,18 @@ public class SearchManageForm extends javax.swing.JFrame {
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPLLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerPLLayout.createSequentialGroup()
-                        .addComponent(defineHeaderBL)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(headerPLLayout.createSequentialGroup()
-                        .addComponent(headingBL, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backBTN)
-                        .addGap(37, 37, 37))))
+                .addComponent(headingLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(headingLBL1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headerPLLayout.setVerticalGroup(
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPLLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(headingBL)
-                    .addComponent(backBTN))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(defineHeaderBL)
+                .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(headingLBL)
+                    .addComponent(headingLBL1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -155,8 +142,10 @@ public class SearchManageForm extends javax.swing.JFrame {
         SearchTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         SearchTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Plasitc", "2.5", "25"},
-                {"2", "Paper", "1.0", "5"},
+                {"", "", "", ""},
+                {"", "", "", ""},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -178,6 +167,13 @@ public class SearchManageForm extends javax.swing.JFrame {
         materialDeleteBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         materialDeleteBTN.setForeground(new java.awt.Color(255, 255, 255));
         materialDeleteBTN.setText("Delete Selected");
+        materialDeleteBTN.addActionListener(this::materialDeleteBTNActionPerformed);
+
+        backBTN.setBackground(new java.awt.Color(100, 100, 100));
+        backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        backBTN.setForeground(new java.awt.Color(255, 255, 255));
+        backBTN.setText("Back");
+        backBTN.addActionListener(this::backBTNActionPerformed);
 
         javax.swing.GroupLayout footerPLLayout = new javax.swing.GroupLayout(footerPL);
         footerPL.setLayout(footerPLLayout);
@@ -186,13 +182,17 @@ public class SearchManageForm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footerPLLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(materialDeleteBTN)
-                .addGap(22, 22, 22))
+                .addGap(31, 31, 31)
+                .addComponent(backBTN)
+                .addGap(30, 30, 30))
         );
         footerPLLayout.setVerticalGroup(
             footerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPLLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(materialDeleteBTN)
+                .addGroup(footerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(materialDeleteBTN)
+                    .addComponent(backBTN))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -204,9 +204,8 @@ public class SearchManageForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(searchbyPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -216,22 +215,22 @@ public class SearchManageForm extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(totalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
             .addComponent(footerPL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(searchbyPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(trackerTB, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(footerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(footerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -239,13 +238,17 @@ public class SearchManageForm extends javax.swing.JFrame {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        new RecyclingMenuForm().setVisible(true);
+        new RecyclingMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void totalBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalBLActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totalBLActionPerformed
+
+    private void materialDeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialDeleteBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_materialDeleteBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,10 +278,10 @@ public class SearchManageForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable SearchTable;
     private javax.swing.JButton backBTN;
-    private javax.swing.JLabel defineHeaderBL;
     private javax.swing.JPanel footerPL;
     private javax.swing.JPanel headerPL;
-    private javax.swing.JLabel headingBL;
+    private javax.swing.JLabel headingLBL;
+    private javax.swing.JLabel headingLBL1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton materialDeleteBTN;

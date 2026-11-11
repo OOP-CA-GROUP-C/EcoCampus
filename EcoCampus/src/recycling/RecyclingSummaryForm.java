@@ -30,10 +30,21 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
 
         headerPL = new javax.swing.JPanel();
         headingBL = new javax.swing.JLabel();
-        defineHeaderBL = new javax.swing.JLabel();
-        backBTN = new javax.swing.JButton();
+        headingLBL1 = new javax.swing.JLabel();
         summaryTB = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        headerPL1 = new javax.swing.JPanel();
+        backBTN = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        activeListingsLBL = new javax.swing.JLabel();
+        activeListingsNum1 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        activeListingsLBL1 = new javax.swing.JLabel();
+        activeListingsNum3 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        activeListingsLBL2 = new javax.swing.JLabel();
+        activeListingsNum4 = new javax.swing.JLabel();
+        activeListingsNum5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,17 +52,11 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
 
         headingBL.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         headingBL.setForeground(new java.awt.Color(255, 255, 255));
-        headingBL.setText("Recycling Summary");
+        headingBL.setText("EcoCampus | ");
 
-        defineHeaderBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        defineHeaderBL.setForeground(new java.awt.Color(255, 255, 255));
-        defineHeaderBL.setText("Totals by material");
-
-        backBTN.setBackground(new java.awt.Color(40, 110, 45));
-        backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        backBTN.setForeground(new java.awt.Color(255, 255, 255));
-        backBTN.setText("Back");
-        backBTN.addActionListener(this::backBTNActionPerformed);
+        headingLBL1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        headingLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        headingLBL1.setText("Recycling Summary");
 
         javax.swing.GroupLayout headerPLLayout = new javax.swing.GroupLayout(headerPL);
         headerPL.setLayout(headerPLLayout);
@@ -59,15 +64,10 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPLLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerPLLayout.createSequentialGroup()
-                        .addComponent(defineHeaderBL, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(headerPLLayout.createSequentialGroup()
-                        .addComponent(headingBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backBTN)
-                        .addGap(38, 38, 38))))
+                .addComponent(headingBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(headingLBL1)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
         headerPLLayout.setVerticalGroup(
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,19 +75,18 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(headingBL)
-                    .addComponent(backBTN))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(defineHeaderBL)
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(headingLBL1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Plastic", "4", "10.0", "100"},
-                {"Paper", "3", "5.5", "27"},
-                {"Metal", "1", "2.0", "60"},
-                {"TOTAL", "10", "23.5", "247"},
+                {"Plastic", "", "", ""},
+                {"Paper", "", "", ""},
+                {"Metal", "", "", ""},
+                {"TOTAL", "", "", ""},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -97,23 +96,165 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         jTable1.setRowHeight(25);
         summaryTB.setViewportView(jTable1);
 
+        headerPL1.setBackground(new java.awt.Color(52, 73, 94));
+
+        backBTN.setBackground(new java.awt.Color(100, 110, 100));
+        backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        backBTN.setForeground(new java.awt.Color(255, 255, 255));
+        backBTN.setText("Back");
+        backBTN.addActionListener(this::backBTNActionPerformed);
+
+        javax.swing.GroupLayout headerPL1Layout = new javax.swing.GroupLayout(headerPL1);
+        headerPL1.setLayout(headerPL1Layout);
+        headerPL1Layout.setHorizontalGroup(
+            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPL1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backBTN)
+                .addGap(39, 39, 39))
+        );
+        headerPL1Layout.setVerticalGroup(
+            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPL1Layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(backBTN)
+                .addGap(18, 18, 18))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(231, 230, 230));
+        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        activeListingsLBL.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        activeListingsLBL.setText("Total Points");
+
+        activeListingsNum1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        activeListingsNum1.setText("---");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(activeListingsLBL)
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(activeListingsNum1)
+                .addGap(45, 45, 45))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(activeListingsLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(activeListingsNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel7.setBackground(new java.awt.Color(231, 230, 230));
+        jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        activeListingsLBL1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        activeListingsLBL1.setText("Total Entries");
+
+        activeListingsNum3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        activeListingsNum3.setText("---");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(activeListingsLBL1)
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(activeListingsNum3)
+                .addGap(45, 45, 45))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(activeListingsLBL1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(activeListingsNum3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel8.setBackground(new java.awt.Color(231, 230, 230));
+        jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        activeListingsLBL2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        activeListingsLBL2.setText("Total weight");
+
+        activeListingsNum4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        activeListingsNum4.setText("KG");
+
+        activeListingsNum5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        activeListingsNum5.setText("---");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(activeListingsLBL2)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(activeListingsNum5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(activeListingsNum4)))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(activeListingsLBL2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(activeListingsNum4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(activeListingsNum5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headerPL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(summaryTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+            .addComponent(headerPL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(summaryTB)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(summaryTB, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 39, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(summaryTB, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(headerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -121,7 +262,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        new RecyclingMenuForm().setVisible(true);
+        new RecyclingMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
 
@@ -151,10 +292,21 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel activeListingsLBL;
+    private javax.swing.JLabel activeListingsLBL1;
+    private javax.swing.JLabel activeListingsLBL2;
+    private javax.swing.JLabel activeListingsNum1;
+    private javax.swing.JLabel activeListingsNum3;
+    private javax.swing.JLabel activeListingsNum4;
+    private javax.swing.JLabel activeListingsNum5;
     private javax.swing.JButton backBTN;
-    private javax.swing.JLabel defineHeaderBL;
     private javax.swing.JPanel headerPL;
+    private javax.swing.JPanel headerPL1;
     private javax.swing.JLabel headingBL;
+    private javax.swing.JLabel headingLBL1;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JTable jTable1;
     private javax.swing.JScrollPane summaryTB;
     // End of variables declaration//GEN-END:variables
