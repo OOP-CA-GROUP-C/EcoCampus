@@ -93,17 +93,17 @@ public class SurplusMarketForm extends javax.swing.JFrame {
 
         headerPL1.setBackground(new java.awt.Color(220, 234, 220));
 
-        claimSelectedBTN.setBackground(new java.awt.Color(204, 102, 0));
+        claimSelectedBTN.setBackground(new java.awt.Color(51, 51, 51));
         claimSelectedBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         claimSelectedBTN.setForeground(new java.awt.Color(255, 255, 255));
         claimSelectedBTN.setText("Claim Selected ");
 
-        deleteBTN.setBackground(new java.awt.Color(153, 0, 0));
+        deleteBTN.setBackground(new java.awt.Color(0, 153, 153));
         deleteBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         deleteBTN.setForeground(new java.awt.Color(255, 255, 255));
         deleteBTN.setText("Delete Expired ");
 
-        backMainBTN.setBackground(new java.awt.Color(51, 51, 51));
+        backMainBTN.setBackground(new java.awt.Color(100, 100, 100));
         backMainBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         backMainBTN.setForeground(new java.awt.Color(255, 255, 255));
         backMainBTN.setText("Back to Main Menu");
@@ -134,6 +134,32 @@ public class SurplusMarketForm extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},

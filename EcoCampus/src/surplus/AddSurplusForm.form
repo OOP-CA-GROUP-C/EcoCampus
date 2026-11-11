@@ -44,21 +44,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="headerPL" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="discountedPriceLBL" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="DiscountedPriceTF" min="-2" pref="226" max="-2" attributes="0"/>
+                      <Component id="CategoryCB" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
+                      <Component id="categoryLBL" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="pickupDeadlineLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="pickupDeadlineTF" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DiscountedPriceTF" min="-2" pref="226" max="-2" attributes="0"/>
-                          <Component id="CategoryCB" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
-                          <Component id="categoryLBL" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="pickupDeadlineLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pickupDeadlineTF" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="discountedPriceLBL" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLayeredPane1" max="32767" attributes="0"/>
@@ -69,14 +64,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="foodTitleLBL1" min="-2" pref="81" max="-2" attributes="0"/>
-                  <EmptySpace pref="517" max="32767" attributes="0"/>
+                  <EmptySpace pref="516" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="foodTitleTF1" min="-2" pref="223" max="-2" attributes="0"/>
-                  <EmptySpace pref="379" max="32767" attributes="0"/>
+                  <EmptySpace pref="378" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -113,14 +108,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="foodTitleLBL1" min="-2" pref="25" max="-2" attributes="0"/>
-                  <EmptySpace pref="328" max="32767" attributes="0"/>
+                  <EmptySpace pref="326" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                   <Component id="foodTitleTF1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="300" max="32767" attributes="0"/>
+                  <EmptySpace pref="298" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -250,7 +245,7 @@
                   <Component id="saveListingBTN" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="clearFormBTN" min="-2" pref="180" max="-2" attributes="0"/>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <EmptySpace pref="33" max="32767" attributes="0"/>
                   <Component id="backMainBTN" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               </Group>
@@ -299,7 +294,7 @@
         <Component class="javax.swing.JButton" name="backMainBTN">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
+              <Color blue="64" green="64" red="64" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="16" style="0"/>
