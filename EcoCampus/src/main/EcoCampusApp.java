@@ -15,6 +15,8 @@ public class EcoCampusApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MainMenu myMainGUI = new MainMenu();
+        myMainGUI.setVisible(true);
     }
     
 }
