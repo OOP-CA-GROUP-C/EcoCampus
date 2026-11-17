@@ -6,7 +6,7 @@ package reuse;
 
 /**
  *
- * @author HP
+ * @author Malavika Manalur Umamagash
  */
 public class AddClothesForm extends javax.swing.JFrame {
     

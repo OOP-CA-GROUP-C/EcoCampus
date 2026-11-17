@@ -8,7 +8,7 @@ import reuse.ReuseMenu;
 
 /**
  *
- * @author HP
+ * @author Malavika Manalur Umamagash
  */
 public class ItemListForm extends javax.swing.JFrame {
     

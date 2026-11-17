@@ -6,7 +6,7 @@ package reuse;
 
 /**
  *
- * @author Shan Narayanan
+ * @author Malavika Manalur Umamagash
  */
 public class reuseApp {
     

@@ -6,7 +6,7 @@ package surplus;
 
 /**
  *
- * @author HP
+ * @author Utkarsh Mishra
  */
 public class AddSurplusForm extends javax.swing.JFrame {
     

@@ -8,7 +8,7 @@ import recycling.RecyclingMenu;
 
 /**
  *
- * @author HP
+ * @author Malavika Manalur Umamagash
  */
 public class AddItemForm extends javax.swing.JFrame {
     
