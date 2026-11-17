@@ -39,7 +39,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         textPointsLBL = new javax.swing.JLabel();
         pointsTF = new javax.swing.JTextField();
         autoCalcLBL = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        controlPL = new javax.swing.JPanel();
         saveRecordBTN = new javax.swing.JButton();
         clearBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
@@ -145,8 +145,8 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
-        jPanel1.setBackground(new java.awt.Color(235, 245, 235));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        controlPL.setBackground(new java.awt.Color(235, 245, 235));
+        controlPL.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         saveRecordBTN.setBackground(new java.awt.Color(27, 94, 32));
         saveRecordBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -165,11 +165,11 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         backBTN.setText("Back");
         backBTN.addActionListener(this::backBTNActionPerformed);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout controlPLLayout = new javax.swing.GroupLayout(controlPL);
+        controlPL.setLayout(controlPLLayout);
+        controlPLLayout.setHorizontalGroup(
+            controlPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlPLLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(saveRecordBTN)
                 .addGap(52, 52, 52)
@@ -178,11 +178,11 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addComponent(backBTN)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        controlPLLayout.setVerticalGroup(
+            controlPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlPLLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(controlPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveRecordBTN)
                     .addComponent(clearBTN)
                     .addComponent(backBTN))
@@ -198,7 +198,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGap(94, 94, 94)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(controlPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -208,7 +208,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(controlPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
 
@@ -266,10 +266,10 @@ public class AddRecyclingForm extends javax.swing.JFrame {
     private javax.swing.JLabel autoCalcLBL;
     private javax.swing.JButton backBTN;
     private javax.swing.JButton clearBTN;
+    private javax.swing.JPanel controlPL;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> materialCB;
     private javax.swing.JTextField pointsTF;
     private javax.swing.JButton saveRecordBTN;
