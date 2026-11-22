@@ -4,10 +4,75 @@
  */
 package recycling;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Shan Narayanan
  */
-public class RecyclingManager {
+public class RecyclingManager implements RecyclingOperations{
+    private ArrayList<RecyclingRecord> records;
+
+    public RecyclingManager() {
+        records = new ArrayList<>();
+    }
+    //
+    public void addRecord(RecyclingRecord record){
+        records.add(record);
+    }
     
+    public ArrayList<RecyclingRecord> searchByMaterial(String material){
+        ArrayList<RecyclingRecord> matches = new ArrayList<>();
+        for (RecyclingRecord r : records) {
+            if (r.getMaterial().equalsIgnoreCase(material)) {
+                matches.add(r);
+            }
+        }
+        return matches;
+    }
+    
+    public double getTotalPoints(){
+        double total = 0;
+        for(RecyclingRecord r : records){
+            total += r.computePoints();
+        }
+        return total;
+    }
+    
+    public int getCount(){
+        return records.size();
+    }
+    
+    public ArrayList<RecyclingRecord> showAll(){
+        return records;
+    }
+    
+    public void deleteRecord(int index) {
+        if (index >= 0 && index < records.size()) {
+            records.remove(index);
+        }else{
+            System.out.println("The record does not exist");
+        }
+    }
+    
+    public void writeToFile(String filename) {
+       try{
+           File f = new File("RecycleRecord.txt");
+           FileWriter fw = new FileWriter(f);
+           BufferedWriter bw = new BufferedWriter(fw);
+           
+           bw.write("Writing to file");
+           bw.close();
+       }catch(IOException e){
+           System.out.println("Error!!");
+       }
+    }
+    
+    public void readFromFile(String filename) {
+        // File persistence will be added next
+    }
 }
