@@ -15,7 +15,7 @@ public class PaperRecord extends RecyclingRecord{
     public PaperRecord(int id, String date, double weightKg) {
         super(id, date, weightKg);
         pointsPerKg = 7.0;
-        points = 0;
+        points = 0.0;
         material = "";
     }
 
