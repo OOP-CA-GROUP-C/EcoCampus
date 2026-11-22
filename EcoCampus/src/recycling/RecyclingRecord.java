@@ -9,9 +9,9 @@ package recycling;
  * @author Shan Narayanan
  */
 public abstract class RecyclingRecord {
-    private int id;
-    private String date;
-    private double weightKg;
+    protected int id;
+    protected String date;
+    protected double weightKg;
 
     public RecyclingRecord(int id, String date, double weightKg) {
         this.id = id;
