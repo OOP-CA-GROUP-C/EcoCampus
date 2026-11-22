@@ -31,6 +31,11 @@ public abstract class RecyclingRecord {
     }
 
     public void setWeightKg(double weightKg) {
+        if(weightKg < 0){
+            System.out.println("Please enter the weight above 0");
+        }else if(weightKg == 0){
+            System.out.println("Please enter the weight you have entered 0");
+        }
         this.weightKg = weightKg;
     }
 
