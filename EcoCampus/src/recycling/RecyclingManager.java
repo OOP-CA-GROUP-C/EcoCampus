@@ -4,8 +4,10 @@
  */
 package recycling;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,6 +75,19 @@ public class RecyclingManager implements RecyclingOperations{
     }
     
     public void readFromFile(String filename) {
-        // File persistence will be added next
+        try{
+           File f = new File("RecycleRecord.txt");
+           FileReader fr = new FileReader(f);
+           BufferedReader br = new BufferedReader(fr);
+           
+           String line = br.readLine();
+            while (line != null) {
+                line = br.readLine();
+            }
+
+           br.close();
+       }catch(IOException e){
+           System.out.println("Error!!");
+       }
     }
 }
