@@ -15,8 +15,8 @@ public class PlasticRecord extends RecyclingRecord{
     public PlasticRecord(int id, String date, double weightKg) {
         super(id, date, weightKg);
         pointsPerKg = 10.0;
-        material = "";
         points = 0;
+        material = "";
     }
 
     public PlasticRecord() {
