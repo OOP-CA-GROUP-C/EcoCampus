@@ -146,12 +146,13 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         );
 
         controlPL.setBackground(new java.awt.Color(235, 245, 235));
-        controlPL.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        controlPL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         saveRecordBTN.setBackground(new java.awt.Color(27, 94, 32));
         saveRecordBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         saveRecordBTN.setForeground(new java.awt.Color(255, 255, 255));
         saveRecordBTN.setText("Save Record");
+        saveRecordBTN.addActionListener(this::saveRecordBTNActionPerformed);
 
         clearBTN.setBackground(new java.awt.Color(153, 153, 153));
         clearBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -235,6 +236,10 @@ public class AddRecyclingForm extends javax.swing.JFrame {
     private void pointsTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointsTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pointsTFActionPerformed
+
+    private void saveRecordBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRecordBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveRecordBTNActionPerformed
 
     /**
      * @param args the command line arguments

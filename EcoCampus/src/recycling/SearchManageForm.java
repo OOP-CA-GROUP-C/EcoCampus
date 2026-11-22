@@ -11,7 +11,7 @@ package recycling;
 public class SearchManageForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SearchManageForm.class.getName());
-
+    
     /**
      * Creates new form SearchManageForm
      */
@@ -39,7 +39,7 @@ public class SearchManageForm extends javax.swing.JFrame {
         materialShowBL = new javax.swing.JButton();
         searchMaterrialTF = new javax.swing.JTextField();
         trackerTB = new javax.swing.JScrollPane();
-        SearchTable = new javax.swing.JTable();
+        searchTable = new javax.swing.JTable();
         footerPL = new javax.swing.JPanel();
         materialDeleteBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
@@ -106,6 +106,7 @@ public class SearchManageForm extends javax.swing.JFrame {
         materialShowBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         materialShowBL.setForeground(new java.awt.Color(255, 255, 255));
         materialShowBL.setText("Show All");
+        materialShowBL.addActionListener(this::materialShowBLActionPerformed);
 
         javax.swing.GroupLayout searchbyPLLayout = new javax.swing.GroupLayout(searchbyPL);
         searchbyPL.setLayout(searchbyPLLayout);
@@ -138,9 +139,9 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        SearchTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
-        SearchTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        SearchTable.setModel(new javax.swing.table.DefaultTableModel(
+        searchTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
+        searchTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        searchTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"", "", "", ""},
                 {"", "", "", ""},
@@ -155,11 +156,11 @@ public class SearchManageForm extends javax.swing.JFrame {
                 "ID", "Material", "Weight (Kg)", "Points"
             }
         ));
-        SearchTable.setGridColor(new java.awt.Color(153, 153, 153));
-        SearchTable.setRowHeight(22);
-        SearchTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        SearchTable.setShowGrid(true);
-        trackerTB.setViewportView(SearchTable);
+        searchTable.setGridColor(new java.awt.Color(153, 153, 153));
+        searchTable.setRowHeight(22);
+        searchTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        searchTable.setShowGrid(true);
+        trackerTB.setViewportView(searchTable);
 
         footerPL.setBackground(new java.awt.Color(52, 73, 94));
 
@@ -251,6 +252,10 @@ public class SearchManageForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_materialDeleteBTNActionPerformed
 
+    private void materialShowBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialShowBLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_materialShowBLActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,7 +282,6 @@ public class SearchManageForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable SearchTable;
     private javax.swing.JButton backBTN;
     private javax.swing.JPanel footerPL;
     private javax.swing.JPanel headerPL;
@@ -290,6 +294,7 @@ public class SearchManageForm extends javax.swing.JFrame {
     private javax.swing.JButton materialShowBL;
     private javax.swing.JLabel searchMaterialBL;
     private javax.swing.JTextField searchMaterrialTF;
+    private javax.swing.JTable searchTable;
     private javax.swing.JPanel searchbyPL;
     private javax.swing.JTextField totalBL;
     private javax.swing.JScrollPane trackerTB;
