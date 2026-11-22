@@ -9,6 +9,6 @@ package recycling;
  * @author Shan Narayanan
  */
 public interface RecyclingOperations {
-    public double calculatePoints();
-    public String getMaterial();
+    //public double calculatePoints();
+    //public String getMaterial();
 }
