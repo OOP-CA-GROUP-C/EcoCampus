@@ -9,11 +9,14 @@ package recycling;
  * @author Shan Narayanan
  */
 public class PlasticRecord extends RecyclingRecord{
-    private double pointsPerKg;
+    private double pointsPerKg, points;
+    private String material;
 
     public PlasticRecord(int id, String date, double weightKg) {
         super(id, date, weightKg);
         pointsPerKg = 10.0;
+        material = "";
+        points = 0;
     }
 
     public PlasticRecord() {
@@ -21,17 +24,17 @@ public class PlasticRecord extends RecyclingRecord{
 
     @Override
     public String getMaterial() {
-        return "Plastic"; 
+        return material = "Plastic"; 
     }
     
     @Override
     public double computePoints(){
-        return pointsPerKg * weightKg;
+        return points = pointsPerKg * weightKg;
     }
 
     @Override
     public String printDetails() {
-        return super.printDetails() + " Material: " + getMaterial() + " Points: " + computePoints(); 
+        return super.printDetails() + " Material: " + material + " Points: " + points; 
     }
     
     
