@@ -8,7 +8,7 @@ package recycling;
  *
  * @author Shan Narayanan
  */
-public abstract class RecyclingRecord {
+public abstract class RecyclingRecord implements RecyclingOperations{
     protected int id;
     protected String date;
     protected double weightKg;
