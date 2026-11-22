@@ -8,6 +8,50 @@ package recycling;
  *
  * @author Shan Narayanan
  */
-public class RecyclingRecord {
+public abstract class RecyclingRecord {
+    private int id;
+    private String date;
+    private double weightKg;
+
+    public RecyclingRecord(int id, String date, double weightKg) {
+        this.id = id;
+        this.date = date;
+        this.weightKg = weightKg;
+    }
+
+    public RecyclingRecord() {
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setWeightKg(double weightKg) {
+        this.weightKg = weightKg;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public double getWeightKg() {
+        return weightKg;
+    }
+    
+    public abstract double computePoints();
+    
+    public abstract String getMaterial();
+    
+    public String printDetails(){
+        return "Id: " + id + " Date: " + date + " Weight: " + weightKg;
+    }
     
 }
