@@ -8,6 +8,33 @@ package recycling;
  *
  * @author Shan Narayanan
  */
-public class PaperRecord {
+public class PaperRecord extends RecyclingRecord{
+    private double pointsPerKg, points;
+    private String material;
+
+    public PaperRecord(int id, String date, double weightKg) {
+        super(id, date, weightKg);
+        pointsPerKg = 7.0;
+        points = 0;
+        material = "";
+    }
+
+    public PaperRecord() {
+    }
+
+    @Override
+    public String getMaterial() {
+        return material = "Paper";
+    }
+
+    @Override
+    public double computePoints() {
+        return points = pointsPerKg * weightKg;
+    }
+
+    @Override
+    public String printDetails() {
+        return super.printDetails() + " Material: " + material + " Points: " + points;
+    }
     
 }
