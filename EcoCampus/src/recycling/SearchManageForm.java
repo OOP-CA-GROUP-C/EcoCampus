@@ -43,7 +43,7 @@ public class SearchManageForm extends javax.swing.JFrame {
         footerPL = new javax.swing.JPanel();
         materialDeleteBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
-        totalBL = new javax.swing.JTextField();
+        totalLBL = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -197,10 +197,10 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        totalBL.setEditable(false);
-        totalBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        totalBL.setText("Total Records: 30");
-        totalBL.addActionListener(this::totalBLActionPerformed);
+        totalLBL.setEditable(false);
+        totalLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        totalLBL.setText("Total Records: 30");
+        totalLBL.addActionListener(this::totalLBLActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,7 +215,7 @@ public class SearchManageForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(trackerTB)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(totalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(47, Short.MAX_VALUE))
             .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -230,7 +230,7 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(trackerTB, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(totalBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(footerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -245,9 +245,9 @@ public class SearchManageForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
 
-    private void totalBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalBLActionPerformed
+    private void totalLBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalLBLActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_totalBLActionPerformed
+    }//GEN-LAST:event_totalLBLActionPerformed
 
     private void materialDeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialDeleteBTNActionPerformed
         // TODO add your handling code here:
@@ -297,7 +297,7 @@ public class SearchManageForm extends javax.swing.JFrame {
     private javax.swing.JTextField searchMaterrialTF;
     private javax.swing.JTable searchTable;
     private javax.swing.JPanel searchbyPL;
-    private javax.swing.JTextField totalBL;
+    private javax.swing.JTextField totalLBL;
     private javax.swing.JScrollPane trackerTB;
     // End of variables declaration//GEN-END:variables
 }
