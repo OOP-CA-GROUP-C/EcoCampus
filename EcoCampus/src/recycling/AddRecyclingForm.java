@@ -11,7 +11,6 @@ package recycling;
 public class AddRecyclingForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddRecyclingForm.class.getName());
-
     /**
      * Creates new form AddRecyclingForm
      */
