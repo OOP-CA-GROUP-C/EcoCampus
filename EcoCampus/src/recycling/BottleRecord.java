@@ -16,8 +16,8 @@ public class BottleRecord extends PlasticRecord{
         this.capOn = capOn;
     }
 
-    public BottleRecord(boolean capOn) {
-        this.capOn = capOn;
+    public BottleRecord() {
+       
     }
 
     public boolean isCapOn() {

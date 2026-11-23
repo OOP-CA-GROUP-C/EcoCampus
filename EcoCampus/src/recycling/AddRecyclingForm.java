@@ -11,11 +11,13 @@ package recycling;
 public class AddRecyclingForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddRecyclingForm.class.getName());
+    private RecyclingManager manager;
     /**
      * Creates new form AddRecyclingForm
      */
     public AddRecyclingForm() {
         initComponents();
+        manager = new RecyclingManager();
     }
 
     /**
@@ -27,6 +29,8 @@ public class AddRecyclingForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ErrorPane = new javax.swing.JScrollPane();
+        errorTA = new javax.swing.JTextArea();
         headerPL = new javax.swing.JPanel();
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
@@ -44,6 +48,10 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         backBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        errorTA.setColumns(20);
+        errorTA.setRows(5);
+        ErrorPane.setViewportView(errorTA);
 
         headerPL.setBackground(new java.awt.Color(27, 94, 32));
 
@@ -200,6 +208,11 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                     .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(controlPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(91, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(93, Short.MAX_VALUE)
+                    .addComponent(ErrorPane, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(90, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,6 +223,11 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(controlPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(78, Short.MAX_VALUE)
+                    .addComponent(ErrorPane, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(158, Short.MAX_VALUE)))
         );
 
         pack();
@@ -238,6 +256,56 @@ public class AddRecyclingForm extends javax.swing.JFrame {
 
     private void saveRecordBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRecordBTNActionPerformed
         // TODO add your handling code here:
+        String material = materialCB.getSelectedItem().toString();
+        double weight = Double.parseDouble(weightTF.getText());
+        
+        if(material.equals("Plastic")){
+            PlasticRecord p = new PlasticRecord();
+            p.setWeightKg(weight);
+            manager.addRecord(p);
+            pointsTF.setText("" + p.computePoints());
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values");
+        }else if(material.equals("Paper")){
+            PaperRecord pa = new PaperRecord();
+            pa.setWeightKg(weight);
+            manager.addRecord(pa);
+            pointsTF.setText("" + pa.computePoints());
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values");
+        }else if(material.equals("NewsPaper")){
+            NewsPaper np = new NewsPaper();
+            np.setWeightKg(weight);
+            manager.addRecord(np);
+            pointsTF.setText("" + np.computePoints());
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values");
+        }else if(material.equals("Bottle")){
+            BottleRecord b = new BottleRecord();
+            b.setWeightKg(weight);
+            manager.addRecord(b);
+            pointsTF.setText("" + b.computePoints());
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values");
+        }else if(material.equals("Can")){
+            CanRecord c = new CanRecord();
+            c.setWeightKg(weight);
+            manager.addRecord(c);
+            pointsTF.setText("" + c.computePoints());
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values");
+        }else if(material.equals("Cardboard")){
+            CardboardRecord cb = new CardboardRecord();
+            cb.setWeightKg(weight);
+            manager.addRecord(cb);
+            pointsTF.setText("" + cb.computePoints());
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values");
+        }else{
+            Body.setVisible(false);
+            errorTA.append("You have entered any values please enter the correct values hit clear and try again!!");
+        }
+        
     }//GEN-LAST:event_saveRecordBTNActionPerformed
 
     /**
@@ -267,10 +335,12 @@ public class AddRecyclingForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Body;
+    private javax.swing.JScrollPane ErrorPane;
     private javax.swing.JLabel autoCalcLBL;
     private javax.swing.JButton backBTN;
     private javax.swing.JButton clearBTN;
     private javax.swing.JPanel controlPL;
+    private javax.swing.JTextArea errorTA;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
