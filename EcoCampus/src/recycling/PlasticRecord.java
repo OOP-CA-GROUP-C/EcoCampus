@@ -20,6 +20,7 @@ public class PlasticRecord extends RecyclingRecord{
     }
 
     public PlasticRecord() {
+        pointsPerKg = 10.0;
     }
 
     @Override

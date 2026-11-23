@@ -30,14 +30,7 @@
                   <Component id="Body" max="32767" attributes="0"/>
                   <Component id="controlPL" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="91" max="32767" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
-                  <Component id="ErrorPane" min="-2" pref="456" max="-2" attributes="0"/>
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace pref="82" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,32 +44,10 @@
               <Component id="controlPL" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
           </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="78" max="32767" attributes="0"/>
-                  <Component id="ErrorPane" min="-2" pref="182" max="-2" attributes="0"/>
-                  <EmptySpace pref="158" max="32767" attributes="0"/>
-              </Group>
-          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="ErrorPane">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="errorTA">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Container class="javax.swing.JPanel" name="headerPL">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -152,23 +123,31 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="textPointsLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="textWeightLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="textMaterialLBL" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="materialCB" min="-2" max="-2" attributes="0"/>
-                      <Component id="weightTF" min="-2" pref="71" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="pointsTF" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="autoCalcLBL" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="DisplayPane" min="-2" pref="266" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="textPointsLBL" min="-2" max="-2" attributes="0"/>
+                              <Component id="textWeightLBL" min="-2" max="-2" attributes="0"/>
+                              <Component id="textMaterialLBL" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="materialCB" min="-2" max="-2" attributes="0"/>
+                              <Component id="weightTF" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="pointsTF" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="autoCalcLBL" min="-2" pref="97" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="94" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -180,7 +159,7 @@
                       <Component id="textMaterialLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="materialCB" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="textWeightLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="weightTF" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -198,7 +177,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="DisplayPane" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -218,10 +199,14 @@
               <Font name="Segoe UI" size="12" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Plastic"/>
-                <StringItem index="1" value="Paper"/>
-                <StringItem index="2" value="Can"/>
+              <StringArray count="7">
+                <StringItem index="0" value="SelectedNone"/>
+                <StringItem index="1" value="Plastic"/>
+                <StringItem index="2" value="Bottle"/>
+                <StringItem index="3" value="Paper"/>
+                <StringItem index="4" value="NewsPaper"/>
+                <StringItem index="5" value="Cardboard"/>
+                <StringItem index="6" value="Can"/>
               </StringArray>
             </Property>
           </Properties>
@@ -272,6 +257,24 @@
             <Property name="text" type="java.lang.String" value="Auto-Calculated"/>
           </Properties>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="DisplayPane">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="displayTA">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="controlPL">
@@ -296,7 +299,7 @@
                   <Component id="clearBTN" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="backBTN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="71" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

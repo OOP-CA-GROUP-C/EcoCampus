@@ -29,8 +29,6 @@ public class AddRecyclingForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ErrorPane = new javax.swing.JScrollPane();
-        errorTA = new javax.swing.JTextArea();
         headerPL = new javax.swing.JPanel();
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
@@ -42,16 +40,14 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         textPointsLBL = new javax.swing.JLabel();
         pointsTF = new javax.swing.JTextField();
         autoCalcLBL = new javax.swing.JLabel();
+        DisplayPane = new javax.swing.JScrollPane();
+        displayTA = new javax.swing.JTextArea();
         controlPL = new javax.swing.JPanel();
         saveRecordBTN = new javax.swing.JButton();
         clearBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        errorTA.setColumns(20);
-        errorTA.setRows(5);
-        ErrorPane.setViewportView(errorTA);
 
         headerPL.setBackground(new java.awt.Color(27, 94, 32));
 
@@ -91,7 +87,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         textMaterialLBL.setText("Material:");
 
         materialCB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        materialCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plastic", "Paper", "Can" }));
+        materialCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SelectedNone", "Plastic", "Bottle", "Paper", "NewsPaper", "Cardboard", "Can" }));
         materialCB.addActionListener(this::materialCBActionPerformed);
 
         textWeightLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -109,25 +105,35 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         autoCalcLBL.setForeground(new java.awt.Color(153, 153, 153));
         autoCalcLBL.setText("Auto-Calculated");
 
+        displayTA.setColumns(20);
+        displayTA.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        displayTA.setRows(5);
+        DisplayPane.setViewportView(displayTA);
+
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
         BodyLayout.setHorizontalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textPointsLBL)
-                    .addComponent(textWeightLBL)
-                    .addComponent(textMaterialLBL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(materialCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BodyLayout.createSequentialGroup()
-                        .addComponent(pointsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(DisplayPane, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BodyLayout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textPointsLBL)
+                            .addComponent(textWeightLBL)
+                            .addComponent(textMaterialLBL))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(autoCalcLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(materialCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addComponent(pointsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(autoCalcLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +142,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textMaterialLBL)
                     .addComponent(materialCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textWeightLBL)
                     .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,7 +155,9 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                         .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textPointsLBL)
                             .addComponent(pointsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(36, 36, 36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DisplayPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         controlPL.setBackground(new java.awt.Color(235, 245, 235));
@@ -184,7 +192,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addComponent(clearBTN)
                 .addGap(39, 39, 39)
                 .addComponent(backBTN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         controlPLLayout.setVerticalGroup(
             controlPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,12 +215,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(controlPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(91, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(93, Short.MAX_VALUE)
-                    .addComponent(ErrorPane, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(90, Short.MAX_VALUE)))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,11 +226,6 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(controlPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(78, Short.MAX_VALUE)
-                    .addComponent(ErrorPane, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(158, Short.MAX_VALUE)))
         );
 
         pack();
@@ -248,6 +246,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         weightTF.setText("");
         pointsTF.setText("");
         materialCB.setSelectedIndex(0);
+        displayTA.setText("");
     }//GEN-LAST:event_clearBTNActionPerformed
 
     private void pointsTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointsTFActionPerformed
@@ -257,53 +256,58 @@ public class AddRecyclingForm extends javax.swing.JFrame {
     private void saveRecordBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRecordBTNActionPerformed
         // TODO add your handling code here:
         String material = materialCB.getSelectedItem().toString();
+        
+        if(weightTF.getText().isEmpty()){
+            displayTA.append("You haven't entered any value for weight \nPlease enter a valid number for weight \nClick on Clear and try again!!");
+        }
+        
         double weight = Double.parseDouble(weightTF.getText());
         
-        if(material.equals("Plastic")){
-            PlasticRecord p = new PlasticRecord();
-            p.setWeightKg(weight);
-            manager.addRecord(p);
-            pointsTF.setText("" + p.computePoints());
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values");
-        }else if(material.equals("Paper")){
-            PaperRecord pa = new PaperRecord();
-            pa.setWeightKg(weight);
-            manager.addRecord(pa);
-            pointsTF.setText("" + pa.computePoints());
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values");
-        }else if(material.equals("NewsPaper")){
-            NewsPaper np = new NewsPaper();
-            np.setWeightKg(weight);
-            manager.addRecord(np);
-            pointsTF.setText("" + np.computePoints());
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values");
-        }else if(material.equals("Bottle")){
-            BottleRecord b = new BottleRecord();
-            b.setWeightKg(weight);
-            manager.addRecord(b);
-            pointsTF.setText("" + b.computePoints());
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values");
-        }else if(material.equals("Can")){
-            CanRecord c = new CanRecord();
-            c.setWeightKg(weight);
-            manager.addRecord(c);
-            pointsTF.setText("" + c.computePoints());
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values");
-        }else if(material.equals("Cardboard")){
-            CardboardRecord cb = new CardboardRecord();
-            cb.setWeightKg(weight);
-            manager.addRecord(cb);
-            pointsTF.setText("" + cb.computePoints());
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values");
+        if(weight > 0){
+            if(material.equals("Plastic")){
+                PlasticRecord p = new PlasticRecord();
+                p.setWeightKg(weight);
+                manager.addRecord(p);
+                pointsTF.setText("" + p.computePoints());
+                displayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Paper")){
+                PaperRecord pa = new PaperRecord();
+                pa.setWeightKg(weight);
+                manager.addRecord(pa);
+                pointsTF.setText("" + pa.computePoints());
+                displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("NewsPaper")){
+                NewsPaper np = new NewsPaper();
+                np.setWeightKg(weight);
+                manager.addRecord(np);
+                pointsTF.setText("" + np.computePoints());
+                displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Bottle")){
+                BottleRecord b = new BottleRecord();
+                b.setWeightKg(weight);
+                manager.addRecord(b);
+                pointsTF.setText("" + b.computePoints());
+                displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Can")){
+                CanRecord c = new CanRecord();
+                c.setWeightKg(weight);
+                manager.addRecord(c);
+                pointsTF.setText("" + c.computePoints());
+                DisplayPane.setVisible(true);
+                displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Cardboard")){
+                CardboardRecord cb = new CardboardRecord();
+                cb.setWeightKg(weight);
+                manager.addRecord(cb);
+                pointsTF.setText("" + cb.computePoints());
+                displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
+            }else{
+                displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
+            }
+        }else if(weight < 0){
+            displayTA.setText("You have entered a negative number for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
         }else{
-            Body.setVisible(false);
-            errorTA.append("You have entered any values please enter the correct values hit clear and try again!!");
+            displayTA.setText("You have'nt entered 0 for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
         }
         
     }//GEN-LAST:event_saveRecordBTNActionPerformed
@@ -335,12 +339,12 @@ public class AddRecyclingForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Body;
-    private javax.swing.JScrollPane ErrorPane;
+    private javax.swing.JScrollPane DisplayPane;
     private javax.swing.JLabel autoCalcLBL;
     private javax.swing.JButton backBTN;
     private javax.swing.JButton clearBTN;
     private javax.swing.JPanel controlPL;
-    private javax.swing.JTextArea errorTA;
+    private javax.swing.JTextArea displayTA;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
