@@ -22,7 +22,7 @@ public class CanRecord extends RecyclingRecord{
     }
 
     public CanRecord() {
-       
+       pointsPerKg = 5.0;
     }
 
     public boolean getCrushed() {

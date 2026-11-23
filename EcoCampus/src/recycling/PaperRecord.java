@@ -20,6 +20,7 @@ public class PaperRecord extends RecyclingRecord{
     }
 
     public PaperRecord() {
+        pointsPerKg = 7.0;
     }
 
     @Override
