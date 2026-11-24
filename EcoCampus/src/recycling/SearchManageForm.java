@@ -11,12 +11,14 @@ package recycling;
 public class SearchManageForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SearchManageForm.class.getName());
+    private RecyclingManager manager;
     
     /**
      * Creates new form SearchManageForm
      */
     public SearchManageForm() {
         initComponents();
+        manager = new RecyclingManager();
     }
 
     /**
@@ -255,6 +257,8 @@ public class SearchManageForm extends javax.swing.JFrame {
 
     private void materialShowBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialShowBLActionPerformed
         // TODO add your handling code here:
+        searchMaterrialTF.setText("");
+        manager.showAll();
     }//GEN-LAST:event_materialShowBLActionPerformed
 
     /**

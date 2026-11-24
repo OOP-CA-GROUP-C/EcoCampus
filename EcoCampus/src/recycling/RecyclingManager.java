@@ -41,7 +41,7 @@ public class RecyclingManager implements RecyclingOperations{
             if (r.getMaterial() != null && r.getMaterial().equalsIgnoreCase(material)) {
                 temp.add(r);
             }else{
-                System.out.println("Error!!");
+                System.out.println("Error!! You haven't entered anything");
             }
         }
         return temp;
