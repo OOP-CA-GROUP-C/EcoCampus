@@ -4,6 +4,8 @@
  */
 package recycling;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Shan Narayanan
@@ -34,7 +36,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
         summaryTB = new javax.swing.JScrollPane();
-        sumaryTable = new javax.swing.JTable();
+        summaryTable = new javax.swing.JTable();
         footerPL1 = new javax.swing.JPanel();
         backBTN = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -82,22 +84,24 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sumaryTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        sumaryTable.setModel(new javax.swing.table.DefaultTableModel(
+        summaryTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        summaryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Plastic", "", "", ""},
                 {"Paper", "", "", ""},
-                {"Metal", "", "", ""},
-                {"TOTAL", "", "", ""},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"NewsPaper", "", "", ""},
+                {"Bottle", "", "", ""},
+                {"Can", null, null, null},
+                {"Cardboard", null, null, null},
+                {"TOTAL", null, null, null},
+                {"", null, null, null}
             },
             new String [] {
                 "Material", "Records", "Weight (kg)", "Points"
             }
         ));
-        sumaryTable.setRowHeight(25);
-        summaryTB.setViewportView(sumaryTable);
+        summaryTable.setRowHeight(25);
+        summaryTB.setViewportView(summaryTable);
 
         footerPL1.setBackground(new java.awt.Color(52, 73, 94));
 
@@ -261,16 +265,16 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(summaryTB, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
+                .addComponent(summaryTB, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(footerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void loadSummary(){
+    private void loadSummaryTable(){
         String totalWeightText = String.valueOf(manager.getTotalWeight());
         String totalPointsText = String.valueOf(manager.getTotalPoints());
         String totalEntriesText = String.valueOf(manager.getCount());
@@ -278,6 +282,84 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         totalWeightLBL.setText(totalWeightText);
         totalPointsLBL.setText(totalPointsText);
         totalEntriesLBL.setText(totalEntriesText);
+        
+        ArrayList<RecyclingRecord> plasticList = manager.searchByMaterial("Plastic");
+        double plasticWeight = 0.0;
+        double plasticPoints = 0.0;
+        for(RecyclingRecord r : plasticList){
+            plasticWeight += r.getWeightKg();
+            plasticPoints += r.computePoints();
+        }
+        summaryTable.setValueAt(plasticList.size(), 0, 1);
+        summaryTable.setValueAt(plasticWeight, 0, 2);
+        summaryTable.setValueAt(plasticPoints, 0, 3);
+        
+        ArrayList<RecyclingRecord> paperList = manager.searchByMaterial("Paper");
+        double paperWeight = 0.0;
+        double paperPoints = 0.0;
+        for(RecyclingRecord r : paperList){
+            paperWeight += r.getWeightKg();
+            paperPoints += r.computePoints();
+        }
+        summaryTable.setValueAt(paperList.size(), 1, 1);
+        summaryTable.setValueAt(paperWeight, 1, 2);
+        summaryTable.setValueAt(paperPoints, 1, 3);
+        
+        ArrayList<RecyclingRecord> newsPaperList = manager.searchByMaterial("NewsPaper");
+        double newsPaperWeight = 0.0;
+        double newsPaperPoints = 0.0;
+        for(RecyclingRecord r : paperList){
+            newsPaperWeight += r.getWeightKg();
+            newsPaperPoints += r.computePoints();
+        }
+        summaryTable.setValueAt(newsPaperList.size(), 2, 1);
+        summaryTable.setValueAt(newsPaperWeight, 2, 2);
+        summaryTable.setValueAt(newsPaperPoints, 2, 3);
+        
+        ArrayList<RecyclingRecord> bottleList = manager.searchByMaterial("Bottle");
+        double bottleWeight = 0.0;
+        double bottlePoints = 0.0;
+        for(RecyclingRecord r : bottleList){
+            bottleWeight += r.getWeightKg();
+            bottlePoints += r.computePoints();
+        }
+        summaryTable.setValueAt(bottleList.size(), 3, 1);
+        summaryTable.setValueAt(bottleWeight, 3, 2);
+        summaryTable.setValueAt(bottlePoints, 3, 3);
+        
+        ArrayList<RecyclingRecord> canList = manager.searchByMaterial("Can");
+        double canWeight = 0.0;
+        double canPoints = 0.0;
+        for(RecyclingRecord r : canList){
+            canWeight += r.getWeightKg();
+            canPoints += r.computePoints();
+        }
+        summaryTable.setValueAt(canList.size(), 4, 1);
+        summaryTable.setValueAt(canWeight, 4, 2);
+        summaryTable.setValueAt(canPoints, 4, 3);
+
+        ArrayList<RecyclingRecord> carboardList = manager.searchByMaterial("Cardboard");
+        double cardboardWeight = 0.0;
+        double cardboardPoints = 0.0;
+        for(RecyclingRecord r : carboardList){
+            cardboardWeight += r.getWeightKg();
+            cardboardPoints += r.computePoints();
+        }
+        summaryTable.setValueAt(canList.size(), 5, 1);
+        summaryTable.setValueAt(canWeight, 5, 2);
+        summaryTable.setValueAt(canPoints, 5, 3);
+        
+    }
+    
+    private void loadSummary(){
+        String totalWeight = String.valueOf(manager.getTotalWeight());
+        String totalPoints = String.valueOf(manager.getTotalPoints());
+        String totalEntries = String.valueOf(manager.getCount());
+        
+        totalWeightLBL.setText(totalWeight);
+        totalPointsLBL.setText(totalPoints);
+        totalEntriesLBL.setText(totalEntries);
+        
     }
     
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
@@ -324,8 +406,8 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     private javax.swing.JLabel kgLBL;
     private javax.swing.JLabel pointsLBL;
     private javax.swing.JLabel ptsLBL;
-    private javax.swing.JTable sumaryTable;
     private javax.swing.JScrollPane summaryTB;
+    private javax.swing.JTable summaryTable;
     private javax.swing.JLabel totalEntriesLBL;
     private javax.swing.JLabel totalPointsLBL;
     private javax.swing.JLabel totalWeightLBL;
