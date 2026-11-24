@@ -11,12 +11,14 @@ package recycling;
 public class RecyclingSummaryForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RecyclingSummaryForm.class.getName());
-
+    private RecyclingManager manager;
+    
     /**
      * Creates new form RecyclingSummaryForm
      */
     public RecyclingSummaryForm() {
         initComponents();
+        manager = new RecyclingManager();
     }
 
     /**
@@ -33,18 +35,19 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         headingLBL1 = new javax.swing.JLabel();
         summaryTB = new javax.swing.JScrollPane();
         sumaryTable = new javax.swing.JTable();
-        headerPL1 = new javax.swing.JPanel();
+        footerPL1 = new javax.swing.JPanel();
         backBTN = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         pointsLBL = new javax.swing.JLabel();
-        totalLBL = new javax.swing.JLabel();
+        totalPointsLBL = new javax.swing.JLabel();
+        ptsLBL = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         entriesLBL = new javax.swing.JLabel();
-        entriesTF = new javax.swing.JLabel();
+        totalEntriesLBL = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         weightLBL = new javax.swing.JLabel();
         kgLBL = new javax.swing.JLabel();
-        weightTF = new javax.swing.JLabel();
+        totalWeightLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +99,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         sumaryTable.setRowHeight(25);
         summaryTB.setViewportView(sumaryTable);
 
-        headerPL1.setBackground(new java.awt.Color(52, 73, 94));
+        footerPL1.setBackground(new java.awt.Color(52, 73, 94));
 
         backBTN.setBackground(new java.awt.Color(100, 110, 100));
         backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -104,18 +107,18 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         backBTN.setText("Back");
         backBTN.addActionListener(this::backBTNActionPerformed);
 
-        javax.swing.GroupLayout headerPL1Layout = new javax.swing.GroupLayout(headerPL1);
-        headerPL1.setLayout(headerPL1Layout);
-        headerPL1Layout.setHorizontalGroup(
-            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPL1Layout.createSequentialGroup()
+        javax.swing.GroupLayout footerPL1Layout = new javax.swing.GroupLayout(footerPL1);
+        footerPL1.setLayout(footerPL1Layout);
+        footerPL1Layout.setHorizontalGroup(
+            footerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footerPL1Layout.createSequentialGroup()
                 .addContainerGap(540, Short.MAX_VALUE)
                 .addComponent(backBTN)
                 .addGap(34, 34, 34))
         );
-        headerPL1Layout.setVerticalGroup(
-            headerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPL1Layout.createSequentialGroup()
+        footerPL1Layout.setVerticalGroup(
+            footerPL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footerPL1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backBTN)
                 .addGap(18, 18, 18))
@@ -127,8 +130,11 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         pointsLBL.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         pointsLBL.setText("Total Points");
 
-        totalLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        totalLBL.setText("---");
+        totalPointsLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        totalPointsLBL.setText("---");
+
+        ptsLBL.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ptsLBL.setText("Pts");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -140,8 +146,10 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(totalLBL)
-                .addGap(45, 45, 45))
+                .addComponent(totalPointsLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsLBL)
+                .addGap(19, 19, 19))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +157,9 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(pointsLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ptsLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalPointsLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -159,8 +169,8 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         entriesLBL.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         entriesLBL.setText("Total Entries");
 
-        entriesTF.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        entriesTF.setText("---");
+        totalEntriesLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        totalEntriesLBL.setText("---");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -172,7 +182,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(entriesTF)
+                .addComponent(totalEntriesLBL)
                 .addGap(45, 45, 45))
         );
         jPanel7Layout.setVerticalGroup(
@@ -181,7 +191,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(entriesLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(entriesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(totalEntriesLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -194,8 +204,8 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
         kgLBL.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         kgLBL.setText("KG");
 
-        weightTF.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        weightTF.setText("---");
+        totalWeightLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        totalWeightLBL.setText("---");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -206,7 +216,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(weightLBL)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(weightTF)
+                        .addComponent(totalWeightLBL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(kgLBL)))
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -220,7 +230,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(kgLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(totalWeightLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
 
@@ -240,7 +250,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                         .addGap(62, 62, 62)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(47, 47, 47))
-            .addComponent(headerPL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(footerPL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,12 +264,22 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(summaryTB, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(headerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(footerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void loadSummary(){
+        String totalWeightText = String.valueOf(manager.getTotalWeight());
+        String totalPointsText = String.valueOf(manager.getTotalPoints());
+        String totalEntriesText = String.valueOf(manager.getCount());
+        
+        totalWeightLBL.setText(totalWeightText);
+        totalPointsLBL.setText(totalPointsText);
+        totalEntriesLBL.setText(totalEntriesText);
+    }
+    
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
         new RecyclingMenu().setVisible(true);
@@ -294,9 +314,8 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
     private javax.swing.JLabel entriesLBL;
-    private javax.swing.JLabel entriesTF;
+    private javax.swing.JPanel footerPL1;
     private javax.swing.JPanel headerPL;
-    private javax.swing.JPanel headerPL1;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
     private javax.swing.JPanel jPanel6;
@@ -304,10 +323,12 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel kgLBL;
     private javax.swing.JLabel pointsLBL;
+    private javax.swing.JLabel ptsLBL;
     private javax.swing.JTable sumaryTable;
     private javax.swing.JScrollPane summaryTB;
-    private javax.swing.JLabel totalLBL;
+    private javax.swing.JLabel totalEntriesLBL;
+    private javax.swing.JLabel totalPointsLBL;
+    private javax.swing.JLabel totalWeightLBL;
     private javax.swing.JLabel weightLBL;
-    private javax.swing.JLabel weightTF;
     // End of variables declaration//GEN-END:variables
 }

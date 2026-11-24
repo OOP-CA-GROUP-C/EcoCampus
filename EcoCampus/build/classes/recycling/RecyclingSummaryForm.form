@@ -38,7 +38,7 @@
               </Group>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
           </Group>
-          <Component id="headerPL1" alignment="0" max="32767" attributes="0"/>
+          <Component id="footerPL1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -54,7 +54,7 @@
               <EmptySpace pref="33" max="32767" attributes="0"/>
               <Component id="summaryTB" min="-2" pref="129" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="headerPL1" min="-2" max="-2" attributes="0"/>
+              <Component id="footerPL1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -197,7 +197,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="headerPL1">
+    <Container class="javax.swing.JPanel" name="footerPL1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5e" green="49" red="34" type="rgb"/>
@@ -266,8 +266,10 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="totalLBL" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="totalPointsLBL" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsLBL" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -277,7 +279,10 @@
                   <EmptySpace pref="16" max="32767" attributes="0"/>
                   <Component id="pointsLBL" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="totalLBL" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="ptsLBL" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="totalPointsLBL" min="-2" pref="49" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -292,12 +297,20 @@
             <Property name="text" type="java.lang.String" value="Total Points"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="totalLBL">
+        <Component class="javax.swing.JLabel" name="totalPointsLBL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="---"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsLBL">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Pts"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -324,7 +337,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="entriesTF" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalEntriesLBL" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -335,7 +348,7 @@
                   <EmptySpace pref="16" max="32767" attributes="0"/>
                   <Component id="entriesLBL" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="entriesTF" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="totalEntriesLBL" min="-2" pref="49" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -350,7 +363,7 @@
             <Property name="text" type="java.lang.String" value="Total Entries"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="entriesTF">
+        <Component class="javax.swing.JLabel" name="totalEntriesLBL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="1"/>
@@ -380,7 +393,7 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="weightLBL" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="weightTF" min="-2" max="-2" attributes="0"/>
+                          <Component id="totalWeightLBL" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="kgLBL" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -398,7 +411,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="kgLBL" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="weightTF" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="totalWeightLBL" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -423,7 +436,7 @@
             <Property name="text" type="java.lang.String" value="KG"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="weightTF">
+        <Component class="javax.swing.JLabel" name="totalWeightLBL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="1"/>

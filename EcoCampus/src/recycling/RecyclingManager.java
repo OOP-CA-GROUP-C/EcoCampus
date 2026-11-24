@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 public class RecyclingManager implements RecyclingOperations{
     private ArrayList<RecyclingRecord> records;
+    private double totalWeight;
 
     public RecyclingManager() {
         records = new ArrayList<>();
@@ -99,5 +100,12 @@ public class RecyclingManager implements RecyclingOperations{
        }catch(IOException e){
            System.out.println("Error!!");
        }
+    }
+    
+    public double getTotalWeight(){ 
+        for(RecyclingRecord r : records){
+            totalWeight += r.getWeightKg();
+        }
+        return totalWeight;
     }
 }

@@ -253,6 +253,11 @@ public class SearchManageForm extends javax.swing.JFrame {
 
     private void materialDeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialDeleteBTNActionPerformed
         // TODO add your handling code here:
+        int row = searchTable.getSelectedRow();
+        manager.deleteRecord(row);
+        manager.showAll();
+        totalLBL.setText("Total Records: " + manager.getCount());
+        
     }//GEN-LAST:event_materialDeleteBTNActionPerformed
 
     private void materialShowBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialShowBLActionPerformed
