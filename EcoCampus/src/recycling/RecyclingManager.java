@@ -91,21 +91,19 @@ public class RecyclingManager implements RecyclingOperations, Serializable{
        }
     }
     
-    public ArrayList<RecyclingRecord> readFromFile() {
+    public void readFromFile() {
+        File inFile;
+        FileInputStream fStream;
+        ObjectInputStream oStream;
         try{   
-            File inFile;
-            if (!inFile.exists()) {
-            return;
-            }
-            
-            FileInputStream fStream;
-            ObjectInputStream oStream;
-
             inFile = new File("output.dat");
+            if (!inFile.exists()) {
+                return;
+            }
             fStream = new FileInputStream(inFile);
             oStream = new ObjectInputStream(fStream);
-
-            return
+            records = (ArrayList<RecyclingRecord>) oStream.readObject();
+            
             oStream.close();
         }catch(IOException e){
             System.out.println("Error!!");
