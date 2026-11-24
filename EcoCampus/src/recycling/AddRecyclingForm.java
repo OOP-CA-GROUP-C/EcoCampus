@@ -268,46 +268,45 @@ public class AddRecyclingForm extends javax.swing.JFrame {
             weight = Double.parseDouble(weightTF.getText());
             if(weight > 0){
                 if(material.equals("Plastic")){
-                    PlasticRecord p = new PlasticRecord();
-                    p.setWeightKg(weight);
-                    manager.addRecord(p);
-                    pointsTF.setText("" + p.computePoints());
-                    dissetWeightKg(weight);
-                    maplayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
-                }else if(material.equals("Paper")){
-                    PaperRecord pa = new PaperRecord();
-                    pa.setWeightKg(weight);
-                    manager.addRecord(pa);
-                    pointsTF.setText("" + pa.computePoints());
-                    displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
-                }else if(material.equals("NewsPaper")){
-                    NewsPaper np = new NewsPaper();
-                    np.setWeightKg(weight);
-                    manager.addRecord(np);
-                    pointsTF.setText("" + np.computePoints());
-                    displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
-                }else if(material.equals("Bottle")){
-                    BottleRecord b = new BottleRecord();
-                    b.setWeightKg(weight);
-                    manager.addRecord(b);
-                    pointsTF.setText("" + b.computePoints());
-                    displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
-                }else if(material.equals("Can")){
-                    CanRecord c = new CanRecord();
-                    c.setWeightKg(weight);
-                    manager.addRecord(c);
-                    pointsTF.setText("" + c.computePoints());
-                    DisplayPane.setVisible(true);
-                    displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
-                }else if(material.equals("Cardboard")){
-                    CardboardRecord cb = new CardboardRecord();
-                    cb.setWeightKg(weight);
-                    manager.addRecord(cb);
-                    pointsTF.setText("" + cb.computePoints());
-                    displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
-                }else{
-                    displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
-                }
+                PlasticRecord p = new PlasticRecord();
+                p.setWeightKg(weight);
+                manager.addRecord(p);
+                pointsTF.setText("" + p.computePoints());
+                displayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Paper")){
+                PaperRecord pa = new PaperRecord();
+                pa.setWeightKg(weight);
+                manager.addRecord(pa);
+                pointsTF.setText("" + pa.computePoints());
+                displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("NewsPaper")){
+                NewsPaper np = new NewsPaper();
+                np.setWeightKg(weight);
+                manager.addRecord(np);
+                pointsTF.setText("" + np.computePoints());
+                displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Bottle")){
+                BottleRecord b = new BottleRecord();
+                b.setWeightKg(weight);
+                manager.addRecord(b);
+                pointsTF.setText("" + b.computePoints());
+                displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Can")){
+                CanRecord c = new CanRecord();
+                c.setWeightKg(weight);
+                manager.addRecord(c);
+                pointsTF.setText("" + c.computePoints());
+                DisplayPane.setVisible(true);
+                displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
+            }else if(material.equals("Cardboard")){
+                CardboardRecord cb = new CardboardRecord();
+                cb.setWeightKg(weight);
+                manager.addRecord(cb);
+                pointsTF.setText("" + cb.computePoints());
+                displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
+            }else{
+                displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
+            }
             }else if(weight < 0){
              displayTA.setText("You have entered a negative number for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
             }else{
