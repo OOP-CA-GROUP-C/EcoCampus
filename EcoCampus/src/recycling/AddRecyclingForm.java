@@ -94,6 +94,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
         textWeightLBL.setText("Weight (kg):");
 
         weightTF.setActionCommand("<Not Set>");
+        weightTF.addActionListener(this::weightTFActionPerformed);
 
         textPointsLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         textPointsLBL.setText("Points:");
@@ -261,56 +262,68 @@ public class AddRecyclingForm extends javax.swing.JFrame {
             displayTA.append("You haven't entered any value for weight \nPlease enter a valid number for weight \nClick on Clear and try again!!");
         }
         
-        double weight = Double.parseDouble(weightTF.getText());
+        double weight;
         
-        if(weight > 0){
-            if(material.equals("Plastic")){
-                PlasticRecord p = new PlasticRecord();
-                p.setWeightKg(weight);
-                manager.addRecord(p);
-                pointsTF.setText("" + p.computePoints());
-                displayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
-            }else if(material.equals("Paper")){
-                PaperRecord pa = new PaperRecord();
-                pa.setWeightKg(weight);
-                manager.addRecord(pa);
-                pointsTF.setText("" + pa.computePoints());
-                displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
-            }else if(material.equals("NewsPaper")){
-                NewsPaper np = new NewsPaper();
-                np.setWeightKg(weight);
-                manager.addRecord(np);
-                pointsTF.setText("" + np.computePoints());
-                displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
-            }else if(material.equals("Bottle")){
-                BottleRecord b = new BottleRecord();
-                b.setWeightKg(weight);
-                manager.addRecord(b);
-                pointsTF.setText("" + b.computePoints());
-                displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
-            }else if(material.equals("Can")){
-                CanRecord c = new CanRecord();
-                c.setWeightKg(weight);
-                manager.addRecord(c);
-                pointsTF.setText("" + c.computePoints());
-                DisplayPane.setVisible(true);
-                displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
-            }else if(material.equals("Cardboard")){
-                CardboardRecord cb = new CardboardRecord();
-                cb.setWeightKg(weight);
-                manager.addRecord(cb);
-                pointsTF.setText("" + cb.computePoints());
-                displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
+        try{
+            weight = Double.parseDouble(weightTF.getText());
+            if(weight > 0){
+                if(material.equals("Plastic")){
+                    PlasticRecord p = new PlasticRecord();
+                    p.setWeightKg(weight);
+                    manager.addRecord(p);
+                    pointsTF.setText("" + p.computePoints());
+                    dissetWeightKg(weight);
+                    maplayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
+                }else if(material.equals("Paper")){
+                    PaperRecord pa = new PaperRecord();
+                    pa.setWeightKg(weight);
+                    manager.addRecord(pa);
+                    pointsTF.setText("" + pa.computePoints());
+                    displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
+                }else if(material.equals("NewsPaper")){
+                    NewsPaper np = new NewsPaper();
+                    np.setWeightKg(weight);
+                    manager.addRecord(np);
+                    pointsTF.setText("" + np.computePoints());
+                    displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
+                }else if(material.equals("Bottle")){
+                    BottleRecord b = new BottleRecord();
+                    b.setWeightKg(weight);
+                    manager.addRecord(b);
+                    pointsTF.setText("" + b.computePoints());
+                    displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
+                }else if(material.equals("Can")){
+                    CanRecord c = new CanRecord();
+                    c.setWeightKg(weight);
+                    manager.addRecord(c);
+                    pointsTF.setText("" + c.computePoints());
+                    DisplayPane.setVisible(true);
+                    displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
+                }else if(material.equals("Cardboard")){
+                    CardboardRecord cb = new CardboardRecord();
+                    cb.setWeightKg(weight);
+                    manager.addRecord(cb);
+                    pointsTF.setText("" + cb.computePoints());
+                    displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
+                }else{
+                    displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
+                }
+            }else if(weight < 0){
+             displayTA.setText("You have entered a negative number for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
             }else{
-                displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
+                displayTA.setText("You have'nt entered 0 for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
             }
-        }else if(weight < 0){
-            displayTA.setText("You have entered a negative number for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
-        }else{
-            displayTA.setText("You have'nt entered 0 for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
+        }catch(NumberFormatException e){
+            displayTA.setText("Invalid weight input.\nPlease enter a valid number for weight.\nClick Clear and try again!!");
         }
         
+        
+        
     }//GEN-LAST:event_saveRecordBTNActionPerformed
+
+    private void weightTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_weightTFActionPerformed
 
     /**
      * @param args the command line arguments

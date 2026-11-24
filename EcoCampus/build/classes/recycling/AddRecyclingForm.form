@@ -229,6 +229,9 @@
           <Properties>
             <Property name="actionCommand" type="java.lang.String" value="&lt;Not Set&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="weightTFActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="textPointsLBL">
           <Properties>
