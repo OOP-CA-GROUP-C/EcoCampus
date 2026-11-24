@@ -24,17 +24,33 @@ public class RecyclingManager implements RecyclingOperations{
     }
     //
     public void addRecord(RecyclingRecord record){
-        records.add(record);
+        if(record != null){
+            records.add(record);
+        }else{
+            System.out.println("Error!! you have'nt entered anything");
+        }
+    }
+    
+    public ArrayList<RecyclingRecord> getRecords(){
+        return records;
     }
     
     public ArrayList<RecyclingRecord> searchByMaterial(String material){
-        ArrayList<RecyclingRecord> matches = new ArrayList<>();
+        ArrayList<RecyclingRecord> temp = new ArrayList<>();
         for (RecyclingRecord r : records) {
-            if (r.getMaterial().equalsIgnoreCase(material)) {
-                matches.add(r);
+            if (r.getMaterial() != null && r.getMaterial().equalsIgnoreCase(material)) {
+                temp.add(r);
+            }else{
+                System.out.println("Error!!");
             }
         }
-        return matches;
+        return temp;
+    }
+    
+    public void deleteRecord(int index){
+        if(index >= 0 && index < records.size()){
+            records.remove(index);
+        }
     }
     
     public double getTotalPoints(){
