@@ -47,12 +47,6 @@ public class RecyclingManager implements RecyclingOperations{
         return temp;
     }
     
-    public void deleteRecord(int index){
-        if(index >= 0 && index < records.size()){
-            records.remove(index);
-        }
-    }
-    
     public double getTotalPoints(){
         double total = 0;
         for(RecyclingRecord r : records){
@@ -69,7 +63,7 @@ public class RecyclingManager implements RecyclingOperations{
         return records;
     }
     
-    public void deleteRecord(int index) {
+    public void deleteRecord(int index){
         if (index >= 0 && index < records.size()) {
             records.remove(index);
         }else{
