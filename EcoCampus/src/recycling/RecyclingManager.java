@@ -4,19 +4,18 @@
  */
 package recycling;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Shan Narayanan
  */
-public class RecyclingManager implements RecyclingOperations{
+public class RecyclingManager implements RecyclingOperations, Serializable{
     private ArrayList<RecyclingRecord> records;
     private double totalWeight;
 
@@ -72,34 +71,26 @@ public class RecyclingManager implements RecyclingOperations{
         }
     }
     
-    public void writeToFile(String filename) {
+    public void writeToFile() {
+       File outFile;
+       FileOutputStream fStream;
+       ObjectOutputStream oStream;
+       
        try{
-           File f = new File("RecycleRecord.txt");
-           FileWriter fw = new FileWriter(f);
-           BufferedWriter bw = new BufferedWriter(fw);
+           outFile = new File("output.dat");
+           fStream = new FileOutputStream(outFile);
+           oStream = new ObjectOutputStream(fStream);
            
-           bw.write("Writing to file");
-           bw.close();
+           oStream.writeObject(records);
+           
+           oStream.close();
        }catch(IOException e){
-           System.out.println("Error!!");
+           System.out.println("Errror!!");
        }
     }
     
-    public void readFromFile(String filename) {
-        try{
-           File f = new File("RecycleRecord.txt");
-           FileReader fr = new FileReader(f);
-           BufferedReader br = new BufferedReader(fr);
-           
-           String line = br.readLine();
-            while (line != null) {
-                line = br.readLine();
-            }
-
-           br.close();
-       }catch(IOException e){
-           System.out.println("Error!!");
-       }
+    public void readFromFile() {
+        
     }
     
     public double getTotalWeight(){ 
