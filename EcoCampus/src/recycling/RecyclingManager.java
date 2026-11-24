@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author Shan Narayanan
  */
-public class RecyclingManager implements RecyclingOperations, Serializable{
+public class RecyclingManager implements Serializable{
     private ArrayList<RecyclingRecord> records;
     private double totalWeight;
 
@@ -95,6 +95,7 @@ public class RecyclingManager implements RecyclingOperations, Serializable{
         File inFile;
         FileInputStream fStream;
         ObjectInputStream oStream;
+        
         try{   
             inFile = new File("output.dat");
             if (!inFile.exists()) {
