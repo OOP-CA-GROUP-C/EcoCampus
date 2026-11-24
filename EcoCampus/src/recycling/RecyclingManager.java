@@ -5,8 +5,10 @@
 package recycling;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -89,7 +91,27 @@ public class RecyclingManager implements RecyclingOperations, Serializable{
        }
     }
     
-    public void readFromFile() {
+    public ArrayList<RecyclingRecord> readFromFile() {
+        try{   
+            File inFile;
+            if (!inFile.exists()) {
+            return;
+            }
+            
+            FileInputStream fStream;
+            ObjectInputStream oStream;
+
+            inFile = new File("output.dat");
+            fStream = new FileInputStream(inFile);
+            oStream = new ObjectInputStream(fStream);
+
+            return
+            oStream.close();
+        }catch(IOException e){
+            System.out.println("Error!!");
+        }catch(ClassNotFoundException e){
+            System.out.println("Error!!");
+        }
         
     }
     
