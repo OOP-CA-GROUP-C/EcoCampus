@@ -237,9 +237,9 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
     private void loadRecords(ArrayList<RecyclingRecord> records) {
         String msge = "";
 
-        if (records.isEmpty()) {
+        if(records.isEmpty()){
             msge = "No records found!";
-        } else {
+        }else{
             for (int i = 0; i < records.size(); i++) {
                 RecyclingRecord item = records.get(i);
                 msge += item.printDetails() + "\n";
