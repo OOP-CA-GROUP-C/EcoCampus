@@ -154,7 +154,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
         materialDeleteBTN.setBackground(new java.awt.Color(0, 153, 153));
         materialDeleteBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         materialDeleteBTN.setForeground(new java.awt.Color(255, 255, 255));
-        materialDeleteBTN.setText("Delete Selected");
+        materialDeleteBTN.setText("Delete ");
         materialDeleteBTN.addActionListener(this::materialDeleteBTNActionPerformed);
 
         backBTN.setBackground(new java.awt.Color(100, 100, 100));
@@ -203,12 +203,11 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(searchbyPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(searchbyPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

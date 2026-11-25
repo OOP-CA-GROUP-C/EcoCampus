@@ -96,8 +96,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
                 {"Bottle", "", "", ""},
                 {"Can", null, null, null},
                 {"Cardboard", null, null, null},
-                {"TOTAL", null, null, null},
-                {"", null, null, null}
+                {"TOTAL", null, null, null}
             },
             new String [] {
                 "Material", "Records", "Weight (kg)", "Points"
@@ -278,13 +277,13 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
     }// </editor-fold>//GEN-END:initComponents
     
     private void loadSummaryTable(){
-        String totalWeightText = String.valueOf(manager.getTotalWeight());
-        String totalPointsText = String.valueOf(manager.getTotalPoints());
-        String totalEntriesText = String.valueOf(manager.getCount());
+        String totalWeight = String.valueOf(manager.getTotalWeight());
+        String totalPoints = String.valueOf(manager.getTotalPoints());
+        String totalCount = String.valueOf(manager.getCount());
         
-        totalWeightLBL.setText(totalWeightText);
-        totalPointsLBL.setText(totalPointsText);
-        totalEntriesLBL.setText(totalEntriesText);
+        totalWeightLBL.setText(totalWeight);
+        totalPointsLBL.setText(totalPoints);
+        totalEntriesLBL.setText(totalCount);
         
         ArrayList<RecyclingRecord> plasticList = manager.searchByMaterial("Plastic");
         double plasticWeight = 0.0;
@@ -352,16 +351,20 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         summaryTable.setValueAt(cardboardWeight, 5, 2);
         summaryTable.setValueAt(cardboardPoints, 5, 3);
         
+        summaryTable.setValueAt(totalCount, 6, 1);
+        summaryTable.setValueAt(totalWeight, 6, 2);
+        summaryTable.setValueAt(totalPoints, 6, 3);
+        
     }
     
     private void loadSummary(){
         String totalWeight = String.valueOf(manager.getTotalWeight());
         String totalPoints = String.valueOf(manager.getTotalPoints());
-        String totalEntries = String.valueOf(manager.getCount());
+        String totalCount = String.valueOf(manager.getCount());
         
         totalWeightLBL.setText(totalWeight);
         totalPointsLBL.setText(totalPoints);
-        totalEntriesLBL.setText(totalEntries);
+        totalEntriesLBL.setText(totalCount);
         
     }
     
