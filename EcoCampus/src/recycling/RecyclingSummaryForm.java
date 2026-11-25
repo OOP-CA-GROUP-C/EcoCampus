@@ -311,7 +311,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         ArrayList<RecyclingRecord> newsPaperList = manager.searchByMaterial("NewsPaper");
         double newsPaperWeight = 0.0;
         double newsPaperPoints = 0.0;
-        for(RecyclingRecord r : paperList){
+        for(RecyclingRecord r : newsPaperList){
             newsPaperWeight += r.getWeightKg();
             newsPaperPoints += r.computePoints();
         }
@@ -348,9 +348,9 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
             cardboardWeight += r.getWeightKg();
             cardboardPoints += r.computePoints();
         }
-        summaryTable.setValueAt(canList.size(), 5, 1);
-        summaryTable.setValueAt(canWeight, 5, 2);
-        summaryTable.setValueAt(canPoints, 5, 3);
+        summaryTable.setValueAt(carboardList.size(), 5, 1);
+        summaryTable.setValueAt(cardboardWeight, 5, 2);
+        summaryTable.setValueAt(cardboardPoints, 5, 3);
         
     }
     
