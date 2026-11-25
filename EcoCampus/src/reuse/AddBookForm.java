@@ -4,11 +4,16 @@
  */
 package reuse;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Malavika Manalur Umamagash
  */
 public class AddBookForm extends javax.swing.JFrame {
+    
+    //declaring variable
+    
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddBookForm.class.getName());
 
@@ -17,6 +22,9 @@ public class AddBookForm extends javax.swing.JFrame {
      */
     public AddBookForm() {
         initComponents();
+        
+        
+        updateFieldVisibility();
     }
 
     /**
@@ -43,6 +51,9 @@ public class AddBookForm extends javax.swing.JFrame {
         subjectTF = new javax.swing.JLabel();
         editionTF = new javax.swing.JLabel();
         conditionCB = new javax.swing.JComboBox<>();
+        genreLBL = new javax.swing.JLabel();
+        genreTF = new javax.swing.JTextField();
+        isHardbackCHB = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         saveListingBTN = new javax.swing.JButton();
         clearFormBTN = new javax.swing.JButton();
@@ -95,7 +106,7 @@ public class AddBookForm extends javax.swing.JFrame {
         authorLBL.setText("Author:");
 
         subjectLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subjectLBL.setText("Subject/genre:");
+        subjectLBL.setText("        Subject:");
 
         conditionLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         conditionLBL.setText("Condition:");
@@ -112,15 +123,22 @@ public class AddBookForm extends javax.swing.JFrame {
         authorTF.setOpaque(true);
 
         subjectTF.setBackground(new java.awt.Color(255, 255, 255));
-        subjectTF.setText("e.g fiction");
+        subjectTF.setText("e.g science");
         subjectTF.setOpaque(true);
 
         editionTF.setBackground(new java.awt.Color(255, 255, 255));
-        editionTF.setText("e.g.3");
+        editionTF.setText("e.g. 3");
         editionTF.setOpaque(true);
 
         conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "new", "good", "poor", " " }));
         conditionCB.addActionListener(this::conditionCBActionPerformed);
+
+        genreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        genreLBL.setText("Genre:");
+
+        genreTF.setText("e.g. fiction");
+
+        isHardbackCHB.setText("Hardback");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,54 +147,64 @@ public class AddBookForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(conditionLBL)
-                                    .addComponent(authorLBL)
-                                    .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(29, 29, 29))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(conditionLBL)
+                            .addComponent(authorLBL)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
+                                .addComponent(genreLBL)
+                                .addGap(11, 11, 11))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)))
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(authorTF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                                .addComponent(conditionCB, 0, 199, Short.MAX_VALUE)
+                                .addComponent(genreTF))
+                            .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(isHardbackCHB)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(titleLBL)
                     .addComponent(titleTF))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(authorLBL)
                     .addComponent(authorTF))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(conditionLBL)
                     .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(genreLBL)
+                    .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(subjectLBL)
                     .addComponent(subjectTF))
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editionLBL)
                     .addComponent(editionTF))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(isHardbackCHB)
                 .addContainerGap())
         );
 
@@ -187,6 +215,7 @@ public class AddBookForm extends javax.swing.JFrame {
         saveListingBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         saveListingBTN.setForeground(new java.awt.Color(255, 255, 255));
         saveListingBTN.setText("Save Item");
+        saveListingBTN.addActionListener(this::saveListingBTNActionPerformed);
 
         clearFormBTN.setBackground(new java.awt.Color(204, 204, 204));
         clearFormBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -224,25 +253,29 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bookTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Textbook", "novel", "fiction" }));
+        bookTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Book", "Textbook", "Novel" }));
+        bookTypeCB.addActionListener(this::bookTypeCBActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headerPL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(bookTypeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bookTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bookTypeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bookTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,16 +285,77 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bookTypeLBL)
                     .addComponent(bookTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void updateFieldVisibility() {
+        String bookType = bookTypeCB.getSelectedItem().toString();
+
+        if (bookType.equals("Book")) {
+            
+            titleLBL.setVisible(true);
+            titleTF.setVisible(true);
+            authorLBL.setVisible(true);
+            authorTF.setVisible(true);
+            conditionLBL.setVisible(true);
+            conditionCB.setVisible(true);
+            genreLBL.setVisible(true);
+            genreTF.setVisible(true);
+
+            
+            subjectLBL.setVisible(false);
+            subjectTF.setVisible(false);
+            editionLBL.setVisible(false);
+            editionTF.setVisible(false);
+            isHardbackCHB.setVisible(false);
+
+        } else if (bookType.equals("Textbook")) {
+            
+            titleLBL.setVisible(true);
+            titleTF.setVisible(true);
+            authorLBL.setVisible(true);
+            authorTF.setVisible(true);
+            conditionLBL.setVisible(true);
+            conditionCB.setVisible(true);
+            genreLBL.setVisible(true);
+            genreTF.setVisible(true);
+            subjectLBL.setVisible(true);
+            subjectTF.setVisible(true);
+            editionLBL.setVisible(true);
+            editionTF.setVisible(true);
+
+            
+            isHardbackCHB.setVisible(false);
+
+        } else if (bookType.equals("Novel")) {
+            
+            titleLBL.setVisible(true);
+            titleTF.setVisible(true);
+            authorLBL.setVisible(true);
+            authorTF.setVisible(true);
+            conditionLBL.setVisible(true);
+            conditionCB.setVisible(true);
+            genreLBL.setVisible(true);
+            genreTF.setVisible(true);
+
+            
+            subjectLBL.setVisible(false);
+            subjectTF.setVisible(false);
+            editionLBL.setVisible(false);
+            editionTF.setVisible(false);
+
+            isHardbackCHB.setVisible(true);
+        }
+    }
+    
+    
     private void conditionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conditionCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_conditionCBActionPerformed
@@ -275,6 +369,82 @@ public class AddBookForm extends javax.swing.JFrame {
     private void clearFormBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFormBTNActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clearFormBTNActionPerformed
+
+    private void saveListingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveListingBTNActionPerformed
+       
+        String type;
+        //since the bookTypeCB is a dropdown i am using getSelectedItem and converting the selection into a string so that it can used in the if statements
+        type = bookTypeCB.getSelectedItem().toString();
+        
+        //declaring variables
+        String title;
+        String author;
+        String condition;
+        String subject;
+        String genre;
+        int edition;
+        boolean isHardback;
+        
+        //getting the values from the GUI and storing in the variables which was created 
+        title = titleTF.getText();
+        author = authorTF.getText();
+        condition = conditionCB.getSelectedItem().toString();
+        subject = subjectTF.getText();
+        genre = genreTF.getText();
+        edition = Integer.parseInt(editionTF.getText());
+        isHardback = isHardbackCHB.isSelected();
+        
+        
+        
+        if(type.equals("Books")){
+            
+            BookItem book = new BookItem();
+            
+            book.setTitle(title);
+            book.setAuthor(author);
+            book.setCondition(condition);
+            book.setGenre(genre);
+            
+            
+            ReuseManager.items.add(book);
+
+        
+
+        }else if (type.equals("Textbook")) {
+            
+            
+            TextbookItem tb = new TextbookItem();
+            
+            tb.setTitle(title);
+            tb.setAuthor(author);
+            tb.setCondition(condition);
+            tb.setSubject(subject);
+            tb.setEdition(edition);
+
+            ReuseManager.items.add(tb);
+
+        } else if (type.equals("Novel")) {
+            
+            NovelItem novel = new NovelItem();
+            
+            novel.setTitle(title);
+            novel.setAuthor(author);
+            novel.setCondition(condition);
+            novel.setGenre(genre);
+            novel.setHardback(isHardback);
+
+            ReuseManager.items.add(novel);
+        }
+
+        JOptionPane.showMessageDialog(this, "Book Added!");
+        
+        
+
+    }//GEN-LAST:event_saveListingBTNActionPerformed
+
+    private void bookTypeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookTypeCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bookTypeCBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,9 +482,12 @@ public class AddBookForm extends javax.swing.JFrame {
     private javax.swing.JLabel conditionLBL;
     private javax.swing.JLabel editionLBL;
     private javax.swing.JLabel editionTF;
+    private javax.swing.JLabel genreLBL;
+    private javax.swing.JTextField genreTF;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
+    private javax.swing.JCheckBox isHardbackCHB;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton saveListingBTN;

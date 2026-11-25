@@ -4,6 +4,8 @@
  */
 package reuse;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Malavika Manalur Umamagash
@@ -17,6 +19,9 @@ public class AddClothesForm extends javax.swing.JFrame {
      */
     public AddClothesForm() {
         initComponents();
+        
+        
+        updateFieldVisibility();
     }
 
     /**
@@ -30,18 +35,23 @@ public class AddClothesForm extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        titleLB = new javax.swing.JLabel();
+        titleLBL = new javax.swing.JLabel();
         sizeLBL = new javax.swing.JLabel();
-        brandLBL = new javax.swing.JLabel();
+        fTypeLBL = new javax.swing.JLabel();
         titleTF = new javax.swing.JLabel();
-        brandTF = new javax.swing.JLabel();
+        fTypeTF = new javax.swing.JLabel();
         conditionCB = new javax.swing.JComboBox<>();
         conditionLBL = new javax.swing.JLabel();
         sizeCB = new javax.swing.JComboBox<>();
         hoodedCHB = new javax.swing.JCheckBox();
         waterproofCHB = new javax.swing.JCheckBox();
+        shoeSizeLBL = new javax.swing.JLabel();
+        shoeSizeTF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         saveListingBTN = new javax.swing.JButton();
         clearFormBTN = new javax.swing.JButton();
@@ -49,12 +59,18 @@ public class AddClothesForm extends javax.swing.JFrame {
         headerPL = new javax.swing.JPanel();
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
         clothesTypeCB = new javax.swing.JComboBox<>();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "L", "XL", "S", "XS", " " }));
+        jComboBox3.addActionListener(this::jComboBox3ActionPerformed);
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane1.setViewportView(jTextArea2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,22 +80,22 @@ public class AddClothesForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(229, 242, 229));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 51)));
 
-        titleLB.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        titleLB.setText("Title:");
+        titleLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        titleLBL.setText("Title:");
 
         sizeLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         sizeLBL.setText("size:");
 
-        brandLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        brandLBL.setText("Brand:");
+        fTypeLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        fTypeLBL.setText("Type:");
 
         titleTF.setBackground(new java.awt.Color(255, 255, 255));
         titleTF.setText("e.g. running shoes");
         titleTF.setOpaque(true);
 
-        brandTF.setBackground(new java.awt.Color(255, 255, 255));
-        brandTF.setText("e.g. puma");
-        brandTF.setOpaque(true);
+        fTypeTF.setBackground(new java.awt.Color(255, 255, 255));
+        fTypeTF.setText("e.g. Shoe, Heels, Sandals");
+        fTypeTF.setOpaque(true);
 
         conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "new", "good", "poor", " " }));
         conditionCB.addActionListener(this::conditionCBActionPerformed);
@@ -94,6 +110,11 @@ public class AddClothesForm extends javax.swing.JFrame {
 
         waterproofCHB.setText("WaterProof");
 
+        shoeSizeLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        shoeSizeLBL.setText("   Shoe Size:");
+
+        shoeSizeTF.setText("e.g. 7");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,52 +127,63 @@ public class AddClothesForm extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(titleLB, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(5, 5, 5))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(brandLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(fTypeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(conditionLBL)
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(brandTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(79, 79, 79)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(sizeLBL)
+                                            .addComponent(conditionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(shoeSizeLBL)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(conditionCB, 0, 199, Short.MAX_VALUE)
+                            .addComponent(titleTF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(sizeCB, 0, 199, Short.MAX_VALUE)
+                            .addComponent(fTypeTF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(shoeSizeTF)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(sizeLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hoodedCHB)
-                            .addComponent(sizeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(waterproofCHB))))
-                .addContainerGap(195, Short.MAX_VALUE))
+                        .addGap(167, 167, 167)
+                        .addComponent(waterproofCHB)
+                        .addGap(18, 18, 18)
+                        .addComponent(hoodedCHB)))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titleLB)
+                    .addComponent(titleLBL)
                     .addComponent(titleTF))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(conditionLBL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sizeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(sizeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(shoeSizeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(shoeSizeLBL))))
+                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandLBL)
-                    .addComponent(brandTF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(fTypeLBL)
+                    .addComponent(fTypeTF))
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sizeLBL)
-                    .addComponent(sizeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hoodedCHB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(waterproofCHB)
+                    .addComponent(waterproofCHB)
+                    .addComponent(hoodedCHB))
                 .addGap(17, 17, 17))
         );
 
@@ -162,6 +194,7 @@ public class AddClothesForm extends javax.swing.JFrame {
         saveListingBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         saveListingBTN.setForeground(new java.awt.Color(255, 255, 255));
         saveListingBTN.setText("Save Item");
+        saveListingBTN.addActionListener(this::saveListingBTNActionPerformed);
 
         clearFormBTN.setBackground(new java.awt.Color(204, 204, 204));
         clearFormBTN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -230,10 +263,8 @@ public class AddClothesForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "L", "XL", "S", "XS", " " }));
-        jComboBox3.addActionListener(this::jComboBox3ActionPerformed);
-
-        clothesTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "shoes", "clothes" }));
+        clothesTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Clothes", "Jacket", "Footwear" }));
+        clothesTypeCB.addActionListener(this::clothesTypeCBActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,7 +272,7 @@ public class AddClothesForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headerPL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -253,11 +284,6 @@ public class AddClothesForm extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(220, 220, 220)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(221, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,17 +297,74 @@ public class AddClothesForm extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(204, 204, 204)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(204, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void updateFieldVisibility() {
+        String selected = clothesTypeCB.getSelectedItem().toString();
 
+        if (selected.equals("Cloth")) {
+            // Basic clothes: only needs Title, Condition, and Size
+            
+            titleLBL.setVisible(true);
+            titleTF.setVisible(true);
+            conditionLBL.setVisible(true);
+            conditionCB.setVisible(true);
+            sizeLBL.setVisible(true);
+            sizeCB.setVisible(true);
+
+            hoodedCHB.setVisible(false);
+            waterproofCHB.setVisible(false);
+            shoeSizeLBL.setVisible(false);
+            shoeSizeTF.setVisible(false);
+            fTypeLBL.setVisible(false);
+            fTypeTF.setVisible(false);
+
+        } else if (selected.equals("Jacket")) {
+            // Jacket: adds Hooded and Waterproof checkboxes
+            
+            
+            titleLBL.setVisible(true);
+            titleTF.setVisible(true);
+            conditionLBL.setVisible(true);
+            conditionCB.setVisible(true);            
+            sizeLBL.setVisible(true);
+            sizeCB.setVisible(true);
+            hoodedCHB.setVisible(true);
+            waterproofCHB.setVisible(true);
+            
+            
+
+            shoeSizeLBL.setVisible(false);
+            shoeSizeTF.setVisible(false);
+            fTypeLBL.setVisible(false);
+            fTypeTF.setVisible(false);
+
+        } else if (selected.equals("Footwear")) {
+            // Footwear: hides clothing Size/checkboxes, shows Shoe Size and Type (Sandal, Shoe, Heels)
+            
+            
+            titleLBL.setVisible(true);
+            titleTF.setVisible(true);
+            conditionLBL.setVisible(true);
+            conditionCB.setVisible(true); 
+            
+            
+            sizeLBL.setVisible(false);
+            sizeCB.setVisible(false);
+            hoodedCHB.setVisible(false);
+            waterproofCHB.setVisible(false);
+            
+
+            shoeSizeLBL.setVisible(true);
+            shoeSizeTF.setVisible(true);
+            fTypeLBL.setVisible(true);
+            fTypeTF.setVisible(true);
+        }
+    }
     private void conditionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conditionCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_conditionCBActionPerformed
@@ -303,6 +386,84 @@ public class AddClothesForm extends javax.swing.JFrame {
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void saveListingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveListingBTNActionPerformed
+       
+        String type;
+        // since the clothesTypeCB is a dropdown i am using getSelectedItem and converting the selection into a string so that it can used in the if statements
+        type = clothesTypeCB.getSelectedItem().toString();
+        
+        
+        //declaring the variable 
+        String title; 
+        String condition;
+        String size;
+        int shoeSize;
+        String fType;
+        boolean isHooded;
+        boolean isWaterproof;
+        
+        //getting the values from the GUI and storing in the variables created
+        title = titleTF.getText();
+        condition = conditionCB.getSelectedItem().toString();
+        size = sizeCB.getSelectedItem().toString();
+        shoeSize = Integer.parseInt(shoeSizeTF.getText());
+        fType = fTypeTF.getText();
+        isHooded = hoodedCHB.isSelected();
+        isWaterproof = waterproofCHB.isSelected();
+        
+        
+        if(type.equals("Cloths")){
+            
+            ClothingItem clothes = new ClothingItem();
+            
+            clothes.setTitle(title);
+            clothes.setCondition(condition);
+            clothes.setSize(size);
+          
+            
+            ReuseManager.items.add(clothes);
+            
+            
+            
+        } else if (type.equals("Jacket")) {
+            
+            JacketItem jacket = new JacketItem();
+            
+            jacket.setTitle(title);
+            jacket.setCondition(condition);
+            jacket.setSize(size);
+            jacket.setHooded(isHooded);
+            jacket.setWaterproof(isWaterproof);
+            
+            
+            ReuseManager.items.add(jacket);
+            
+      
+
+        } else if (type.equals("Footwear")) {
+            
+            FootwearItem fw = new FootwearItem();
+            
+            
+            fw.setTitle(title);
+            fw.setCondition(condition);
+            fw.setShoeSize(shoeSize);
+            fw.setFType(fType);
+            
+            
+
+
+            ReuseManager.items.add(fw);
+        }
+
+        JOptionPane.showMessageDialog(this, "Clothing Added!");
+
+    }//GEN-LAST:event_saveListingBTNActionPerformed
+
+    private void clothesTypeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothesTypeCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clothesTypeCBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,12 +492,12 @@ public class AddClothesForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backMainBTN;
-    private javax.swing.JLabel brandLBL;
-    private javax.swing.JLabel brandTF;
     private javax.swing.JButton clearFormBTN;
     private javax.swing.JComboBox<String> clothesTypeCB;
     private javax.swing.JComboBox<String> conditionCB;
     private javax.swing.JLabel conditionLBL;
+    private javax.swing.JLabel fTypeLBL;
+    private javax.swing.JLabel fTypeTF;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
@@ -345,12 +506,16 @@ public class AddClothesForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton saveListingBTN;
+    private javax.swing.JLabel shoeSizeLBL;
+    private javax.swing.JTextField shoeSizeTF;
     private javax.swing.JComboBox<String> sizeCB;
     private javax.swing.JLabel sizeLBL;
-    private javax.swing.JLabel titleLB;
+    private javax.swing.JLabel titleLBL;
     private javax.swing.JLabel titleTF;
     private javax.swing.JCheckBox waterproofCHB;
     // End of variables declaration//GEN-END:variables
