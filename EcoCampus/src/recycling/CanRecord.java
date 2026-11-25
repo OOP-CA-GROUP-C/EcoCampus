@@ -20,11 +20,12 @@ public class CanRecord extends RecyclingRecord implements Serializable{
         this.crushed = crushed;
         pointsPerKg = 5.0;
         points = 0.0;
-        material = "";
+        material = "Can";
     }
 
     public CanRecord() {
        pointsPerKg = 5.0;
+       material = "Can";
     }
 
     public boolean getCrushed() {
@@ -37,7 +38,7 @@ public class CanRecord extends RecyclingRecord implements Serializable{
     
     @Override
     public String getMaterial() {
-        return material = "Can";
+        return material;
     }
 
     @Override

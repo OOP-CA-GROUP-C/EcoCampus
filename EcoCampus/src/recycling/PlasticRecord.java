@@ -18,16 +18,17 @@ public class PlasticRecord extends RecyclingRecord implements Serializable{
         super(id, date, weightKg);
         pointsPerKg = 10.0;
         points = 0.0;
-        material = "";
+        material = "Plastic";
     }
 
     public PlasticRecord() {
         pointsPerKg = 10.0;
+        material = "Plastic";
     }
 
     @Override
     public String getMaterial() {
-        return material = "Plastic"; 
+        return material; 
     }
     
     @Override

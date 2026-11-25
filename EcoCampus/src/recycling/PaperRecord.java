@@ -18,16 +18,17 @@ public class PaperRecord extends RecyclingRecord implements Serializable{
         super(id, date, weightKg);
         pointsPerKg = 7.0;
         points = 0.0;
-        material = "";
+        material = "Paper";
     }
 
     public PaperRecord() {
         pointsPerKg = 7.0;
+        material = "Paper";
     }
 
     @Override
     public String getMaterial() {
-        return material = "Paper";
+        return material;
     }
 
     @Override
