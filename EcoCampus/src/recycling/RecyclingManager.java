@@ -23,6 +23,7 @@ public class RecyclingManager implements Serializable{
 
     public RecyclingManager() {
         records = new ArrayList<>();
+        
     }
     //
     public void addRecord(RecyclingRecord record){
