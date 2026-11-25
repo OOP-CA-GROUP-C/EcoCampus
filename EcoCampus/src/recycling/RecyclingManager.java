@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class RecyclingManager implements Serializable{
     private ArrayList<RecyclingRecord> records;
-    private double totalWeight;
+    private double totalWeight; 
 
     public RecyclingManager() {
         records = new ArrayList<>();
