@@ -58,7 +58,7 @@ public abstract class RecyclingRecord implements RecyclingOperations, Serializab
     public abstract String getMaterial();
     
     public String printDetails(){
-        return "Id: " + id + " Date: " + date + " Weight: " + weightKg;
+        return "Id: " + id + " | Date: " + date + " | Weight: " + weightKg + "kg";
     }
     
 }

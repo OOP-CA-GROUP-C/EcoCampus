@@ -47,7 +47,7 @@ public class NewsPaperRecord extends PaperRecord implements Serializable{
     
     @Override
     public String printDetails() {
-        return super.printDetails() + " bundled: " + bundled;
+        return super.printDetails() + " | bundled: " + bundled;
     }
     
     

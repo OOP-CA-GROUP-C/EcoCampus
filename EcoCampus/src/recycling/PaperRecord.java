@@ -37,7 +37,7 @@ public class PaperRecord extends RecyclingRecord implements Serializable{
 
     @Override
     public String printDetails() {
-        return super.printDetails() + " Material: " + material + " Points: " + points;
+        return super.printDetails() + " | Material: " + material + " | Points: " + points;
     }
     
 }

@@ -47,6 +47,6 @@ public class BottleRecord extends PlasticRecord implements Serializable{
 
     @Override
     public String printDetails() {
-        return super.printDetails() + " CapOn: " + capOn;
+        return super.printDetails() + " | CapOn: " + capOn;
     }
 }

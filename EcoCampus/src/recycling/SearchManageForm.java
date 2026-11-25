@@ -242,34 +242,9 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
         } else {
             for (int i = 0; i < records.size(); i++) {
                 RecyclingRecord item = records.get(i);
-                String extra = "";
-
-                if (item instanceof NewsPaperRecord) {
-                    NewsPaperRecord news = (NewsPaperRecord) item;
-                    if (news.getBundled()) {
-                        extra = " | Bundled: Yes";
-                    } else {
-                        extra = " | Bundled: No";
-                    }
-                } else if (item instanceof BottleRecord) {
-                    BottleRecord bottle = (BottleRecord) item;
-                    if (bottle.getCap()) {
-                        extra = " | Cap: Yes";
-                    } else {
-                        extra = " | Cap: No";
-                    }
-                } else if (item instanceof CardboardRecord) {
-                    CardboardRecord box = (CardboardRecord) item;
-                    if (box.getFlattened()) {
-                        extra = " | Flattened: Yes";
-                    } else {
-                        extra = " | Flattened: No";
-                    }
-                }
-                msge = msge + (i + 1) + ". " + item.getMaterial() + " | Weight: " + item.getWeightKg() + " kg" + " | Points: " + item.computePoints() + extra + "\n";
+                msge += (i + 1) + ". " + item.printDetails() + "\n";
             }
         }
-        
         displayTA.setText(msge);
     }
 
