@@ -12,6 +12,7 @@ import java.io.Serializable;
  */
 public class NewsPaperRecord extends PaperRecord implements Serializable{
     private boolean bundled;
+    private String material;
 
     public NewsPaperRecord(boolean bundled, int id, String date, double weightKg) {
         super(id, date, weightKg);
@@ -28,6 +29,11 @@ public class NewsPaperRecord extends PaperRecord implements Serializable{
 
     public void setBundled(boolean bundled) {
         this.bundled = bundled;
+    }
+    
+    @Override
+    public String getMaterial() {
+        return material = "NewsPaper"; 
     }
     
     @Override

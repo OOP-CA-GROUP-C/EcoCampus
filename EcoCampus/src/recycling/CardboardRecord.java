@@ -12,6 +12,7 @@ import java.io.Serializable;
  */
 public class CardboardRecord extends PaperRecord implements Serializable{
     private boolean flattened;
+    private String material;
 
     public CardboardRecord(boolean flattened, int id, String date, double weightKg) {
         super(id, date, weightKg);
@@ -27,6 +28,11 @@ public class CardboardRecord extends PaperRecord implements Serializable{
 
     public void setFlattened(boolean flattened) {
         this.flattened = flattened;
+    }
+    
+    @Override
+    public String getMaterial() {
+        return material = "Cardboard"; 
     }
 
     @Override

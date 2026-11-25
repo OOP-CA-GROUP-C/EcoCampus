@@ -12,6 +12,7 @@ import java.io.Serializable;
  */
 public class BottleRecord extends PlasticRecord implements Serializable{
     private boolean capOn;
+    private String material;
 
     public BottleRecord(boolean capON, int id, String date, double weightKg) {
         super(id, date, weightKg);
@@ -28,6 +29,11 @@ public class BottleRecord extends PlasticRecord implements Serializable{
 
     public void setCap(boolean capOn) {
         this.capOn = capOn;
+    }
+    
+    @Override
+    public String getMaterial() {
+        return material = "Bottle"; 
     }
 
     @Override
