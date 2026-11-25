@@ -27,6 +27,7 @@ public class RecyclingManager implements Serializable{
     //
     public void addRecord(RecyclingRecord record){
         if(record != null){
+            record.setId(records.size() + 1);
             records.add(record);
         }else{
             System.out.println("Error!! you have'nt entered anything");
