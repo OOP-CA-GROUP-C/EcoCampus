@@ -242,7 +242,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
         } else {
             for (int i = 0; i < records.size(); i++) {
                 RecyclingRecord item = records.get(i);
-                msge += (i + 1) + ". " + item.printDetails() + "\n";
+                msge += item.printDetails() + "\n";
             }
         }
         displayTA.setText(msge);
