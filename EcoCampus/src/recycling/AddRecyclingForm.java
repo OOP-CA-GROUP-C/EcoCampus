@@ -272,30 +272,35 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 p.setWeightKg(weight);
                 manager.addRecord(p);
                 pointsTF.setText("" + p.computePoints());
+                manager.writeToFile();
                 displayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Paper")){
                 PaperRecord pa = new PaperRecord();
                 pa.setWeightKg(weight);
                 manager.addRecord(pa);
                 pointsTF.setText("" + pa.computePoints());
+                manager.writeToFile();
                 displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("NewsPaper")){
                 NewsPaperRecord np = new NewsPaperRecord();
                 np.setWeightKg(weight);
                 manager.addRecord(np);
                 pointsTF.setText("" + np.computePoints());
+                manager.writeToFile();
                 displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Bottle")){
                 BottleRecord b = new BottleRecord();
                 b.setWeightKg(weight);
                 manager.addRecord(b);
                 pointsTF.setText("" + b.computePoints());
+                manager.writeToFile();
                 displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Can")){
                 CanRecord c = new CanRecord();
                 c.setWeightKg(weight);
                 manager.addRecord(c);
                 pointsTF.setText("" + c.computePoints());
+                manager.writeToFile();
                 DisplayPane.setVisible(true);
                 displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Cardboard")){
@@ -303,6 +308,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 cb.setWeightKg(weight);
                 manager.addRecord(cb);
                 pointsTF.setText("" + cb.computePoints());
+                manager.writeToFile();
                 displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
             }else{
                 displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
