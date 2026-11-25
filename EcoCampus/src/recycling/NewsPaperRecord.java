@@ -8,15 +8,15 @@ package recycling;
  *
  * @author Shan Narayanan
  */
-public class NewsPaper extends PaperRecord{
+public class NewsPaperRecord extends PaperRecord{
     private boolean bundled;
 
-    public NewsPaper(boolean bundled, int id, String date, double weightKg) {
+    public NewsPaperRecord(boolean bundled, int id, String date, double weightKg) {
         super(id, date, weightKg);
         this.bundled = bundled;
     }
 
-    public NewsPaper() {
+    public NewsPaperRecord() {
     
     }
 

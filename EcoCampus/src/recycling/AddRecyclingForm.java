@@ -280,7 +280,7 @@ public class AddRecyclingForm extends javax.swing.JFrame {
                 pointsTF.setText("" + pa.computePoints());
                 displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("NewsPaper")){
-                NewsPaper np = new NewsPaper();
+                NewsPaperRecord np = new NewsPaperRecord();
                 np.setWeightKg(weight);
                 manager.addRecord(np);
                 pointsTF.setText("" + np.computePoints());

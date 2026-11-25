@@ -4,21 +4,26 @@
  */
 package recycling;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Shan Narayanan
  */
 public class SearchManageForm extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SearchManageForm.class.getName());
     private RecyclingManager manager;
-    
+
     /**
      * Creates new form SearchManageForm
      */
     public SearchManageForm() {
         initComponents();
         manager = new RecyclingManager();
+        manager.readFromFile();
+        loadRecords(manager.showAll());
+        totalLBL.setText("Total Records: " + manager.getCount());
     }
 
     /**
@@ -40,12 +45,12 @@ public class SearchManageForm extends javax.swing.JFrame {
         materialSearchBTN = new javax.swing.JButton();
         materialShowBL = new javax.swing.JButton();
         searchMaterrialTF = new javax.swing.JTextField();
-        trackerTB = new javax.swing.JScrollPane();
-        searchTable = new javax.swing.JTable();
         footerPL = new javax.swing.JPanel();
         materialDeleteBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
         totalLBL = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        displayTA = new javax.swing.JTextArea();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -81,7 +86,7 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addComponent(headingLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(headingLBL1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         headerPLLayout.setVerticalGroup(
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,29 +146,6 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        searchTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
-        searchTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        searchTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"", "", "", ""},
-                {"", "", "", ""},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Material", "Weight (Kg)", "Points"
-            }
-        ));
-        searchTable.setGridColor(new java.awt.Color(153, 153, 153));
-        searchTable.setRowHeight(22);
-        searchTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        searchTable.setShowGrid(true);
-        trackerTB.setViewportView(searchTable);
-
         footerPL.setBackground(new java.awt.Color(52, 73, 94));
 
         materialDeleteBTN.setBackground(new java.awt.Color(0, 153, 153));
@@ -204,24 +186,27 @@ public class SearchManageForm extends javax.swing.JFrame {
         totalLBL.setText("Total Records: 0");
         totalLBL.addActionListener(this::totalLBLActionPerformed);
 
+        displayTA.setColumns(20);
+        displayTA.setRows(5);
+        jScrollPane2.setViewportView(displayTA);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(footerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchbyPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(trackerTB)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(47, Short.MAX_VALUE))
-            .addComponent(headerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(footerPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(searchbyPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,7 +215,7 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(searchbyPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(trackerTB, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
@@ -247,17 +232,56 @@ public class SearchManageForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
 
+    private void loadRecords(ArrayList<RecyclingRecord> records) {
+        String msge = "";
+
+        if (records.isEmpty()) {
+            msge = "No records found!";
+        } else {
+            for (int i = 0; i < records.size(); i++) {
+                RecyclingRecord item = records.get(i);
+                String extra = "";
+
+                if (item instanceof NewsPaperRecord) {
+                    NewsPaperRecord news = (NewsPaperRecord) item;
+                    if (news.getBundled()) {
+                        extra = " | Bundled: Yes";
+                    } else {
+                        extra = " | Bundled: No";
+                    }
+                } else if (item instanceof BottleRecord) {
+                    BottleRecord bottle = (BottleRecord) item;
+                    if (bottle.getCap()) {
+                        extra = " | Cap: Yes";
+                    } else {
+                        extra = " | Cap: No";
+                    }
+                } else if (item instanceof CardboardRecord) {
+                    CardboardRecord box = (CardboardRecord) item;
+                    if (box.getFlattened()) {
+                        extra = " | Flattened: Yes";
+                    } else {
+                        extra = " | Flattened: No";
+                    }
+                }
+                msge = msge + (i + 1) + ". " + item.getMaterial() + " | Weight: " + item.getWeightKg() + " kg" + " | Points: " + item.computePoints() + extra + "\n";
+            }
+        }
+        
+        displayTA.setText(msge);
+    }
+
     private void totalLBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalLBLActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totalLBLActionPerformed
 
     private void materialDeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialDeleteBTNActionPerformed
         // TODO add your handling code here:
-        int row = searchTable.getSelectedRow();
+        int row = .getSelectedRow();
         manager.deleteRecord(row);
         manager.showAll();
         totalLBL.setText("Total Records: " + manager.getCount());
-        
+
     }//GEN-LAST:event_materialDeleteBTNActionPerformed
 
     private void materialShowBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialShowBLActionPerformed
@@ -293,20 +317,20 @@ public class SearchManageForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
+    private javax.swing.JTextArea displayTA;
     private javax.swing.JPanel footerPL;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton materialDeleteBTN;
     private javax.swing.JButton materialSearchBTN;
     private javax.swing.JButton materialShowBL;
     private javax.swing.JLabel searchMaterialBL;
     private javax.swing.JTextField searchMaterrialTF;
-    private javax.swing.JTable searchTable;
     private javax.swing.JPanel searchbyPL;
     private javax.swing.JTextField totalLBL;
-    private javax.swing.JScrollPane trackerTB;
     // End of variables declaration//GEN-END:variables
 }

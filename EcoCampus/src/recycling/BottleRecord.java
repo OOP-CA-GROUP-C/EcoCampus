@@ -20,11 +20,11 @@ public class BottleRecord extends PlasticRecord{
        
     }
 
-    public boolean isCapOn() {
+    public boolean getCap() {
         return capOn;
     }
 
-    public void getCapON(boolean capOn) {
+    public void setCap(boolean capOn) {
         this.capOn = capOn;
     }
 
