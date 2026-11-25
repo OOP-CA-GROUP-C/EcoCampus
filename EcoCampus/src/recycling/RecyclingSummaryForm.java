@@ -23,7 +23,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         initComponents();
         manager = new RecyclingManager();
         manager.readFromFile();
-        loadSummaryTable();
+        loadSummary();
     }
 
     /**
@@ -276,7 +276,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void loadSummaryTable(){
+    private void loadSummary(){
         String totalWeight = String.valueOf(manager.getTotalWeight());
         String totalPoints = String.valueOf(manager.getTotalPoints());
         String totalCount = String.valueOf(manager.getCount());
@@ -354,17 +354,6 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         summaryTable.setValueAt(totalCount, 6, 1);
         summaryTable.setValueAt(totalWeight, 6, 2);
         summaryTable.setValueAt(totalPoints, 6, 3);
-        
-    }
-    
-    private void loadSummary(){
-        String totalWeight = String.valueOf(manager.getTotalWeight());
-        String totalPoints = String.valueOf(manager.getTotalPoints());
-        String totalCount = String.valueOf(manager.getCount());
-        
-        totalWeightLBL.setText(totalWeight);
-        totalPointsLBL.setText(totalPoints);
-        totalEntriesLBL.setText(totalCount);
         
     }
     
