@@ -5,6 +5,7 @@
 package recycling;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,8 +44,8 @@ public class SearchManageForm extends javax.swing.JFrame {
         searchbyPL = new javax.swing.JPanel();
         searchMaterialBL = new javax.swing.JLabel();
         materialSearchBTN = new javax.swing.JButton();
-        materialShowBL = new javax.swing.JButton();
-        searchMaterrialTF = new javax.swing.JTextField();
+        showAllBTN = new javax.swing.JButton();
+        searchMaterialTF = new javax.swing.JTextField();
         footerPL = new javax.swing.JPanel();
         materialDeleteBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
@@ -108,12 +109,13 @@ public class SearchManageForm extends javax.swing.JFrame {
         materialSearchBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         materialSearchBTN.setForeground(new java.awt.Color(255, 255, 255));
         materialSearchBTN.setText("Search");
+        materialSearchBTN.addActionListener(this::materialSearchBTNActionPerformed);
 
-        materialShowBL.setBackground(new java.awt.Color(70, 130, 70));
-        materialShowBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        materialShowBL.setForeground(new java.awt.Color(255, 255, 255));
-        materialShowBL.setText("Show All");
-        materialShowBL.addActionListener(this::materialShowBLActionPerformed);
+        showAllBTN.setBackground(new java.awt.Color(70, 130, 70));
+        showAllBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        showAllBTN.setForeground(new java.awt.Color(255, 255, 255));
+        showAllBTN.setText("Show All");
+        showAllBTN.addActionListener(this::showAllBTNActionPerformed);
 
         javax.swing.GroupLayout searchbyPLLayout = new javax.swing.GroupLayout(searchbyPL);
         searchbyPL.setLayout(searchbyPLLayout);
@@ -123,11 +125,11 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(searchbyPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(searchbyPLLayout.createSequentialGroup()
-                        .addComponent(searchMaterrialTF, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                        .addComponent(searchMaterialTF, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(materialSearchBTN)
                         .addGap(7, 7, 7)
-                        .addComponent(materialShowBL))
+                        .addComponent(showAllBTN))
                     .addGroup(searchbyPLLayout.createSequentialGroup()
                         .addComponent(searchMaterialBL)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -141,8 +143,8 @@ public class SearchManageForm extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(searchbyPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(materialSearchBTN)
-                    .addComponent(materialShowBL)
-                    .addComponent(searchMaterrialTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(showAllBTN)
+                    .addComponent(searchMaterialTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -277,18 +279,31 @@ public class SearchManageForm extends javax.swing.JFrame {
 
     private void materialDeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialDeleteBTNActionPerformed
         // TODO add your handling code here:
-        int row = .getSelectedRow();
-        manager.deleteRecord(row);
-        manager.showAll();
-        totalLBL.setText("Total Records: " + manager.getCount());
+        String input = JOptionPane.showInputDialog(null, "Enter record number to delete:");
+        if (input != null) {
+            int index = Integer.parseInt(input) - 1;
+            manager.deleteRecord(index);
+            manager.writeToFile();
+            loadRecords(manager.showAll());
+        }
 
     }//GEN-LAST:event_materialDeleteBTNActionPerformed
 
-    private void materialShowBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialShowBLActionPerformed
+    private void showAllBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAllBTNActionPerformed
         // TODO add your handling code here:
-        searchMaterrialTF.setText("");
-        manager.showAll();
-    }//GEN-LAST:event_materialShowBLActionPerformed
+        searchMaterialTF.setText("");
+        loadRecords(manager.showAll());
+    }//GEN-LAST:event_showAllBTNActionPerformed
+
+    private void materialSearchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialSearchBTNActionPerformed
+        // TODO add your handling code here:
+        String search = searchMaterialTF.getText().trim();
+        if(search.isEmpty()){
+            loadRecords(manager.showAll());
+        }else{
+            loadRecords(manager.searchByMaterial(search));
+        }
+    }//GEN-LAST:event_materialSearchBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,10 +342,10 @@ public class SearchManageForm extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JButton materialDeleteBTN;
     private javax.swing.JButton materialSearchBTN;
-    private javax.swing.JButton materialShowBL;
     private javax.swing.JLabel searchMaterialBL;
-    private javax.swing.JTextField searchMaterrialTF;
+    private javax.swing.JTextField searchMaterialTF;
     private javax.swing.JPanel searchbyPL;
+    private javax.swing.JButton showAllBTN;
     private javax.swing.JTextField totalLBL;
     // End of variables declaration//GEN-END:variables
 }
