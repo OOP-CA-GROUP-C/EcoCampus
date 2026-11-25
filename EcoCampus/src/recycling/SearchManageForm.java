@@ -4,6 +4,7 @@
  */
 package recycling;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -11,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Shan Narayanan
  */
-public class SearchManageForm extends javax.swing.JFrame {
+public class SearchManageForm extends javax.swing.JFrame implements Serializable{
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SearchManageForm.class.getName());
     private RecyclingManager manager;

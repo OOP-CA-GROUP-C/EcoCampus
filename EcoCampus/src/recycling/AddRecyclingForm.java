@@ -4,11 +4,13 @@
  */
 package recycling;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Shan Narayanan
  */
-public class AddRecyclingForm extends javax.swing.JFrame {
+public class AddRecyclingForm extends javax.swing.JFrame implements Serializable {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddRecyclingForm.class.getName());
     private RecyclingManager manager;

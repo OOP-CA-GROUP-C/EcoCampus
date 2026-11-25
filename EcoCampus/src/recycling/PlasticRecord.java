@@ -4,11 +4,13 @@
  */
 package recycling;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Shan Narayanan
  */
-public class PlasticRecord extends RecyclingRecord{
+public class PlasticRecord extends RecyclingRecord implements Serializable{
     private double pointsPerKg, points;
     private String material;
 

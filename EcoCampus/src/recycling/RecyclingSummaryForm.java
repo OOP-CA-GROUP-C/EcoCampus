@@ -4,13 +4,14 @@
  */
 package recycling;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Shan Narayanan
  */
-public class RecyclingSummaryForm extends javax.swing.JFrame {
+public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializable{
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RecyclingSummaryForm.class.getName());
     private RecyclingManager manager;
@@ -21,6 +22,8 @@ public class RecyclingSummaryForm extends javax.swing.JFrame {
     public RecyclingSummaryForm() {
         initComponents();
         manager = new RecyclingManager();
+        manager.readFromFile();
+        loadSummaryTable();
     }
 
     /**

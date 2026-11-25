@@ -4,11 +4,13 @@
  */
 package recycling;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Shan Narayanan
  */
-public class NewsPaperRecord extends PaperRecord{
+public class NewsPaperRecord extends PaperRecord implements Serializable{
     private boolean bundled;
 
     public NewsPaperRecord(boolean bundled, int id, String date, double weightKg) {

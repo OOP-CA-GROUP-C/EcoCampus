@@ -4,11 +4,13 @@
  */
 package recycling;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Shan Narayanan
  */
-public class CardboardRecord extends PaperRecord{
+public class CardboardRecord extends PaperRecord implements Serializable{
     private boolean flattened;
 
     public CardboardRecord(boolean flattened, int id, String date, double weightKg) {

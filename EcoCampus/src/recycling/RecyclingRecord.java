@@ -4,11 +4,13 @@
  */
 package recycling;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Shan Narayanan
  */
-public abstract class RecyclingRecord implements RecyclingOperations{
+public abstract class RecyclingRecord implements RecyclingOperations, Serializable{
     protected int id;
     protected String date;
     protected double weightKg;

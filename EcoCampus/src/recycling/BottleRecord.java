@@ -4,11 +4,13 @@
  */
 package recycling;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Shan Narayanan
  */
-public class BottleRecord extends PlasticRecord{
+public class BottleRecord extends PlasticRecord implements Serializable{
     private boolean capOn;
 
     public BottleRecord(boolean capON, int id, String date, double weightKg) {
