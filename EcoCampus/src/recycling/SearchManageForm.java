@@ -201,7 +201,7 @@ public class SearchManageForm extends javax.swing.JFrame {
 
         totalLBL.setEditable(false);
         totalLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        totalLBL.setText("Total Records: 30");
+        totalLBL.setText("Total Records: 0");
         totalLBL.addActionListener(this::totalLBLActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
