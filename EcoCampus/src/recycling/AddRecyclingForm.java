@@ -266,10 +266,9 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         
         double weight;
         
-        try{
             weight = Double.parseDouble(weightTF.getText());
-            if(weight > 0){
-                if(material.equals("Plastic")){
+        if(weight > 0){
+            if(material.equals("Plastic")){
                 PlasticRecord p = new PlasticRecord();
                 p.setWeightKg(weight);
                 manager.addRecord(p);
@@ -288,7 +287,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 np.setWeightKg(weight);
                 manager.addRecord(np);
                 pointsTF.setText("" + np.computePoints());
-                manager.writeToFile();
+                manager.writeToFile();        
                 displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Bottle")){
                 BottleRecord b = new BottleRecord();
@@ -303,7 +302,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 manager.addRecord(c);
                 pointsTF.setText("" + c.computePoints());
                 manager.writeToFile();
-                DisplayPane.setVisible(true);
+                DisplayPane.setVisible(true);  
                 displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Cardboard")){
                 CardboardRecord cb = new CardboardRecord();
@@ -315,14 +314,11 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
             }else{
                 displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
             }
-            }else if(weight < 0){
+        }else if(weight < 0){
              displayTA.setText("You have entered a negative number for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
-            }else{
-                displayTA.setText("You have'nt entered 0 for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
-            }
-        }catch(NumberFormatException e){
-            displayTA.setText("Invalid weight input.\nPlease enter a valid number for weight.\nClick Clear and try again!!");
-        }
+        }else{
+            displayTA.setText("You have'nt entered 0 for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
+       }
         
         
         

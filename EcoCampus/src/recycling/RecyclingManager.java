@@ -40,10 +40,8 @@ public class RecyclingManager implements Serializable{
     public ArrayList<RecyclingRecord> searchByMaterial(String material){
         ArrayList<RecyclingRecord> temp = new ArrayList<>();
         for (RecyclingRecord r : records) {
-            if (r.getMaterial() != null && r.getMaterial().equalsIgnoreCase(material)) {
+            if (r.getMaterial() != null && r.getMaterial().equalsIgnoreCase(material)){
                 temp.add(r);
-            }else{
-                System.out.println("Error!! You haven't entered anything");
             }
         }
         return temp;
