@@ -308,6 +308,9 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         }else if(selectedType.equals("NewsPaper")) {
             question(true);
             questionLBL.setText("Bundled?");
+        }else if(selectedType.equals("Can")){
+            question(true);
+            questionLBL.setText("Crushed?");
         }else{
             question(false);
         }
@@ -393,8 +396,18 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 manager.writeToFile();
                 displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
             }else if(material.equals("Can")){
+                boolean crushed;
+                if(trueBTN.isSelected()) {
+                    crushed = true;
+                }else if(falseBTN.isSelected()) {
+                    crushed = false;
+                }else{
+                    displayTA.setText("Please select Yes or No for Cap on? \nClick Clear and try again!!");
+                    return;
+                }
                 CanRecord c = new CanRecord();
                 c.setWeightKg(weight);
+                c.setCrushed(crushed);
                 manager.addRecord(c);
                 pointsTF.setText("" + c.computePoints());
                 manager.writeToFile();

@@ -44,7 +44,7 @@ public class CanRecord extends RecyclingRecord implements Serializable, Recyclin
     @Override
     public double computePoints() {
         if(crushed){
-            points = (pointsPerKg * weightKg) - 2;
+            points = (pointsPerKg * weightKg) + 2;
         }else{
             points = pointsPerKg * weightKg;
         }
@@ -53,7 +53,7 @@ public class CanRecord extends RecyclingRecord implements Serializable, Recyclin
 
     @Override
     public String printDetails() {
-        return super.printDetails() + " | Material: " + material + " | Points: " + points;
+        return super.printDetails() + " | Material: " + material + " | Points: " + points + " | Crushed: " + crushed;
     }
     
 }
