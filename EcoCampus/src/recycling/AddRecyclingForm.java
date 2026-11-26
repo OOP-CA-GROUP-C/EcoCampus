@@ -39,7 +39,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        trueFalseBTNS = new javax.swing.ButtonGroup();
+        trueFalseBTNG = new javax.swing.ButtonGroup();
         headerPL = new javax.swing.JPanel();
         headingLBL = new javax.swing.JLabel();
         headingLBL1 = new javax.swing.JLabel();
@@ -227,10 +227,12 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         questionLBL.setText("Question?");
 
         trueBTN.setBackground(new java.awt.Color(235, 245, 235));
+        trueFalseBTNG.add(trueBTN);
         trueBTN.setText("Yes");
         trueBTN.addActionListener(this::trueBTNActionPerformed);
 
         falseBTN.setBackground(new java.awt.Color(235, 245, 235));
+        trueFalseBTNG.add(falseBTN);
         falseBTN.setText("No");
 
         javax.swing.GroupLayout questionPanelLayout = new javax.swing.GroupLayout(questionPanel);
@@ -501,7 +503,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
     private javax.swing.JLabel textPointsLBL;
     private javax.swing.JLabel textWeightLBL;
     private javax.swing.JRadioButton trueBTN;
-    private javax.swing.ButtonGroup trueFalseBTNS;
+    private javax.swing.ButtonGroup trueFalseBTNG;
     private javax.swing.JTextField weightTF;
     // End of variables declaration//GEN-END:variables
 }
