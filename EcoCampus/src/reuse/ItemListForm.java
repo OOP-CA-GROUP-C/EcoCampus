@@ -5,6 +5,7 @@
 package reuse;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -96,7 +97,7 @@ public class ItemListForm extends javax.swing.JFrame {
         showAllBTN.setText("Show All");
         showAllBTN.addActionListener(this::showAllBTNActionPerformed);
 
-        deleteBTN.setBackground(new java.awt.Color(27, 94, 32));
+        deleteBTN.setBackground(new java.awt.Color(0, 153, 153));
         deleteBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         deleteBTN.setForeground(new java.awt.Color(255, 255, 255));
         deleteBTN.setText("Delete");
@@ -153,7 +154,7 @@ public class ItemListForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(sidebarPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addComponent(itemSP)
+                .addComponent(itemSP, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -187,7 +188,7 @@ public class ItemListForm extends javax.swing.JFrame {
         String display = "";
         
         for(ReuseItem item: results){
-            display = display+"ID: "+item.getId()+" | Title: "+item.getTitle()+" | Condition: "+item.getCondition()+" |Details: "+item.getDetails()+"/n";
+            display = display+"ID: "+item.getId()+" | Title: "+item.getTitle()+" | Condition: "+item.getCondition()+" |Details: "+item.getDetails()+"\n";
         }
         
         //setting to display the text
@@ -208,6 +209,24 @@ public class ItemListForm extends javax.swing.JFrame {
 
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
+        String input = JOptionPane.showInputDialog(null, "Enter the ID which need to be deleted");
+        
+        if(input == null){
+            return;
+        }
+        
+        try{
+            int delete = Integer.parseInt(input);
+            ReuseManager.deleteItems(delete);
+            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null,"Please enter a valid number");
+        }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**

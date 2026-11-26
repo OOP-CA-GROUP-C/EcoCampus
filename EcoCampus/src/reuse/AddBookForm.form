@@ -148,54 +148,50 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="conditionLBL" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="contactLBL" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="authorLBL" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="conditionLBL" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="contactLBL" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="authorLBL" alignment="1" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="editionLBL" min="-2" pref="54" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="isHardbackCHB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="editionTF" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="authorTF" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="conditionCB" alignment="0" pref="199" max="32767" attributes="0"/>
-                                  <Component id="contactTF" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="editionLBL" min="-2" pref="54" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="titleLBL" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <Component id="subjectLBL" min="-2" pref="109" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="titleTF" max="32767" attributes="0"/>
-                                  <Component id="subjectTF" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="genreTF" min="-2" pref="199" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="isHardbackCHB" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="editionTF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="authorTF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="conditionCB" alignment="0" pref="199" max="32767" attributes="0"/>
+                              <Component id="contactTF" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="titleLBL" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="subjectLBL" min="-2" pref="109" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="titleTF" max="32767" attributes="0"/>
+                              <Component id="subjectTF" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           <Component id="genreLBL" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="41" max="32767" attributes="0"/>
+                          <Component id="genreTF" min="-2" pref="199" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="195" max="32767" attributes="0"/>
@@ -225,10 +221,10 @@
                       <Component id="conditionLBL" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="conditionCB" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="genreLBL" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="genreTF" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="genreLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="genreTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">

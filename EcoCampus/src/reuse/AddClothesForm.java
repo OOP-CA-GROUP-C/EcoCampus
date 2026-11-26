@@ -21,7 +21,7 @@ public class AddClothesForm extends javax.swing.JFrame {
         initComponents();
         
         
-        updateFieldVisibility();
+        visibile();
     }
 
     /**
@@ -33,12 +33,7 @@ public class AddClothesForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        clothesTypeLBL = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         titleLBL = new javax.swing.JLabel();
         sizeLBL = new javax.swing.JLabel();
@@ -63,21 +58,10 @@ public class AddClothesForm extends javax.swing.JFrame {
         headingLBL1 = new javax.swing.JLabel();
         clothesTypeCB = new javax.swing.JComboBox<>();
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "L", "XL", "S", "XS", " " }));
-        jComboBox3.addActionListener(this::jComboBox3ActionPerformed);
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane1.setViewportView(jTextArea2);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel1.setText("Clothes Type: ");
+        clothesTypeLBL.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        clothesTypeLBL.setText("Clothes Type: ");
 
         jPanel1.setBackground(new java.awt.Color(229, 242, 229));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 51)));
@@ -274,7 +258,7 @@ public class AddClothesForm extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(clothesTypeLBL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clothesTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -290,7 +274,7 @@ public class AddClothesForm extends javax.swing.JFrame {
                 .addComponent(headerPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(clothesTypeLBL)
                     .addComponent(clothesTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,10 +286,10 @@ public class AddClothesForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void updateFieldVisibility() {
+    private void visibile() {
         String selected = clothesTypeCB.getSelectedItem().toString();
 
-        if (selected.equals("Cloth")) {
+        if (selected.equals("Clothes")){
             // Basic clothes: only needs Title, Condition, and Size
             
             titleLBL.setVisible(true);
@@ -324,7 +308,7 @@ public class AddClothesForm extends javax.swing.JFrame {
             fTypeLBL.setVisible(false);
             fTypeTF.setVisible(false);
 
-        } else if (selected.equals("Jacket")) {
+        }else if (selected.equals("Jacket")){
             // Jacket: adds Hooded and Waterproof checkboxes
             
             
@@ -346,7 +330,7 @@ public class AddClothesForm extends javax.swing.JFrame {
             fTypeLBL.setVisible(false);
             fTypeTF.setVisible(false);
 
-        } else if (selected.equals("Footwear")) {
+        }else if (selected.equals("Footwear")){
             // Footwear: hides clothing Size/checkboxes, shows Shoe Size and Type (Sandal, Shoe, Heels)
             
             
@@ -369,6 +353,15 @@ public class AddClothesForm extends javax.swing.JFrame {
             shoeSizeTF.setVisible(true);
             fTypeLBL.setVisible(true);
             fTypeTF.setVisible(true);
+            
+        }else{
+            sizeLBL.setVisible(false);
+            sizeCB.setVisible(false);
+            hoodedCHB.setVisible(false);
+            waterproofCHB.setVisible(false);
+            shoeSizeTF.setVisible(false);
+            fTypeLBL.setVisible(false);
+            fTypeTF.setVisible(false);
         }
     }
     private void conditionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conditionCBActionPerformed
@@ -383,9 +376,11 @@ public class AddClothesForm extends javax.swing.JFrame {
         hoodedCHB.setSelected(false);
         waterproofCHB.setSelected(false);
         conditionCB.setSelectedIndex(0);
+        sizeCB.setSelectedItem(0);
+        clothesTypeCB.setSelectedIndex(0);
 
         // Call updateFieldVisibility so hidden fields disappear again after clearing
-        updateFieldVisibility();
+        visibile();
     }
     private void clearFormBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFormBTNActionPerformed
        clearForm();
@@ -400,10 +395,6 @@ public class AddClothesForm extends javax.swing.JFrame {
     private void sizeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sizeCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sizeCBActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void saveListingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveListingBTNActionPerformed
        
@@ -438,28 +429,38 @@ public class AddClothesForm extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"Please enter a Title to add this item");
            return;
            
-        }else if(contact.trim().equals("")){
+        }
+        
+        if(contact.trim().equals("")){
             JOptionPane.showMessageDialog(null,"Please enter your email id to add this item");
             return;
-        }else if(condition.equals("None selected")){
+        }
+        
+        if(condition.equals("None selected")){
             JOptionPane.showMessageDialog(null,"Please select a Condition to add this item");
             return;
               
-        }else if(size.trim().equals("None selected")){
+        }
+        
+        if(size.trim().equals("None selected")){
             JOptionPane.showMessageDialog(null,"Please select a Size to add this item");
             return;            
             
-        }else if(num.trim().equals("")) {
+        }
+        
+        if(num.trim().equals("")){
             JOptionPane.showMessageDialog(null, "Please enter a Shoe Size to add this item");
             return;
                               
-        }else if(fType.trim().equals("")){
+        }
+        
+        if(fType.trim().equals("")){
            JOptionPane.showMessageDialog(null,"Please enter a Type to add this item");
            return;
         }
         
         
-        if(type.equals("Cloths")){
+        if(type.equals("Clothes")){
             
             ClothingItem clothes = new ClothingItem();
             
@@ -473,7 +474,7 @@ public class AddClothesForm extends javax.swing.JFrame {
             
             
             
-        } else if (type.equals("Jacket")) {
+        }else if (type.equals("Jacket")){
             
             JacketItem jacket = new JacketItem();
             
@@ -489,13 +490,13 @@ public class AddClothesForm extends javax.swing.JFrame {
             
       
 
-        } else if (type.equals("Footwear")) {
+        }else if (type.equals("Footwear")){
             int shoeSize;
             
             try {
                 shoeSize = Integer.parseInt(num);
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Please enter a valid number for the edition.");
+                JOptionPane.showMessageDialog(null, "Please enter a valid number for the shoe size");
                 return; 
             }
             
@@ -521,6 +522,7 @@ public class AddClothesForm extends javax.swing.JFrame {
 
     private void clothesTypeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothesTypeCBActionPerformed
         // TODO add your handling code here:
+        visibile();
     }//GEN-LAST:event_clothesTypeCBActionPerformed
 
     /**
@@ -552,6 +554,7 @@ public class AddClothesForm extends javax.swing.JFrame {
     private javax.swing.JButton backMainBTN;
     private javax.swing.JButton clearFormBTN;
     private javax.swing.JComboBox<String> clothesTypeCB;
+    private javax.swing.JLabel clothesTypeLBL;
     private javax.swing.JComboBox<String> conditionCB;
     private javax.swing.JLabel conditionLBL;
     private javax.swing.JLabel contactLBL;
@@ -562,14 +565,8 @@ public class AddClothesForm extends javax.swing.JFrame {
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
     private javax.swing.JCheckBox hoodedCHB;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton saveListingBTN;
     private javax.swing.JLabel shoeSizeLBL;
     private javax.swing.JTextField shoeSizeTF;

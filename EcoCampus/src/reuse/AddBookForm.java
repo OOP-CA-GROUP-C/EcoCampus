@@ -11,10 +11,8 @@ import javax.swing.JOptionPane;
  * @author Malavika Manalur Umamagash
  */
 public class AddBookForm extends javax.swing.JFrame {
-    
+
     //declaring variable
-    
-    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddBookForm.class.getName());
 
     /**
@@ -22,9 +20,8 @@ public class AddBookForm extends javax.swing.JFrame {
      */
     public AddBookForm() {
         initComponents();
-        
-        
-        updateFieldVisibility();
+
+        visibile();
     }
 
     /**
@@ -146,42 +143,40 @@ public class AddBookForm extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(64, 64, 64)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(conditionLBL)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(contactLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(authorLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGap(29, 29, 29))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(32, 32, 32)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(isHardbackCHB, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(editionTF, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(authorTF, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(conditionCB, javax.swing.GroupLayout.Alignment.LEADING, 0, 199, Short.MAX_VALUE)
-                                .addComponent(contactTF, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(40, 40, 40)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(titleTF)
-                                .addComponent(subjectTF)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(conditionLBL)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(contactLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(authorLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(29, 29, 29))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(isHardbackCHB, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(editionTF, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(authorTF, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(conditionCB, javax.swing.GroupLayout.Alignment.LEADING, 0, 199, Short.MAX_VALUE)
+                            .addComponent(contactTF, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titleTF)
+                            .addComponent(subjectTF)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
-                        .addComponent(genreLBL)))
+                        .addComponent(genreLBL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(195, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -203,10 +198,10 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(conditionLBL, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(conditionCB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(genreLBL, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(genreTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(genreLBL)
+                    .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(subjectLBL)
@@ -307,21 +302,22 @@ public class AddBookForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void updateFieldVisibility() {
+    private void visibile() {
         String bookType = bookTypeCB.getSelectedItem().toString();
 
         if (bookType.equals("Book")) {
-            
+
             titleLBL.setVisible(true);
             titleTF.setVisible(true);
             authorLBL.setVisible(true);
             authorTF.setVisible(true);
             conditionLBL.setVisible(true);
             conditionCB.setVisible(true);
+            contactLBL.setVisible(true);
+            contactTF.setVisible(true);
             genreLBL.setVisible(true);
             genreTF.setVisible(true);
 
-            
             subjectLBL.setVisible(false);
             subjectTF.setVisible(false);
             editionLBL.setVisible(false);
@@ -329,44 +325,55 @@ public class AddBookForm extends javax.swing.JFrame {
             isHardbackCHB.setVisible(false);
 
         } else if (bookType.equals("Textbook")) {
-            
+
             titleLBL.setVisible(true);
             titleTF.setVisible(true);
             authorLBL.setVisible(true);
             authorTF.setVisible(true);
             conditionLBL.setVisible(true);
             conditionCB.setVisible(true);
-            genreLBL.setVisible(true);
-            genreTF.setVisible(true);
+            contactLBL.setVisible(true);
+            contactTF.setVisible(true);
+
+            genreLBL.setVisible(false);
+            genreTF.setVisible(false);
+
             subjectLBL.setVisible(true);
             subjectTF.setVisible(true);
             editionLBL.setVisible(true);
             editionTF.setVisible(true);
 
-            
             isHardbackCHB.setVisible(false);
 
         } else if (bookType.equals("Novel")) {
-            
+
             titleLBL.setVisible(true);
             titleTF.setVisible(true);
             authorLBL.setVisible(true);
             authorTF.setVisible(true);
             conditionLBL.setVisible(true);
             conditionCB.setVisible(true);
+            contactLBL.setVisible(true);
+            contactTF.setVisible(true);
             genreLBL.setVisible(true);
             genreTF.setVisible(true);
 
-            
             subjectLBL.setVisible(false);
             subjectTF.setVisible(false);
             editionLBL.setVisible(false);
             editionTF.setVisible(false);
 
             isHardbackCHB.setVisible(true);
+
+        } else {
+            subjectLBL.setVisible(false);
+            subjectTF.setVisible(false);
+            editionLBL.setVisible(false);
+            editionTF.setVisible(false);
+            isHardbackCHB.setVisible(false);
         }
     }
-    
+
     //clear btn function
     private void clearForm() {
         titleTF.setText("");
@@ -382,10 +389,10 @@ public class AddBookForm extends javax.swing.JFrame {
         conditionCB.setSelectedIndex(0);
 
         // Call updateFieldVisibility so hidden fields disappear again after clearing
-        updateFieldVisibility();
+        visibile();
     }
-    
-    
+
+
     private void conditionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conditionCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_conditionCBActionPerformed
@@ -395,17 +402,17 @@ public class AddBookForm extends javax.swing.JFrame {
         new AddItemForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backMainBTNActionPerformed
-   
+
     private void clearFormBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFormBTNActionPerformed
         clearForm();
     }//GEN-LAST:event_clearFormBTNActionPerformed
 
     private void saveListingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveListingBTNActionPerformed
-       
+
         String type;
         //since the bookTypeCB is a dropdown i am using getSelectedItem and converting the selection into a string so that it can used in the if statements
         type = bookTypeCB.getSelectedItem().toString();
-        
+
         //declaring variables
         String title;
         String author;
@@ -415,7 +422,7 @@ public class AddBookForm extends javax.swing.JFrame {
         String num;
         String contact;
         boolean isHardback;
-        
+
         //getting the values from the GUI and storing in the variables which was created 
         title = titleTF.getText();
         author = authorTF.getText();
@@ -425,72 +432,131 @@ public class AddBookForm extends javax.swing.JFrame {
         num = editionTF.getText();
         contact = contactTF.getText();
         isHardback = isHardbackCHB.isSelected();
-        
-        
-        
+
         //validation for empty text       
-        if(title.trim().equals("")){
-           JOptionPane.showMessageDialog(null,"Please enter a Title to add this item");
-           return;
-           
-        }else if(contact.trim().equals("")){
-           JOptionPane.showMessageDialog(null,"Please enter a mail id to add this item"); 
-           
-        }else if(condition.equals("None selected")){
-            JOptionPane.showMessageDialog(null,"Please select a Condition to add this item");
+        if (title.trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
             return;
-                          
-        }else if(author.trim().equals("")){
-            JOptionPane.showMessageDialog(null,"Please enter a Author to add this item");
+
+        }
+
+        if (contact.trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
             return;
-              
-        }else if(genre.trim().equals("")){
-            JOptionPane.showMessageDialog(null,"Please enter a Genre to add this item");
-            return;            
-            
-        }else if(num.trim().equals("")) {
+
+        }
+
+        if (condition.equals("None selected")) {
+            JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
+            return;
+
+        }
+
+        if (author.trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
+            return;
+
+        }
+
+        if (genre.trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a Genre to add this item");
+            return;
+
+        }
+        if (num.trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Please enter a Edition to add this item");
             return;
-                              
-        }else if(subject.trim().equals("")){
-           JOptionPane.showMessageDialog(null,"Please enter a Subject to add this item");
-           return;
-        }
-        
-        
-        
-        
-        
 
-    //setting items for their respective category    
-        if(type.equals("Book")){
-            
+        }
+
+        if (subject.trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a Subject to add this item");
+            return;
+        }
+
+        if (type.equals("None selected")) {
+            JOptionPane.showMessageDialog(null, "Please select a Book Type");
+            return;
+        }
+
+        //setting items for their respective category    
+        if (type.equals("Book")) {
+
+            if (title.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
+                return;
+
+            }
+            if (contact.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
+                return;
+
+            }
+
+            if (condition.equals("None selected")) {
+                JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
+                return;
+
+            }
+
+            if (author.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
+                return;
+            }
+
             BookItem book = new BookItem();
-            
+
             book.setTitle(title);
             book.setAuthor(author);
             book.setContact(contact);
             book.setCondition(condition);
             book.setGenre(genre);
-            
-            
+
             ReuseManager.addItem(book);
 
-        
-        }else if (type.equals("Textbook")) {
-            
+        } else if (type.equals("Textbook")) {
+
+            if (title.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
+                return;
+
+            }
+
+            if (contact.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
+                return;
+
+            }
+
+            if (condition.equals("None selected")) {
+                JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
+                return;
+
+            }
+
+            if (author.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
+                return;
+
+            }
+
+            if (subject.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Subject to add this item");
+                return;
+            }
+
             //validation for edition to check whether its a number
             int edition;
-            
+
             try {
                 edition = Integer.parseInt(num);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number for the edition.");
-                return; 
+                return;
             }
-            
+
             TextbookItem tb = new TextbookItem();
-            
+
             tb.setTitle(title);
             tb.setAuthor(author);
             tb.setContact(contact);
@@ -499,12 +565,40 @@ public class AddBookForm extends javax.swing.JFrame {
             tb.setEdition(edition);
 
             ReuseManager.addItem(tb);
-            
 
         } else if (type.equals("Novel")) {
-            
+
+            if (title.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
+                return;
+
+            }
+
+            if (contact.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
+                return;
+
+            }
+
+            if (condition.equals("None selected")) {
+                JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
+                return;
+
+            }
+
+            if (author.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
+                return;
+
+            }
+
+            if (genre.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please enter a Genre to add this item");
+                return;
+
+            }
             NovelItem novel = new NovelItem();
-            
+
             novel.setTitle(title);
             novel.setAuthor(author);
             novel.setContact(contact);
@@ -515,17 +609,16 @@ public class AddBookForm extends javax.swing.JFrame {
             ReuseManager.addItem(novel);
         }
         //success message for the user
-        JOptionPane.showMessageDialog(null, "Item Added succcessfully ");
+        JOptionPane.showMessageDialog(null, "Item Added successfully ");
         //clears the form and resets all the value
         clearForm();
-        
-        
+
 
     }//GEN-LAST:event_saveListingBTNActionPerformed
 
     private void bookTypeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookTypeCBActionPerformed
 
-        updateFieldVisibility();
+        visibile();
     }//GEN-LAST:event_bookTypeCBActionPerformed
 
     private void subjectTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectTFActionPerformed

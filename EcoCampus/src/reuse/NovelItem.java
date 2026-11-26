@@ -15,6 +15,7 @@ public class NovelItem extends BookItem implements Reuse{
     private boolean hardback;
     
     
+    
     //constructor:
     
     //default constructor:
@@ -28,9 +29,10 @@ public class NovelItem extends BookItem implements Reuse{
         super(author, genre, id, title, condition, contact, available);
     }
 
-    public NovelItem(String genre, boolean hardback, String author, int id, String title, String condition, String contact, boolean available) {
+    public NovelItem(String genre,boolean hardback, String author, int id, String title, String condition, String contact, boolean available) {
         super(author, genre, id, title, condition, contact, available);
         this.hardback = hardback;
+        
     }
     
     
@@ -40,12 +42,13 @@ public class NovelItem extends BookItem implements Reuse{
     public void setHardback(boolean hardback) {
         this.hardback = hardback;
     }
-    
+
     //getter
 
     public boolean isHardback() {
         return hardback;
     }
+
     
     //own mehtods implemented from Reuse interface
     
