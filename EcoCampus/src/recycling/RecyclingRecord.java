@@ -19,6 +19,7 @@ public abstract class RecyclingRecord implements RecyclingOperations, Serializab
         this.id = id;
         this.date = date;
         this.weightKg = weightKg;
+        this.date = java.time.LocalDate.now().toString();
     }
 
     public RecyclingRecord() {

@@ -21,13 +21,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         initComponents();
         manager = new RecyclingManager();
         manager.readFromFile();
-        questionLBL.setVisible(false);
-        trueBTN.setVisible(false);
-        falseBTN.setVisible(false);
-        questionLBL.setEnabled(false);
-        trueBTN.setEnabled(false);
-        falseBTN.setEnabled(false);
-        questionPanel.setVisible(false);
+        question(false);
     }
 
     /**
@@ -289,46 +283,32 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void question(boolean t){
+        questionPanel.setVisible(t);
+            questionLBL.setVisible(t);
+            trueBTN.setVisible(t);
+            falseBTN.setVisible(t);
+            questionLBL.setEnabled(t);
+            trueBTN.setEnabled(t);
+            falseBTN.setEnabled(t);
+    }
+    
     private void materialCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialCBActionPerformed
         // TODO add your handling code here:
         String selectedType = materialCB.getSelectedItem().toString();
         
         if(selectedType.equals("Bottle")) {
-            questionPanel.setVisible(true);
-            questionLBL.setVisible(true);
-            questionLBL.setText("Cap on?");
-            trueBTN.setVisible(true);
-            falseBTN.setVisible(true);
-            questionLBL.setEnabled(true);
-            trueBTN.setEnabled(true);
-            falseBTN.setEnabled(true);
-        }else if(selectedType.equals("Cardboard")) {
-            questionPanel.setVisible(true);
-            questionLBL.setVisible(true);
+            question(true);
+            questionLBL.setText("Cap On?");
+        }else if(selectedType.equals("Cardboard")){
+            question(true);
             questionLBL.setText("Flattened?");
-            trueBTN.setVisible(true);
-            falseBTN.setVisible(true);
-            questionLBL.setEnabled(true);
-            trueBTN.setEnabled(true);
-            falseBTN.setEnabled(true);
         }else if(selectedType.equals("NewsPaper")) {
-            questionPanel.setVisible(true);
-            questionLBL.setVisible(true);
+            question(true);
             questionLBL.setText("Bundled?");
-            trueBTN.setVisible(true);
-            falseBTN.setVisible(true);
-            questionLBL.setEnabled(true);
-            trueBTN.setEnabled(true);
-            falseBTN.setEnabled(true);
         }else{
-            questionLBL.setVisible(false);
-            trueBTN.setVisible(false);
-            falseBTN.setVisible(false);
-            questionLBL.setEnabled(false);
-            trueBTN.setEnabled(false);
-            falseBTN.setEnabled(false);
-            questionPanel.setVisible(false);
+            question(false);
         }
     }//GEN-LAST:event_materialCBActionPerformed
 
