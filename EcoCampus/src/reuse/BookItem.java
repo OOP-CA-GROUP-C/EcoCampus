@@ -8,7 +8,7 @@ package reuse;
  *
  * @author malavikaumamagash
  */
-public class BookItem extends ReuseItem{
+public class BookItem extends ReuseItem implements Reuse{
     
     //declare and create variable
     
@@ -58,7 +58,15 @@ public class BookItem extends ReuseItem{
         return genre;
     }
     
+    @Override
+    public String getCategory(){
+        return "Books";
+    }
     
+    @Override
+    public String getDetails(){
+        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
+    }
 
   
     

@@ -8,7 +8,7 @@ package reuse;
  *
  * @author malavikaumamagash
  */
-public class ClothingItem extends ReuseItem {
+public class ClothingItem extends ReuseItem implements Reuse{
     
     //declaring variable
     private String size;
@@ -41,6 +41,16 @@ public class ClothingItem extends ReuseItem {
 
     public String getSize() {
         return size;
+    }
+    
+    @Override
+    public String getCategory(){
+        return "Clothes";
+    }
+    
+    @Override
+    public String getDetails(){
+        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
     }
     
     

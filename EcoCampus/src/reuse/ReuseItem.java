@@ -8,7 +8,7 @@ package reuse;
  *
  * @author malavikaumamagash
  */
-public abstract class ReuseItem {
+public abstract class ReuseItem implements Reuse{
     //declare and creating variables
     protected int id;
     protected String title;
@@ -82,6 +82,11 @@ public abstract class ReuseItem {
     }
     
     
+    @Override
+    public abstract String getCategory();
+    
+    @Override
+    public abstract String getDetails();
 
         
         

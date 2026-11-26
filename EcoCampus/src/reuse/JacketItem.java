@@ -57,12 +57,12 @@ public class JacketItem extends ClothingItem implements Reuse{
     
     @Override
     public String getCategory(){
-        return "ClothItem(Jacket)";
+        return "Jacket";
     }
     
     @Override
     public String getDetails(){
-        return "jacket";
+        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
     }
     
     

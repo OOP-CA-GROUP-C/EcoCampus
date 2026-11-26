@@ -60,12 +60,12 @@ public class FootwearItem extends ClothingItem implements Reuse {
     
     @Override
     public String getCategory(){
-        return "ClothItem(Footwear)";
+        return "Footwear";
     }
     
     @Override
     public String getDetails(){
-        return "Footwear";
+        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
     }
     
     

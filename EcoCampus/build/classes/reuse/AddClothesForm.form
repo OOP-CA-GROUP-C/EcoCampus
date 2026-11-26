@@ -106,7 +106,7 @@
                   <Component id="clothesTypeCB" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="252" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -145,31 +145,18 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="titleLBL" min="-2" pref="48" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="fTypeLBL" min="-2" pref="54" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                  <Component id="titleLBL" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="sizeLBL" min="-2" max="-2" attributes="0"/>
-                                              <Component id="conditionLBL" min="-2" pref="82" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="shoeSizeLBL" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="shoeSizeLBL" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="fTypeLBL" alignment="1" min="-2" pref="54" max="-2" attributes="0"/>
+                                      <Component id="sizeLBL" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="conditionLBL" alignment="1" min="-2" pref="82" max="-2" attributes="0"/>
+                                      <Component id="contactLBL" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               </Group>
@@ -180,6 +167,7 @@
                               <Component id="shoeSizeTF" alignment="0" max="32767" attributes="0"/>
                               <Component id="titleTF" alignment="0" max="32767" attributes="0"/>
                               <Component id="fTypeTF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="contactTF" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -201,29 +189,32 @@
                       <Component id="titleLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="titleTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="conditionCB" min="-2" max="-2" attributes="0"/>
-                      <Component id="conditionLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="sizeLBL" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="sizeCB" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="shoeSizeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="shoeSizeLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fTypeLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="fTypeTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="contactLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="contactTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="conditionLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="conditionCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="sizeLBL" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="sizeCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="shoeSizeLBL" min="-2" max="-2" attributes="0"/>
+                      <Component id="shoeSizeTF" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="fTypeLBL" min="-2" max="-2" attributes="0"/>
+                      <Component id="fTypeTF" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="waterproofCHB" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="hoodedCHB" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -339,6 +330,17 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="e.g Shoe, Sandals, Heels, flip-flops"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="contactLBL">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Contact"/>
+            <Property name="toolTipText" type="java.lang.String" value="e.g x@gmail.com"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="contactTF">
         </Component>
       </SubComponents>
     </Container>

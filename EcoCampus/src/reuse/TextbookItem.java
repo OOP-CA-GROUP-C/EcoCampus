@@ -62,13 +62,13 @@ public class TextbookItem extends BookItem {
     //own mehtods implemented from Reuse interface 
     
     public String getCategory(){
-        return "Category: Book(TextBook)";
+        return "Category: TextBook";
     }
     
     
     
     public String getDetails(){
-        return "Book";
+        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
     }
     
     

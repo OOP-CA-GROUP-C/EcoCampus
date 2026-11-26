@@ -54,6 +54,8 @@ public class AddBookForm extends javax.swing.JFrame {
         authorTF = new javax.swing.JTextField();
         subjectTF = new javax.swing.JTextField();
         editionTF = new javax.swing.JTextField();
+        contactLBL = new javax.swing.JLabel();
+        contactTF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         saveListingBTN = new javax.swing.JButton();
         clearFormBTN = new javax.swing.JButton();
@@ -134,70 +136,86 @@ public class AddBookForm extends javax.swing.JFrame {
         editionTF.setToolTipText("e.g 3");
         editionTF.addActionListener(this::editionTFActionPerformed);
 
+        contactLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        contactLBL.setText("Contact");
+
+        contactTF.setToolTipText("e.g x@gmail.com");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(conditionLBL)
-                            .addComponent(authorLBL)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(genreLBL)
-                                .addGap(11, 11, 11))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(3, 3, 3)))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(conditionCB, 0, 199, Short.MAX_VALUE)
-                                .addComponent(genreTF)
-                                .addComponent(isHardbackCHB)
-                                .addComponent(editionTF))
-                            .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGap(64, 64, 64)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(conditionLBL)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(contactLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(authorLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGap(29, 29, 29))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(32, 32, 32)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(isHardbackCHB, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(editionTF, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(authorTF, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(conditionCB, javax.swing.GroupLayout.Alignment.LEADING, 0, 199, Short.MAX_VALUE)
+                                .addComponent(contactTF, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(titleTF)
+                                .addComponent(subjectTF)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titleTF)
-                            .addComponent(subjectTF))))
+                        .addGap(82, 82, 82)
+                        .addComponent(genreLBL)))
                 .addContainerGap(195, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titleLBL)
-                    .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titleLBL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(authorLBL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(authorLBL)
-                    .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(contactLBL)
+                    .addComponent(contactTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(conditionLBL)
-                    .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(conditionLBL, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(conditionCB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(genreLBL)
-                    .addComponent(genreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(genreLBL, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(genreTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(subjectLBL)
                     .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editionLBL)
-                    .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(editionTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editionLBL, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(isHardbackCHB)
                 .addContainerGap())
         );
@@ -239,7 +257,7 @@ public class AddBookForm extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveListingBTN)
                     .addComponent(clearFormBTN)
@@ -256,7 +274,7 @@ public class AddBookForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headerPL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
             .addGroup(layout.createSequentialGroup()
@@ -281,7 +299,7 @@ public class AddBookForm extends javax.swing.JFrame {
                     .addComponent(bookTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -352,6 +370,7 @@ public class AddBookForm extends javax.swing.JFrame {
     //clear btn function
     private void clearForm() {
         titleTF.setText("");
+        contactTF.setText("");
         authorTF.setText("");
         genreTF.setText("");
         subjectTF.setText("");
@@ -393,7 +412,8 @@ public class AddBookForm extends javax.swing.JFrame {
         String condition;
         String subject;
         String genre;
-        String text;
+        String num;
+        String contact;
         boolean isHardback;
         
         //getting the values from the GUI and storing in the variables which was created 
@@ -402,7 +422,8 @@ public class AddBookForm extends javax.swing.JFrame {
         condition = conditionCB.getSelectedItem().toString();
         subject = subjectTF.getText();
         genre = genreTF.getText();
-        text = editionTF.getText();
+        num = editionTF.getText();
+        contact = contactTF.getText();
         isHardback = isHardbackCHB.isSelected();
         
         
@@ -411,7 +432,14 @@ public class AddBookForm extends javax.swing.JFrame {
         if(title.trim().equals("")){
            JOptionPane.showMessageDialog(null,"Please enter a Title to add this item");
            return;
-             
+           
+        }else if(contact.trim().equals("")){
+           JOptionPane.showMessageDialog(null,"Please enter a mail id to add this item"); 
+           
+        }else if(condition.equals("None selected")){
+            JOptionPane.showMessageDialog(null,"Please select a Condition to add this item");
+            return;
+                          
         }else if(author.trim().equals("")){
             JOptionPane.showMessageDialog(null,"Please enter a Author to add this item");
             return;
@@ -420,7 +448,7 @@ public class AddBookForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please enter a Genre to add this item");
             return;            
             
-        }else if(text.trim().equals("")) {
+        }else if(num.trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Please enter a Edition to add this item");
             return;
                               
@@ -441,11 +469,12 @@ public class AddBookForm extends javax.swing.JFrame {
             
             book.setTitle(title);
             book.setAuthor(author);
+            book.setContact(contact);
             book.setCondition(condition);
             book.setGenre(genre);
             
             
-            ReuseManager.items.add(book);
+            ReuseManager.addItem(book);
 
         
         }else if (type.equals("Textbook")) {
@@ -454,7 +483,7 @@ public class AddBookForm extends javax.swing.JFrame {
             int edition;
             
             try {
-                edition = Integer.parseInt(text);
+                edition = Integer.parseInt(num);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number for the edition.");
                 return; 
@@ -464,11 +493,12 @@ public class AddBookForm extends javax.swing.JFrame {
             
             tb.setTitle(title);
             tb.setAuthor(author);
+            tb.setContact(contact);
             tb.setCondition(condition);
             tb.setSubject(subject);
             tb.setEdition(edition);
 
-            ReuseManager.items.add(tb);
+            ReuseManager.addItem(tb);
             
 
         } else if (type.equals("Novel")) {
@@ -477,11 +507,12 @@ public class AddBookForm extends javax.swing.JFrame {
             
             novel.setTitle(title);
             novel.setAuthor(author);
+            novel.setContact(contact);
             novel.setCondition(condition);
             novel.setGenre(genre);
             novel.setHardback(isHardback);
 
-            ReuseManager.items.add(novel);
+            ReuseManager.addItem(novel);
         }
         //success message for the user
         JOptionPane.showMessageDialog(null, "Item Added succcessfully ");
@@ -539,6 +570,8 @@ public class AddBookForm extends javax.swing.JFrame {
     private javax.swing.JButton clearFormBTN;
     private javax.swing.JComboBox<String> conditionCB;
     private javax.swing.JLabel conditionLBL;
+    private javax.swing.JLabel contactLBL;
+    private javax.swing.JTextField contactTF;
     private javax.swing.JLabel editionLBL;
     private javax.swing.JTextField editionTF;
     private javax.swing.JLabel genreLBL;

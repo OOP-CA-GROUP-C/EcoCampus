@@ -4,7 +4,7 @@
  */
 package reuse;
 
-import reuse.ReuseMenu;
+import java.util.ArrayList;
 
 /**
  *
@@ -39,14 +39,10 @@ public class ItemListForm extends javax.swing.JFrame {
         searchCB = new javax.swing.JComboBox<>();
         searchBTN = new javax.swing.JButton();
         showAllBTN = new javax.swing.JButton();
-        showContactBTN = new javax.swing.JButton();
-        markUnavailableBTN = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
         itemSP = new javax.swing.JScrollPane();
-        itemTable = new javax.swing.JTable();
-        extraDetailsPL = new javax.swing.JPanel();
-        itemDetailsLBL = new javax.swing.JLabel();
-        detailsHintLBL = new javax.swing.JLabel();
+        itemTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,7 +82,7 @@ public class ItemListForm extends javax.swing.JFrame {
         filterLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         filterLBL.setText("Filter by Category");
 
-        searchCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Book", "Textbook", "Novel", "Clothes", "Jacket", "Footwear" }));
+        searchCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None selected", "Books", "Textbooks", "Novels", "Clothes", "Jackets", "Footwears" }));
 
         searchBTN.setBackground(new java.awt.Color(27, 94, 32));
         searchBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -100,16 +96,11 @@ public class ItemListForm extends javax.swing.JFrame {
         showAllBTN.setText("Show All");
         showAllBTN.addActionListener(this::showAllBTNActionPerformed);
 
-        showContactBTN.setBackground(new java.awt.Color(27, 94, 32));
-        showContactBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        showContactBTN.setForeground(new java.awt.Color(255, 255, 255));
-        showContactBTN.setText("Show Contact Info");
-
-        markUnavailableBTN.setBackground(new java.awt.Color(0, 153, 153));
-        markUnavailableBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        markUnavailableBTN.setForeground(new java.awt.Color(255, 255, 255));
-        markUnavailableBTN.setText("Mark Unavailable");
-        markUnavailableBTN.addActionListener(this::markUnavailableBTNActionPerformed);
+        deleteBTN.setBackground(new java.awt.Color(27, 94, 32));
+        deleteBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        deleteBTN.setForeground(new java.awt.Color(255, 255, 255));
+        deleteBTN.setText("Delete");
+        deleteBTN.addActionListener(this::deleteBTNActionPerformed);
 
         backBTN.setBackground(new java.awt.Color(100, 100, 100));
         backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -128,8 +119,7 @@ public class ItemListForm extends javax.swing.JFrame {
                     .addComponent(searchCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(searchBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(showAllBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(showContactBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                    .addComponent(markUnavailableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                     .addComponent(backBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -142,94 +132,18 @@ public class ItemListForm extends javax.swing.JFrame {
                 .addComponent(searchCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addComponent(showAllBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(showContactBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(markUnavailableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(backBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        itemTable.setAutoCreateRowSorter(true);
-        itemTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Title", "Category", "Condition", "Status"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        itemSP.setViewportView(itemTable);
-
-        extraDetailsPL.setBackground(new java.awt.Color(234, 236, 234));
-        extraDetailsPL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        itemDetailsLBL.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        itemDetailsLBL.setText("Item Details");
-
-        detailsHintLBL.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        detailsHintLBL.setText("Select an item to see its details");
-
-        javax.swing.GroupLayout extraDetailsPLLayout = new javax.swing.GroupLayout(extraDetailsPL);
-        extraDetailsPL.setLayout(extraDetailsPLLayout);
-        extraDetailsPLLayout.setHorizontalGroup(
-            extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(extraDetailsPLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(itemDetailsLBL)
-                    .addComponent(detailsHintLBL))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        extraDetailsPLLayout.setVerticalGroup(
-            extraDetailsPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(extraDetailsPLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(itemDetailsLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(detailsHintLBL)
-                .addContainerGap())
-        );
+        itemTA.setColumns(20);
+        itemTA.setRows(5);
+        itemSP.setViewportView(itemTA);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,9 +153,7 @@ public class ItemListForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(sidebarPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(itemSP, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
-                    .addComponent(extraDetailsPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(itemSP)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -252,9 +164,7 @@ public class ItemListForm extends javax.swing.JFrame {
                     .addComponent(sidebarPL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(itemSP, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(extraDetailsPL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(itemSP)
                         .addContainerGap())))
         );
 
@@ -268,16 +178,37 @@ public class ItemListForm extends javax.swing.JFrame {
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
-        // TODO add your handling code here:
+
+        String category = searchCB.getSelectedItem().toString();
+        
+        //adding the results to the results arraylist by calling the method and passing the variable category
+        ArrayList<ReuseItem> results = ReuseManager.searchItem(category);
+        
+        String display = "";
+        
+        for(ReuseItem item: results){
+            display = display+"ID: "+item.getId()+" | Title: "+item.getTitle()+" | Condition: "+item.getCondition()+" |Details: "+item.getDetails()+"/n";
+        }
+        
+        //setting to display the text
+        itemTA.setText(display);
+        
+        
+        
+        
     }//GEN-LAST:event_searchBTNActionPerformed
 
     private void showAllBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAllBTNActionPerformed
-        // TODO add your handling code here:
+        
+        String t = ReuseManager.displayItems();
+        //setting to the textarea
+        itemTA.setText(t);
+                
     }//GEN-LAST:event_showAllBTNActionPerformed
 
-    private void markUnavailableBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markUnavailableBTNActionPerformed
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_markUnavailableBTNActionPerformed
+    }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,20 +237,16 @@ public class ItemListForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
-    private javax.swing.JLabel detailsHintLBL;
-    private javax.swing.JPanel extraDetailsPL;
+    private javax.swing.JButton deleteBTN;
     private javax.swing.JLabel filterLBL;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
-    private javax.swing.JLabel itemDetailsLBL;
     private javax.swing.JScrollPane itemSP;
-    private javax.swing.JTable itemTable;
-    private javax.swing.JButton markUnavailableBTN;
+    private javax.swing.JTextArea itemTA;
     private javax.swing.JButton searchBTN;
     private javax.swing.JComboBox<String> searchCB;
     private javax.swing.JButton showAllBTN;
-    private javax.swing.JButton showContactBTN;
     private javax.swing.JPanel sidebarPL;
     // End of variables declaration//GEN-END:variables
 }
