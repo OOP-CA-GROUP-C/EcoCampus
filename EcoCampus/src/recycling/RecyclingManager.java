@@ -12,6 +12,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -65,11 +66,11 @@ public class RecyclingManager implements Serializable{
         return records;
     }
     
-    public void deleteRecord(int index){
-        if (index >= 0 && index < records.size()) {
-            records.remove(index);
+    public void deleteRecord(int id){
+        if (id >= 0 && id < records.size()) {
+            records.remove(id);
         }else{
-            System.out.println("The record does not exist");
+            JOptionPane.showInputDialog(null, "The record does not exist");
         }
     }
     
