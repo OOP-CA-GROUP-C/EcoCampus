@@ -92,10 +92,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
             new Object [][] {
                 {"Plastic", "", "", ""},
                 {"Paper", "", "", ""},
-                {"NewsPaper", "", "", ""},
-                {"Bottle", "", "", ""},
                 {"Can", null, null, null},
-                {"Cardboard", null, null, null},
                 {"TOTAL", null, null, null}
             },
             new String [] {
@@ -267,9 +264,9 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(summaryTB, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(summaryTB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
                 .addComponent(footerPL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -277,84 +274,56 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
     }// </editor-fold>//GEN-END:initComponents
     
     private void loadSummary(){
-        String totalWeight = String.valueOf(manager.getTotalWeight());
-        String totalPoints = String.valueOf(manager.getTotalPoints());
-        String totalCount = String.valueOf(manager.getCount());
-        
-        totalWeightLBL.setText(totalWeight);
-        totalPointsLBL.setText(totalPoints);
-        totalEntriesLBL.setText(totalCount);
-        
-        ArrayList<RecyclingRecord> plasticList = manager.searchByMaterial("Plastic");
-        double plasticWeight = 0.0;
-        double plasticPoints = 0.0;
-        for(RecyclingRecord r : plasticList){
-            plasticWeight += r.getWeightKg();
-            plasticPoints += r.computePoints();
+        double plasticWeight = 0;
+        double plasticPoints = 0;
+        int plasticCount = 0;
+
+        double paperWeight = 0;
+        double paperPoints = 0;
+        int paperCount = 0;
+
+        double canWeight = 0;
+        double canPoints = 0;
+        int canCount = 0;
+
+        for (RecyclingRecord r : manager.getRecords()) {
+            double pts = r.computePoints();
+            double wt = r.getWeightKg();
+
+            if(r instanceof PlasticRecord || r instanceof BottleRecord){
+                plasticCount++;
+                plasticWeight += wt;
+                plasticPoints += pts;
+            }else if(r instanceof PaperRecord || r instanceof NewsPaperRecord || r instanceof CardboardRecord) {
+                paperCount++;
+                paperWeight += wt;
+                paperPoints += pts;
+            }else if(r instanceof CanRecord){
+                canCount++;
+                canWeight += wt;
+                canPoints += pts;
+            }
         }
-        summaryTable.setValueAt(plasticList.size(), 0, 1);
+        
+        double totalWeight = plasticWeight + paperWeight + canWeight;
+        double totalPoints = plasticPoints + paperPoints + canPoints;
+        int totalCount = manager.getCount();
+        
+        summaryTable.setValueAt(plasticCount, 0, 1);
         summaryTable.setValueAt(plasticWeight, 0, 2);
         summaryTable.setValueAt(plasticPoints, 0, 3);
         
-        ArrayList<RecyclingRecord> paperList = manager.searchByMaterial("Paper");
-        double paperWeight = 0.0;
-        double paperPoints = 0.0;
-        for(RecyclingRecord r : paperList){
-            paperWeight += r.getWeightKg();
-            paperPoints += r.computePoints();
-        }
-        summaryTable.setValueAt(paperList.size(), 1, 1);
+        summaryTable.setValueAt(paperCount, 1, 1);
         summaryTable.setValueAt(paperWeight, 1, 2);
         summaryTable.setValueAt(paperPoints, 1, 3);
         
-        ArrayList<RecyclingRecord> newsPaperList = manager.searchByMaterial("NewsPaper");
-        double newsPaperWeight = 0.0;
-        double newsPaperPoints = 0.0;
-        for(RecyclingRecord r : newsPaperList){
-            newsPaperWeight += r.getWeightKg();
-            newsPaperPoints += r.computePoints();
-        }
-        summaryTable.setValueAt(newsPaperList.size(), 2, 1);
-        summaryTable.setValueAt(newsPaperWeight, 2, 2);
-        summaryTable.setValueAt(newsPaperPoints, 2, 3);
+        summaryTable.setValueAt(canCount, 2, 1);
+        summaryTable.setValueAt(canWeight, 2, 2);
+        summaryTable.setValueAt(canPoints, 2, 3);
         
-        ArrayList<RecyclingRecord> bottleList = manager.searchByMaterial("Bottle");
-        double bottleWeight = 0.0;
-        double bottlePoints = 0.0;
-        for(RecyclingRecord r : bottleList){
-            bottleWeight += r.getWeightKg();
-            bottlePoints += r.computePoints();
-        }
-        summaryTable.setValueAt(bottleList.size(), 3, 1);
-        summaryTable.setValueAt(bottleWeight, 3, 2);
-        summaryTable.setValueAt(bottlePoints, 3, 3);
-        
-        ArrayList<RecyclingRecord> canList = manager.searchByMaterial("Can");
-        double canWeight = 0.0;
-        double canPoints = 0.0;
-        for(RecyclingRecord r : canList){
-            canWeight += r.getWeightKg();
-            canPoints += r.computePoints();
-        }
-        summaryTable.setValueAt(canList.size(), 4, 1);
-        summaryTable.setValueAt(canWeight, 4, 2);
-        summaryTable.setValueAt(canPoints, 4, 3);
-
-        ArrayList<RecyclingRecord> carboardList = manager.searchByMaterial("Cardboard");
-        double cardboardWeight = 0.0;
-        double cardboardPoints = 0.0;
-        for(RecyclingRecord r : carboardList){
-            cardboardWeight += r.getWeightKg();
-            cardboardPoints += r.computePoints();
-        }
-        summaryTable.setValueAt(carboardList.size(), 5, 1);
-        summaryTable.setValueAt(cardboardWeight, 5, 2);
-        summaryTable.setValueAt(cardboardPoints, 5, 3);
-        
-        summaryTable.setValueAt(totalCount, 6, 1);
-        summaryTable.setValueAt(totalWeight, 6, 2);
-        summaryTable.setValueAt(totalPoints, 6, 3);
-        
+        summaryTable.setValueAt(totalCount, 3, 1);
+        summaryTable.setValueAt(totalWeight, 3, 2);
+        summaryTable.setValueAt(totalPoints, 3, 3);
     }
     
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
