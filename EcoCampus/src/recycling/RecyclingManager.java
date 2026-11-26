@@ -107,9 +107,9 @@ public class RecyclingManager implements Serializable{
             
             oStream.close();
         }catch(IOException e){
-            System.out.println("Error!!");
+            System.out.println("Please add a record");
         }catch(ClassNotFoundException e){
-            System.out.println("Error!!");
+            System.out.println("Error" + e);
         }
         
     }
