@@ -20,6 +20,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
     public AddRecyclingForm() {
         initComponents();
         manager = new RecyclingManager();
+        manager.readFromFile();
         questionLBL.setVisible(false);
         trueBTN.setVisible(false);
         falseBTN.setVisible(false);
