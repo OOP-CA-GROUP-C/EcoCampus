@@ -225,9 +225,11 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         questionLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         questionLBL.setText("Question?");
 
+        trueBTN.setBackground(new java.awt.Color(235, 245, 235));
         trueBTN.setText("Yes");
         trueBTN.addActionListener(this::trueBTNActionPerformed);
 
+        falseBTN.setBackground(new java.awt.Color(235, 245, 235));
         falseBTN.setText("No");
 
         javax.swing.GroupLayout questionPanelLayout = new javax.swing.GroupLayout(questionPanel);
@@ -238,8 +240,9 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(questionLBL)
-                    .addComponent(trueBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(falseBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(trueBTN)
+                    .addComponent(falseBTN))
+                .addGap(30, 30, 30))
         );
         questionPanelLayout.setVerticalGroup(
             questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
