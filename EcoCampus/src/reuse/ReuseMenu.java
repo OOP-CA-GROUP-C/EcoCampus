@@ -19,6 +19,7 @@ public class ReuseMenu extends javax.swing.JFrame {
      */
     public ReuseMenu() {
         initComponents();
+        ReuseManager.readFile();
     }
 
     /**
@@ -124,6 +125,7 @@ public class ReuseMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AddItemForm().setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_addItemBTNActionPerformed
 
     private void itemListBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListBTNActionPerformed

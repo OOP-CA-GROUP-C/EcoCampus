@@ -4,6 +4,13 @@
  */
 package reuse;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -11,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author malavikaumamagash
  */
-public class ReuseManager {
+public class ReuseManager implements Serializable {
 
     //declaring ArrayList
     private static ArrayList<ReuseItem> items = new ArrayList<>();
@@ -29,7 +36,8 @@ public class ReuseManager {
         item.setId(id);
         id++;
         items.add(item);//item can be book tb(textbook) novel,clothes,jacket or even fw which is being added to the arraylist
-        
+        writeFile();
+
         System.out.println("Added: " + item.getTitle() + " | total = " + items.size());
 
     }
@@ -77,31 +85,93 @@ public class ReuseManager {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getId() == delete) {
                 items.remove(i);
+                writeFile();
                 JOptionPane.showMessageDialog(null, "Deleted the item at index " + i);
                 return;
 
             }
 
         }
-        
-        JOptionPane.showMessageDialog(null,"Sorry the item could not be found, please try again");
+
+        JOptionPane.showMessageDialog(null, "Sorry the item could not be found, please try again");
     }
 
     //display item:
-    public static String displayItems() {
-        
-        if(items.isEmpty()){
+    public static String displayItems(){
+
+        if (items.isEmpty()){
             return "no item found";
         }
 
         String display = "";
 
-        for (ReuseItem item : items) {
+        for (ReuseItem item : items){
             display = display + "ID: " + item.getId() + " | Title: " + item.getTitle() + " | Condition: " + item.getCondition() + " |Details: " + item.getDetails() + "\n";
         }
 
         return display;
 
     }
+
+    public static void writeFile() {
+
+        try{
+            File outFile;
+            FileOutputStream outStream;
+            ObjectOutputStream outObj;
+
+            outFile = new File("reuse.dat");
+            outStream = new FileOutputStream(outFile);
+            outObj = new ObjectOutputStream(outStream);
+
+            outObj.writeObject(items);
+            outObj.close();
+
+        }catch (IOException e) {
+            
+            JOptionPane.showMessageDialog(null,"Couldnt save items");
+
+        }
+        
+
+    }
+    
+    
+    public static void readFile(){
+        try{
+            
+            File inputFile;
+            FileInputStream inputStream;
+            ObjectInputStream inputObj;
+            
+            inputFile = new File("reuse.dat");
+            inputStream = new FileInputStream(inputFile);
+            inputObj = new ObjectInputStream(inputStream);
+            
+            items = (ArrayList<ReuseItem>) inputObj.readObject();
+            inputObj.close();
+            
+            
+            for(ReuseItem item:items){
+                if(item.getId() >= id){
+                    id = item.getId()+1;
+                }
+            }
+            
+            
+        }catch (IOException | ClassNotFoundException e){
+            JOptionPane.showMessageDialog(null,"Could not load the items");
+            
+        }
+        
+        
+        
+                
+        
+        
+        
+    }
+        
+        
 
 }
