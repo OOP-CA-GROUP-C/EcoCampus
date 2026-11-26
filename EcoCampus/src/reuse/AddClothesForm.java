@@ -43,8 +43,6 @@ public class AddClothesForm extends javax.swing.JFrame {
         titleLBL = new javax.swing.JLabel();
         sizeLBL = new javax.swing.JLabel();
         fTypeLBL = new javax.swing.JLabel();
-        titleTF = new javax.swing.JLabel();
-        fTypeTF = new javax.swing.JLabel();
         conditionCB = new javax.swing.JComboBox<>();
         conditionLBL = new javax.swing.JLabel();
         sizeCB = new javax.swing.JComboBox<>();
@@ -52,6 +50,8 @@ public class AddClothesForm extends javax.swing.JFrame {
         waterproofCHB = new javax.swing.JCheckBox();
         shoeSizeLBL = new javax.swing.JLabel();
         shoeSizeTF = new javax.swing.JTextField();
+        titleTF = new javax.swing.JTextField();
+        fTypeTF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         saveListingBTN = new javax.swing.JButton();
         clearFormBTN = new javax.swing.JButton();
@@ -89,21 +89,13 @@ public class AddClothesForm extends javax.swing.JFrame {
         fTypeLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fTypeLBL.setText("Type:");
 
-        titleTF.setBackground(new java.awt.Color(255, 255, 255));
-        titleTF.setText("e.g. running shoes");
-        titleTF.setOpaque(true);
-
-        fTypeTF.setBackground(new java.awt.Color(255, 255, 255));
-        fTypeTF.setText("e.g. Shoe, Heels, Sandals");
-        fTypeTF.setOpaque(true);
-
-        conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "new", "good", "poor", " " }));
+        conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None selected", "New", "Good", "Poor", " " }));
         conditionCB.addActionListener(this::conditionCBActionPerformed);
 
         conditionLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         conditionLBL.setText("Condition:");
 
-        sizeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "L", "XL", "S", "XS", " " }));
+        sizeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None selected", "XS", "S", "M", "L", "XL", "XXL", " " }));
         sizeCB.addActionListener(this::sizeCBActionPerformed);
 
         hoodedCHB.setText("Hooded");
@@ -113,7 +105,11 @@ public class AddClothesForm extends javax.swing.JFrame {
         shoeSizeLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         shoeSizeLBL.setText("   Shoe Size:");
 
-        shoeSizeTF.setText("e.g. 7");
+        shoeSizeTF.setToolTipText("e.g. 7");
+
+        titleTF.setToolTipText("e.g. running shoes");
+
+        fTypeTF.setToolTipText("e.g Shoe, Sandals, Heels, flip-flops");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,10 +141,10 @@ public class AddClothesForm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(conditionCB, 0, 199, Short.MAX_VALUE)
-                            .addComponent(titleTF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                             .addComponent(sizeCB, 0, 199, Short.MAX_VALUE)
-                            .addComponent(fTypeTF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                            .addComponent(shoeSizeTF)))
+                            .addComponent(shoeSizeTF)
+                            .addComponent(titleTF)
+                            .addComponent(fTypeTF)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(167, 167, 167)
                         .addComponent(waterproofCHB)
@@ -162,7 +158,7 @@ public class AddClothesForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(titleLBL)
-                    .addComponent(titleTF))
+                    .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(conditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,11 +172,11 @@ public class AddClothesForm extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(shoeSizeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shoeSizeLBL))))
-                .addGap(17, 17, 17)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fTypeLBL)
-                    .addComponent(fTypeTF))
-                .addGap(38, 38, 38)
+                    .addComponent(fTypeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(waterproofCHB)
                     .addComponent(hoodedCHB))
@@ -263,7 +259,7 @@ public class AddClothesForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        clothesTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Clothes", "Jacket", "Footwear" }));
+        clothesTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None selected", "Clothes", "Jacket", "Footwear" }));
         clothesTypeCB.addActionListener(this::clothesTypeCBActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -497,7 +493,7 @@ public class AddClothesForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> conditionCB;
     private javax.swing.JLabel conditionLBL;
     private javax.swing.JLabel fTypeLBL;
-    private javax.swing.JLabel fTypeTF;
+    private javax.swing.JTextField fTypeTF;
     private javax.swing.JPanel headerPL;
     private javax.swing.JLabel headingLBL;
     private javax.swing.JLabel headingLBL1;
@@ -516,7 +512,7 @@ public class AddClothesForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> sizeCB;
     private javax.swing.JLabel sizeLBL;
     private javax.swing.JLabel titleLBL;
-    private javax.swing.JLabel titleTF;
+    private javax.swing.JTextField titleTF;
     private javax.swing.JCheckBox waterproofCHB;
     // End of variables declaration//GEN-END:variables
 }

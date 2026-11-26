@@ -46,14 +46,14 @@ public class AddBookForm extends javax.swing.JFrame {
         subjectLBL = new javax.swing.JLabel();
         conditionLBL = new javax.swing.JLabel();
         editionLBL = new javax.swing.JLabel();
-        titleTF = new javax.swing.JLabel();
-        authorTF = new javax.swing.JLabel();
-        subjectTF = new javax.swing.JLabel();
-        editionTF = new javax.swing.JLabel();
         conditionCB = new javax.swing.JComboBox<>();
         genreLBL = new javax.swing.JLabel();
         genreTF = new javax.swing.JTextField();
         isHardbackCHB = new javax.swing.JCheckBox();
+        titleTF = new javax.swing.JTextField();
+        authorTF = new javax.swing.JTextField();
+        subjectTF = new javax.swing.JTextField();
+        editionTF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         saveListingBTN = new javax.swing.JButton();
         clearFormBTN = new javax.swing.JButton();
@@ -114,39 +114,33 @@ public class AddBookForm extends javax.swing.JFrame {
         editionLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         editionLBL.setText("Edition:");
 
-        titleTF.setBackground(new java.awt.Color(255, 255, 255));
-        titleTF.setText("e.g. Harry potter");
-        titleTF.setOpaque(true);
-
-        authorTF.setBackground(new java.awt.Color(255, 255, 255));
-        authorTF.setText("e.g. JK Rowling");
-        authorTF.setOpaque(true);
-
-        subjectTF.setBackground(new java.awt.Color(255, 255, 255));
-        subjectTF.setText("e.g science");
-        subjectTF.setOpaque(true);
-
-        editionTF.setBackground(new java.awt.Color(255, 255, 255));
-        editionTF.setText("e.g. 3");
-        editionTF.setOpaque(true);
-
-        conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "new", "good", "poor", " " }));
+        conditionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None selected", "New", "Good", "poor", "slightly damaged" }));
         conditionCB.addActionListener(this::conditionCBActionPerformed);
 
         genreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         genreLBL.setText("Genre:");
 
-        genreTF.setText("e.g. fiction");
+        genreTF.setToolTipText("e.g fiction");
 
         isHardbackCHB.setText("Hardback");
+
+        titleTF.setToolTipText("e.g Harry Potter");
+
+        authorTF.setToolTipText("e.g J.K Rowling");
+
+        subjectTF.setToolTipText("e.g Science");
+        subjectTF.addActionListener(this::subjectTFActionPerformed);
+
+        editionTF.setToolTipText("e.g 3");
+        editionTF.addActionListener(this::editionTFActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(conditionLBL)
@@ -158,13 +152,13 @@ public class AddBookForm extends javax.swing.JFrame {
                                 .addComponent(editionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(3, 3, 3)))
                         .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(authorTF, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                                 .addComponent(conditionCB, 0, 199, Short.MAX_VALUE)
-                                .addComponent(genreTF))
-                            .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(isHardbackCHB)))
+                                .addComponent(genreTF)
+                                .addComponent(isHardbackCHB)
+                                .addComponent(editionTF))
+                            .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -172,8 +166,8 @@ public class AddBookForm extends javax.swing.JFrame {
                             .addComponent(subjectLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(titleTF)
+                            .addComponent(subjectTF))))
                 .addContainerGap(195, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -182,11 +176,11 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(titleLBL)
-                    .addComponent(titleTF))
+                    .addComponent(titleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(authorLBL)
-                    .addComponent(authorTF))
+                    .addComponent(authorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(conditionLBL)
@@ -198,11 +192,11 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(subjectLBL)
-                    .addComponent(subjectTF))
+                    .addComponent(subjectTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editionLBL)
-                    .addComponent(editionTF))
+                    .addComponent(editionTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(isHardbackCHB)
                 .addContainerGap())
@@ -253,7 +247,7 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bookTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Book", "Textbook", "Novel" }));
+        bookTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None selected", "Book", "Textbook", "Novel" }));
         bookTypeCB.addActionListener(this::bookTypeCBActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -289,7 +283,7 @@ public class AddBookForm extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -355,6 +349,23 @@ public class AddBookForm extends javax.swing.JFrame {
         }
     }
     
+    //clear btn function
+    private void clearForm() {
+        titleTF.setText("");
+        authorTF.setText("");
+        genreTF.setText("");
+        subjectTF.setText("");
+        editionTF.setText("");
+
+        isHardbackCHB.setSelected(false);
+
+        bookTypeCB.setSelectedIndex(0);
+        conditionCB.setSelectedIndex(0);
+
+        // Call updateFieldVisibility so hidden fields disappear again after clearing
+        updateFieldVisibility();
+    }
+    
     
     private void conditionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conditionCBActionPerformed
         // TODO add your handling code here:
@@ -365,9 +376,9 @@ public class AddBookForm extends javax.swing.JFrame {
         new AddItemForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backMainBTNActionPerformed
-
+   
     private void clearFormBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFormBTNActionPerformed
-        // TODO add your handling code here:
+        clearForm();
     }//GEN-LAST:event_clearFormBTNActionPerformed
 
     private void saveListingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveListingBTNActionPerformed
@@ -382,7 +393,7 @@ public class AddBookForm extends javax.swing.JFrame {
         String condition;
         String subject;
         String genre;
-        int edition;
+        String text;
         boolean isHardback;
         
         //getting the values from the GUI and storing in the variables which was created 
@@ -391,12 +402,40 @@ public class AddBookForm extends javax.swing.JFrame {
         condition = conditionCB.getSelectedItem().toString();
         subject = subjectTF.getText();
         genre = genreTF.getText();
-        edition = Integer.parseInt(editionTF.getText());
+        text = editionTF.getText();
         isHardback = isHardbackCHB.isSelected();
         
         
         
-        if(type.equals("Books")){
+        //validation for empty text       
+        if(title.trim().equals("")){
+           JOptionPane.showMessageDialog(null,"Please enter a Title to add this item");
+           return;
+             
+        }else if(author.trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Please enter a Author to add this item");
+            return;
+              
+        }else if(genre.trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Please enter a Genre to add this item");
+            return;            
+            
+        }else if(text.trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a Edition to add this item");
+            return;
+                              
+        }else if(subject.trim().equals("")){
+           JOptionPane.showMessageDialog(null,"Please enter a Subject to add this item");
+           return;
+        }
+        
+        
+        
+        
+        
+
+    //setting items for their respective category    
+        if(type.equals("Book")){
             
             BookItem book = new BookItem();
             
@@ -409,9 +448,17 @@ public class AddBookForm extends javax.swing.JFrame {
             ReuseManager.items.add(book);
 
         
-
         }else if (type.equals("Textbook")) {
             
+            //validation for edition to check whether its a number
+            int edition;
+            
+            try {
+                edition = Integer.parseInt(text);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number for the edition.");
+                return; 
+            }
             
             TextbookItem tb = new TextbookItem();
             
@@ -422,6 +469,7 @@ public class AddBookForm extends javax.swing.JFrame {
             tb.setEdition(edition);
 
             ReuseManager.items.add(tb);
+            
 
         } else if (type.equals("Novel")) {
             
@@ -435,16 +483,27 @@ public class AddBookForm extends javax.swing.JFrame {
 
             ReuseManager.items.add(novel);
         }
-
-        JOptionPane.showMessageDialog(this, "Book Added!");
+        //success message for the user
+        JOptionPane.showMessageDialog(null, "Item Added succcessfully ");
+        //clears the form and resets all the value
+        clearForm();
         
         
 
     }//GEN-LAST:event_saveListingBTNActionPerformed
 
     private void bookTypeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookTypeCBActionPerformed
-        // TODO add your handling code here:
+
+        updateFieldVisibility();
     }//GEN-LAST:event_bookTypeCBActionPerformed
+
+    private void subjectTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subjectTFActionPerformed
+
+    private void editionTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editionTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editionTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,7 +532,7 @@ public class AddBookForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel authorLBL;
-    private javax.swing.JLabel authorTF;
+    private javax.swing.JTextField authorTF;
     private javax.swing.JButton backMainBTN;
     private javax.swing.JComboBox<String> bookTypeCB;
     private javax.swing.JLabel bookTypeLBL;
@@ -481,7 +540,7 @@ public class AddBookForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> conditionCB;
     private javax.swing.JLabel conditionLBL;
     private javax.swing.JLabel editionLBL;
-    private javax.swing.JLabel editionTF;
+    private javax.swing.JTextField editionTF;
     private javax.swing.JLabel genreLBL;
     private javax.swing.JTextField genreTF;
     private javax.swing.JPanel headerPL;
@@ -492,8 +551,8 @@ public class AddBookForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton saveListingBTN;
     private javax.swing.JLabel subjectLBL;
-    private javax.swing.JLabel subjectTF;
+    private javax.swing.JTextField subjectTF;
     private javax.swing.JLabel titleLBL;
-    private javax.swing.JLabel titleTF;
+    private javax.swing.JTextField titleTF;
     // End of variables declaration//GEN-END:variables
 }

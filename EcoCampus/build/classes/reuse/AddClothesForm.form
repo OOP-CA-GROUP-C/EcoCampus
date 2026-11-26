@@ -176,10 +176,10 @@
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="conditionCB" pref="199" max="32767" attributes="0"/>
-                              <Component id="titleTF" pref="199" max="32767" attributes="0"/>
                               <Component id="sizeCB" pref="199" max="32767" attributes="0"/>
-                              <Component id="fTypeTF" alignment="0" pref="199" max="32767" attributes="0"/>
                               <Component id="shoeSizeTF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="titleTF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="fTypeTF" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -218,12 +218,12 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="fTypeLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="fTypeTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="waterproofCHB" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="hoodedCHB" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -258,32 +258,15 @@
             <Property name="text" type="java.lang.String" value="Type:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="titleTF">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="e.g. running shoes"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="fTypeTF">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="e.g. Shoe, Heels, Sandals"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JComboBox" name="conditionCB">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="new"/>
-                <StringItem index="1" value="good"/>
-                <StringItem index="2" value="poor"/>
-                <StringItem index="3" value=" "/>
+              <StringArray count="5">
+                <StringItem index="0" value="None selected"/>
+                <StringItem index="1" value="New"/>
+                <StringItem index="2" value="Good"/>
+                <StringItem index="3" value="Poor"/>
+                <StringItem index="4" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -305,13 +288,15 @@
         <Component class="javax.swing.JComboBox" name="sizeCB">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="M"/>
-                <StringItem index="1" value="L"/>
-                <StringItem index="2" value="XL"/>
-                <StringItem index="3" value="S"/>
-                <StringItem index="4" value="XS"/>
-                <StringItem index="5" value=" "/>
+              <StringArray count="8">
+                <StringItem index="0" value="None selected"/>
+                <StringItem index="1" value="XS"/>
+                <StringItem index="2" value="S"/>
+                <StringItem index="3" value="M"/>
+                <StringItem index="4" value="L"/>
+                <StringItem index="5" value="XL"/>
+                <StringItem index="6" value="XXL"/>
+                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -342,7 +327,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="shoeSizeTF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="e.g. 7"/>
+            <Property name="toolTipText" type="java.lang.String" value="e.g. 7"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="titleTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g. running shoes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fTypeTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g Shoe, Sandals, Heels, flip-flops"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -503,10 +498,11 @@
     <Component class="javax.swing.JComboBox" name="clothesTypeCB">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Clothes"/>
-            <StringItem index="1" value="Jacket"/>
-            <StringItem index="2" value="Footwear"/>
+          <StringArray count="4">
+            <StringItem index="0" value="None selected"/>
+            <StringItem index="1" value="Clothes"/>
+            <StringItem index="2" value="Jacket"/>
+            <StringItem index="3" value="Footwear"/>
           </StringArray>
         </Property>
       </Properties>

@@ -18,7 +18,8 @@ public class ItemListForm extends javax.swing.JFrame {
      * Creates new form ItemListForm
      */
     public ItemListForm() {
-        initComponents();
+        initComponents();    
+        
     }
 
     /**
@@ -85,17 +86,19 @@ public class ItemListForm extends javax.swing.JFrame {
         filterLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         filterLBL.setText("Filter by Category");
 
-        searchCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Textbook", "Novel", "Jacket", "Footwear" }));
+        searchCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Book", "Textbook", "Novel", "Clothes", "Jacket", "Footwear" }));
 
         searchBTN.setBackground(new java.awt.Color(27, 94, 32));
         searchBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         searchBTN.setForeground(new java.awt.Color(255, 255, 255));
         searchBTN.setText("Search");
+        searchBTN.addActionListener(this::searchBTNActionPerformed);
 
         showAllBTN.setBackground(new java.awt.Color(27, 94, 32));
         showAllBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         showAllBTN.setForeground(new java.awt.Color(255, 255, 255));
         showAllBTN.setText("Show All");
+        showAllBTN.addActionListener(this::showAllBTNActionPerformed);
 
         showContactBTN.setBackground(new java.awt.Color(27, 94, 32));
         showContactBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -106,6 +109,7 @@ public class ItemListForm extends javax.swing.JFrame {
         markUnavailableBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         markUnavailableBTN.setForeground(new java.awt.Color(255, 255, 255));
         markUnavailableBTN.setText("Mark Unavailable");
+        markUnavailableBTN.addActionListener(this::markUnavailableBTNActionPerformed);
 
         backBTN.setBackground(new java.awt.Color(100, 100, 100));
         backBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -149,6 +153,7 @@ public class ItemListForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        itemTable.setAutoCreateRowSorter(true);
         itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -261,6 +266,18 @@ public class ItemListForm extends javax.swing.JFrame {
         new ReuseMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
+
+    private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchBTNActionPerformed
+
+    private void showAllBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAllBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showAllBTNActionPerformed
+
+    private void markUnavailableBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markUnavailableBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_markUnavailableBTNActionPerformed
 
     /**
      * @param args the command line arguments

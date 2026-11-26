@@ -170,11 +170,13 @@
         <Component class="javax.swing.JComboBox" name="searchCB">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Textbook"/>
-                <StringItem index="1" value="Novel"/>
-                <StringItem index="2" value="Jacket"/>
-                <StringItem index="3" value="Footwear"/>
+              <StringArray count="6">
+                <StringItem index="0" value="Book"/>
+                <StringItem index="1" value="Textbook"/>
+                <StringItem index="2" value="Novel"/>
+                <StringItem index="3" value="Clothes"/>
+                <StringItem index="4" value="Jacket"/>
+                <StringItem index="5" value="Footwear"/>
               </StringArray>
             </Property>
           </Properties>
@@ -195,6 +197,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchBTNActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="showAllBTN">
           <Properties>
@@ -209,6 +214,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Show All"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showAllBTNActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="showContactBTN">
           <Properties>
@@ -237,6 +245,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Mark Unavailable"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="markUnavailableBTNActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="backBTN">
           <Properties>
@@ -263,6 +274,7 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="itemTable">
           <Properties>
+            <Property name="autoCreateRowSorter" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="30">
                 <Column editable="true" title="ID" type="java.lang.Integer"/>

@@ -59,7 +59,7 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -148,8 +148,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="conditionLBL" min="-2" max="-2" attributes="0"/>
@@ -163,15 +163,15 @@
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="authorTF" pref="199" max="32767" attributes="0"/>
                                   <Component id="conditionCB" alignment="0" pref="199" max="32767" attributes="0"/>
                                   <Component id="genreTF" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="isHardbackCHB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editionTF" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="editionTF" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                              <Component id="isHardbackCHB" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="authorTF" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -182,8 +182,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="subjectTF" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                              <Component id="titleTF" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                              <Component id="titleTF" max="32767" attributes="0"/>
+                              <Component id="subjectTF" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -272,50 +272,15 @@
             <Property name="text" type="java.lang.String" value="Edition:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="titleTF">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="e.g. Harry potter"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="authorTF">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="e.g. JK Rowling"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="subjectTF">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="e.g science"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="editionTF">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="e.g. 3"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JComboBox" name="conditionCB">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="new"/>
-                <StringItem index="1" value="good"/>
-                <StringItem index="2" value="poor"/>
-                <StringItem index="3" value=" "/>
+              <StringArray count="5">
+                <StringItem index="0" value="None selected"/>
+                <StringItem index="1" value="New"/>
+                <StringItem index="2" value="Good"/>
+                <StringItem index="3" value="poor"/>
+                <StringItem index="4" value="slightly damaged"/>
               </StringArray>
             </Property>
           </Properties>
@@ -336,13 +301,39 @@
         </Component>
         <Component class="javax.swing.JTextField" name="genreTF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="e.g. fiction"/>
+            <Property name="toolTipText" type="java.lang.String" value="e.g fiction"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="isHardbackCHB">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hardback"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="titleTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g Harry Potter"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="authorTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g J.K Rowling"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="subjectTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g Science"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subjectTFActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="editionTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g 3"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editionTFActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -445,10 +436,11 @@
     <Component class="javax.swing.JComboBox" name="bookTypeCB">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Book"/>
-            <StringItem index="1" value="Textbook"/>
-            <StringItem index="2" value="Novel"/>
+          <StringArray count="4">
+            <StringItem index="0" value="None selected"/>
+            <StringItem index="1" value="Book"/>
+            <StringItem index="2" value="Textbook"/>
+            <StringItem index="3" value="Novel"/>
           </StringArray>
         </Property>
       </Properties>

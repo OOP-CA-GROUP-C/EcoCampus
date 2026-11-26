@@ -12,8 +12,8 @@ public class NovelItem extends BookItem implements Reuse{
     
     //variable
     
-    
     private boolean hardback;
+    
     
     //constructor:
     
