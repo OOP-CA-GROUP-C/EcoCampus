@@ -286,7 +286,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         double canPoints = 0;
         int canCount = 0;
 
-        for (RecyclingRecord r : manager.getRecords()) {
+        for (RecyclingRecord r : manager.getRecords()){
             double pts = r.computePoints();
             double wt = r.getWeightKg();
 
@@ -294,7 +294,7 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
                 plasticCount++;
                 plasticWeight += wt;
                 plasticPoints += pts;
-            }else if(r instanceof PaperRecord || r instanceof NewsPaperRecord || r instanceof CardboardRecord) {
+            }else if(r instanceof PaperRecord || r instanceof NewsPaperRecord || r instanceof CardboardRecord){
                 paperCount++;
                 paperWeight += wt;
                 paperPoints += pts;
