@@ -324,6 +324,15 @@ public class RecyclingSummaryForm extends javax.swing.JFrame implements Serializ
         summaryTable.setValueAt(totalCount, 3, 1);
         summaryTable.setValueAt(totalWeight, 3, 2);
         summaryTable.setValueAt(totalPoints, 3, 3);
+        
+        String totalWeightTxt = String.valueOf(totalWeight);
+        String totalPointsTxt = String.valueOf(totalPoints);
+        String totalCountTxt = String.valueOf(totalCount);
+        
+        totalWeightLBL.setText(totalWeightTxt);
+        totalPointsLBL.setText(totalPointsTxt);
+        totalEntriesLBL.setText(totalCountTxt);
+        
     }
     
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
