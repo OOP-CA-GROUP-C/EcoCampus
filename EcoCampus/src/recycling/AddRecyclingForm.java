@@ -4,6 +4,7 @@
  */
 package recycling;
 
+import javax.swing.JOptionPane;
 import java.io.Serializable;
 
 /**
@@ -424,8 +425,6 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         }else{
             displayTA.setText("You have'nt entered 0 for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
        }
-        
-        
         
     }//GEN-LAST:event_saveRecordBTNActionPerformed
 

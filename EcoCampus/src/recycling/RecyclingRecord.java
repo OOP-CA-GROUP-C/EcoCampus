@@ -23,6 +23,7 @@ public abstract class RecyclingRecord implements RecyclingOperations, Serializab
     }
 
     public RecyclingRecord() {
+        this.date = java.time.LocalDate.now().toString();
     }
 
     public void setId(int id) {
