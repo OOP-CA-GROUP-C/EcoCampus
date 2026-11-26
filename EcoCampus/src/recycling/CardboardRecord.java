@@ -40,7 +40,7 @@ public class CardboardRecord extends PaperRecord implements Serializable{
             return super.computePoints();
         }
     }
-    
+   
     @Override
     public String printDetails() {
         return super.printDetails() + " | Type: " + material + " | flattened: " + flattened;
