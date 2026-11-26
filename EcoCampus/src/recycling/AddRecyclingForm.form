@@ -35,7 +35,7 @@
                   <Group type="102" attributes="0">
                       <Component id="Body" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="questionPanel" min="-2" max="-2" attributes="0"/>
+                      <Component id="questionPanel" min="-2" pref="94" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -138,26 +138,27 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="DisplayPane" alignment="0" min="-2" pref="307" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="textPointsLBL" min="-2" max="-2" attributes="0"/>
-                              <Component id="textWeightLBL" min="-2" max="-2" attributes="0"/>
-                              <Component id="textMaterialLBL" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="textMaterialLBL" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="pointsTF" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="autoCalcLBL" min="-2" pref="97" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="weightTF" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="materialCB" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="textWeightLBL" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="weightTF" min="-2" pref="71" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="materialCB" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="textPointsLBL" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="pointsTF" min="-2" pref="71" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="autoCalcLBL" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -172,26 +173,18 @@
                       <Component id="textMaterialLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="materialCB" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="textWeightLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="weightTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="autoCalcLBL" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="textPointsLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="pointsTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="textPointsLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pointsTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="autoCalcLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Component id="DisplayPane" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -312,7 +305,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="saveRecordBTN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="78" max="32767" attributes="0"/>
                   <Component id="clearBTN" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                   <Component id="backBTN" min="-2" max="-2" attributes="0"/>
@@ -406,13 +399,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="questionLBL" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="trueBTN" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
                       <Component id="falseBTN" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
