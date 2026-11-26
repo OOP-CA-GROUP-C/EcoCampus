@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author Shan Narayanan
  */
-public class CanRecord extends RecyclingRecord implements Serializable{
+public class CanRecord extends RecyclingRecord implements Serializable, RecyclingOperations{
     private double pointsPerKg, points;
     private String material;
     private boolean crushed;

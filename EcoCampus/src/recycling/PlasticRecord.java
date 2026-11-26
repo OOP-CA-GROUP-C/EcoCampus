@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author Shan Narayanan
  */
-public class PlasticRecord extends RecyclingRecord implements Serializable{
+public class PlasticRecord extends RecyclingRecord implements Serializable, RecyclingOperations{
     private double pointsPerKg, points;
     private String material;
 
