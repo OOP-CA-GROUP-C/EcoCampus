@@ -33,15 +33,6 @@ public class CardboardRecord extends PaperRecord implements Serializable{
     }
 
     @Override
-    public double computePoints() {
-        if(flattened){
-            return super.computePoints() + 2;
-        }else{
-            return super.computePoints();
-        }
-    }
-   
-    @Override
     public String printDetails() {
         return super.printDetails() + " | Type: " + material + " | flattened: " + flattened;
     }

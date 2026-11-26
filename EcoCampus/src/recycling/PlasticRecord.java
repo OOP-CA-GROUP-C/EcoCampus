@@ -35,7 +35,7 @@ public class PlasticRecord extends RecyclingRecord implements Serializable{
     public double computePoints(){
         return points = pointsPerKg * weightKg;
     }
-
+    
     @Override
     public String printDetails() {
         return super.printDetails() + " | Material: " + material + " | Points: " + points; 

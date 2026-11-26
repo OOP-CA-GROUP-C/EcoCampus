@@ -33,15 +33,6 @@ public class BottleRecord extends PlasticRecord implements Serializable{
     }
 
     @Override
-    public double computePoints() {
-        if(capOn){
-            return super.computePoints() + 1;
-        }else{
-            return super.computePoints();
-        }
-    }
-
-    @Override
     public String printDetails() {
         return super.printDetails() + " | Type: " + material + " | CapOn: " + capOn ;
     }
