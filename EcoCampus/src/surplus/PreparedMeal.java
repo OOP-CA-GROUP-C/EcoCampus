@@ -6,7 +6,7 @@ package surplus;
 
 /**
  *
- * @author HP
+ * @author UtkarshMishra
  */
 public class PreparedMeal extends FreshFoodItem{
     
