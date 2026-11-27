@@ -252,12 +252,15 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
 
     private void materialDeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialDeleteBTNActionPerformed
         // TODO add your handling code here:
-        String input = JOptionPane.showInputDialog(null, "Enter record number to delete:");
-        if (input != null) {
-            int index = Integer.parseInt(input) - 1;
-            manager.deleteRecord(index);
+        String input = JOptionPane.showInputDialog(null, "Enter the id of the record to delete:");
+        if(input != null){
+            int id = Integer.parseInt(input);
+            manager.deleteRecord(id);
             manager.writeToFile();
             loadRecords(manager.showAll());
+        }else{
+            JOptionPane.showMessageDialog(null, "You haven't entered any value!");
+            return;
         }
 
     }//GEN-LAST:event_materialDeleteBTNActionPerformed

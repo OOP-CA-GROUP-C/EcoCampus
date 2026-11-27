@@ -66,11 +66,18 @@ public class RecyclingManager implements Serializable{
         return records;
     }
     
-    public void deleteRecord(int index){
-        if(index >= 0 && index < records.size()){
-            records.remove(index);
-        }else{
-            JOptionPane.showInputDialog(null, "The record does not exist");
+    public void deleteRecord(int id){
+        int count = 0;
+        for(RecyclingRecord r : records){
+            if(r.getId() == id){
+                records.remove(r);
+                JOptionPane.showMessageDialog(null, "You have succesfully deleted that record!");
+                count += 1;
+                break;
+            }
+        }
+        if(count == 0){
+            JOptionPane.showMessageDialog(null, "There is no such record that exists!");
         }
     }
     
