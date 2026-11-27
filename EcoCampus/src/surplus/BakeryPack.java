@@ -34,7 +34,8 @@ public class BakeryPack extends FreshFoodItem {
         this.itemCount = itemCount;
         this.allergenInfo = allergenInfo;
     }
-
+    
+    //setters and getters
     public int getItemCount() {
         return itemCount;
     }
@@ -51,7 +52,27 @@ public class BakeryPack extends FreshFoodItem {
         this.allergenInfo = allergenInfo;
     }
     
+    //overriding methods    
+    @Override
+    public double calculateMoneySaved() {
+        double estimatedFullPrice = itemCount * 2.50;
+        return Math.max(0.0, estimatedFullPrice - discountedPrice);
+    }
     
+    @Override
+    public double calculateWastePreventedKg() {
+        return itemCount * 0.15;
+    }
+
+    @Override
+    public String getDetails() {
+        return super.getDetails()+ " | Items: " + itemCount + " | Allergens: " + allergenInfo;
+    }
+
+    @Override
+    public String toFileString() {
+        return "BakeryPack;" + id + ";" + title + ";" + discountedPrice + ";" + pickupDeadline + ";" + status + ";" + sameDayPickup + ";" + itemCount + ";" + allergenInfo;
+    }
     
     
 }
