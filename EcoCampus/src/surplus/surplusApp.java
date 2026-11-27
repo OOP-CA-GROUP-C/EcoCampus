@@ -8,6 +8,6 @@ package surplus;
  *
  * @author Utkarsh Mishra
  */
-public class surplusApp {
+public class SurplusApp {
     //test
 }
