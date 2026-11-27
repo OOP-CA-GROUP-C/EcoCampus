@@ -50,7 +50,7 @@ public class ClothingItem extends ReuseItem implements Reuse{
     
     @Override
     public String getDetails(){
-        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
+        return "[ Size: "+size+" | Contact: "+getContact();
     }
     
     
