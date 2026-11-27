@@ -12,16 +12,19 @@ public abstract class FreshFoodItem extends SurplusItem {
     
     protected boolean sameDayPickup;
     
+    //default constructor
     public FreshFoodItem(){
         super();
         this.sameDayPickup= true;
     }
     
+    //overlaoded constructor
     public FreshFoodItem(String title, String category, double discountedPrice, String pickupDeadline){
         super(title,category,discountedPrice,pickupDeadline);
         this.sameDayPickup= true;
     }
     
+    //complete constructor
     public FreshFoodItem(int id,String title, String category, double discountedPrice, String pickupDeadline, String status , Boolean sameDayPickup){
         super(id,title,category,discountedPrice,pickupDeadline,status);
         this.sameDayPickup= sameDayPickup;
