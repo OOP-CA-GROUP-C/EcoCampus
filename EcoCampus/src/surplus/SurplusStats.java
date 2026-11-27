@@ -26,7 +26,8 @@ public class SurplusStats {
         this.moneySaved = moneySaved;
         this.wastePreventedKg = wastePreventedKg;
     }
-
+    
+    //setters and getters
     public int getActiveListings() {
         return activeListings;
     }
@@ -59,6 +60,14 @@ public class SurplusStats {
         this.wastePreventedKg = wastePreventedKg;
     }
     
+    //display headers    
+    public String getFormattedMoneySaved() {
+        return "€" + String.format("%.2f", moneySaved);
+    }
+
+    public String getFormattedWastePrevented() {
+        return String.format("%.1f kg", wastePreventedKg);
+    }
     
     
     
