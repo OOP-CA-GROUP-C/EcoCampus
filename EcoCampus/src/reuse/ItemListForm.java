@@ -208,20 +208,25 @@ public class ItemListForm extends javax.swing.JFrame {
     }//GEN-LAST:event_showAllBTNActionPerformed
 
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
-        // TODO add your handling code here:
-        String input = JOptionPane.showInputDialog(null, "Enter the ID which need to be deleted");
+        
+        String input = JOptionPane.showInputDialog(null, "Enter the ID in numbers which need to be deleted");
         
         if(input == null){
             return;
         }
         
         try{
-            int delete = Integer.parseInt(input);
+            int delete  = Integer.parseInt(input.trim());
             ReuseManager.deleteItems(delete);
+            itemTA.setText(ReuseManager.displayItems());
             
         }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null,"Please enter a valid number");
+            JOptionPane.showMessageDialog(null, e);
+            
         }
+        
+        
+   
         
         
         

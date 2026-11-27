@@ -73,7 +73,10 @@ public class ReuseManager implements Serializable {
                 JOptionPane.showMessageDialog(null, "Deleted the item at index " + i);
                 return;
             }
-        }        
+        }
+        
+        JOptionPane.showMessageDialog(null,"Item Not found");
+        
     }
 
     //display item:
@@ -122,21 +125,17 @@ public class ReuseManager implements Serializable {
         File inputFile;
         FileInputStream inputStream;
         ObjectInputStream inputObj;
+        
         try{
             inputFile = new File("reuse.dat");
+            if(!inputFile.exists()){
+                return;
+            }
             inputStream = new FileInputStream(inputFile);
             inputObj = new ObjectInputStream(inputStream);
             
             items = (ArrayList<ReuseItem>) inputObj.readObject();
-            inputObj.close();
-            
-            
-            for(ReuseItem item:items){
-                if(item.getId() >= id){
-                    id = item.getId()+1;
-                }
-            }
-            
+            inputObj.close();            
             
         }catch (IOException  e){
             JOptionPane.showMessageDialog(null,e);

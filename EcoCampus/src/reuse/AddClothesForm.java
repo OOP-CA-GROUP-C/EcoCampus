@@ -359,6 +359,7 @@ public class AddClothesForm extends javax.swing.JFrame {
             sizeCB.setVisible(false);
             hoodedCHB.setVisible(false);
             waterproofCHB.setVisible(false);
+            shoeSizeLBL.setVisible(false);
             shoeSizeTF.setVisible(false);
             fTypeLBL.setVisible(false);
             fTypeTF.setVisible(false);
@@ -376,7 +377,7 @@ public class AddClothesForm extends javax.swing.JFrame {
         hoodedCHB.setSelected(false);
         waterproofCHB.setSelected(false);
         conditionCB.setSelectedIndex(0);
-        sizeCB.setSelectedItem(0);
+        sizeCB.setSelectedIndex(0);
         clothesTypeCB.setSelectedIndex(0);
 
         // Call updateFieldVisibility so hidden fields disappear again after clearing
@@ -427,8 +428,7 @@ public class AddClothesForm extends javax.swing.JFrame {
         //validation for empty text       
         if(title.trim().equals("")){
            JOptionPane.showMessageDialog(null,"Please enter a Title to add this item");
-           return;
-           
+           return;       
         }
         
         if(contact.trim().equals("")){
@@ -447,19 +447,7 @@ public class AddClothesForm extends javax.swing.JFrame {
             return;            
             
         }
-        
-        if(num.trim().equals("")){
-            JOptionPane.showMessageDialog(null, "Please enter a Shoe Size to add this item");
-            return;
-                              
-        }
-        
-        if(fType.trim().equals("")){
-           JOptionPane.showMessageDialog(null,"Please enter a Type to add this item");
-           return;
-        }
-        
-        
+   
         if(type.equals("Clothes")){
             
             ClothingItem clothes = new ClothingItem();
@@ -491,10 +479,21 @@ public class AddClothesForm extends javax.swing.JFrame {
       
 
         }else if (type.equals("Footwear")){
-            int shoeSize;
+            
+            if(num.trim().equals("")){           
+            JOptionPane.showMessageDialog(null, "Please enter a Shoe Size to add this item");
+            return;                           
+            }
+            
+            if(fType.trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Please enter a Type to add this item");
+            return;
+           }
+            
+            double shoeSize;
             
             try {
-                shoeSize = Integer.parseInt(num);
+                shoeSize = Double.parseDouble(num);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number for the shoe size");
                 return; 

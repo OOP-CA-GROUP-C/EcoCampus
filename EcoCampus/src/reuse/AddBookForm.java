@@ -437,71 +437,30 @@ public class AddBookForm extends javax.swing.JFrame {
         if (title.trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
             return;
-
         }
 
         if (contact.trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
             return;
-
         }
 
         if (condition.equals("None selected")) {
             JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
             return;
-
         }
 
         if (author.trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
             return;
-
         }
 
-        if (genre.trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a Genre to add this item");
-            return;
-
-        }
-        if (num.trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a Edition to add this item");
-            return;
-
-        }
-
-        if (subject.trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a Subject to add this item");
-            return;
-        }
-
-        if (type.equals("None selected")) {
-            JOptionPane.showMessageDialog(null, "Please select a Book Type");
-            return;
-        }
 
         //setting items for their respective category    
         if (type.equals("Book")) {
-
-            if (title.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
-                return;
-
-            }
-            if (contact.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
-                return;
-
-            }
-
-            if (condition.equals("None selected")) {
-                JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
-                return;
-
-            }
-
-            if (author.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
-                return;
+            
+            if(genre.trim().equals("")){
+               JOptionPane.showMessageDialog(null,"Please enter a Genre to add this item");
+               return;
             }
 
             BookItem book = new BookItem();
@@ -515,30 +474,6 @@ public class AddBookForm extends javax.swing.JFrame {
             ReuseManager.addItem(book);
 
         } else if (type.equals("Textbook")) {
-
-            if (title.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
-                return;
-
-            }
-
-            if (contact.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
-                return;
-
-            }
-
-            if (condition.equals("None selected")) {
-                JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
-                return;
-
-            }
-
-            if (author.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
-                return;
-
-            }
 
             if (subject.trim().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please enter a Subject to add this item");
@@ -567,30 +502,6 @@ public class AddBookForm extends javax.swing.JFrame {
             ReuseManager.addItem(tb);
 
         } else if (type.equals("Novel")) {
-
-            if (title.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a Title to add this item");
-                return;
-
-            }
-
-            if (contact.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a mail id to add this item");
-                return;
-
-            }
-
-            if (condition.equals("None selected")) {
-                JOptionPane.showMessageDialog(null, "Please select a Condition to add this item");
-                return;
-
-            }
-
-            if (author.trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
-                return;
-
-            }
 
             if (genre.trim().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please enter a Genre to add this item");
