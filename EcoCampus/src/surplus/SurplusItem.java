@@ -36,12 +36,19 @@ public abstract class SurplusItem {
         this.status = status;
     }
     
+    //abstract methods
     public abstract double calculateMoneySaved();
 
     public abstract double calculateWastePreventedKg();
 
     public abstract String toFileString();
-
+    
+    @Override
+    public String toString() {
+        return getDetails();
+    }
+    
+    // setter and getters
     public int getId() {
         return id;
     }
