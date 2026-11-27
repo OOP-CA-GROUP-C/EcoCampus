@@ -106,9 +106,6 @@ public class RecyclingManager implements Serializable{
         
         try{   
             inFile = new File("output.dat");
-            if (!inFile.exists()) {
-                return;
-            }
             fStream = new FileInputStream(inFile);
             oStream = new ObjectInputStream(fStream);
             records = (ArrayList<RecyclingRecord>) oStream.readObject();
