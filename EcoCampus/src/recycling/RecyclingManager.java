@@ -80,8 +80,8 @@ public class RecyclingManager implements Serializable{
             JOptionPane.showMessageDialog(null, "There is no such record that exists!");
         }
     }
-    
-    public void writeToFile() {
+
+    public void writeToFile(){
        File outFile;
        FileOutputStream fStream;
        ObjectOutputStream oStream;
@@ -99,7 +99,7 @@ public class RecyclingManager implements Serializable{
        }
     }
     
-    public void readFromFile() {
+    public void readFromFile(){
         File inFile;
         FileInputStream fStream;
         ObjectInputStream oStream;

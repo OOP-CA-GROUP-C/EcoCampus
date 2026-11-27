@@ -87,7 +87,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
                 .addComponent(headingLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(headingLBL1)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         headerPLLayout.setVerticalGroup(
             headerPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +125,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
                 .addGap(15, 15, 15)
                 .addGroup(searchbyPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(searchbyPLLayout.createSequentialGroup()
-                        .addComponent(searchMaterialTF, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                        .addComponent(searchMaterialTF, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(materialSearchBTN)
                         .addGap(7, 7, 7)
