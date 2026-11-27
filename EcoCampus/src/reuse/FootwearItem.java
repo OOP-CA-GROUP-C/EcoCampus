@@ -65,7 +65,7 @@ public class FootwearItem extends ClothingItem implements Reuse {
     
     @Override
     public String getDetails(){
-        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
+        return "[ Size: "+getSize()+" | Contact: "+getContact()+" | Type:"+fType+" ]";
     }
     
     
