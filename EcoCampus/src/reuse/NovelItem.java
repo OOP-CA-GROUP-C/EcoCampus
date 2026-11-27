@@ -59,7 +59,7 @@ public class NovelItem extends BookItem implements Reuse{
     
     @Override
     public String getDetails(){
-        return "[ Author: " + getAuthor() + " | Contact: " + getContact()+" ]";
+        return "[ Title: "+getTitle()+" | Author: " + getAuthor() + " | Genre: " + getGenre() +" | Contact: " + getContact()+" ]";
     }
     
 }

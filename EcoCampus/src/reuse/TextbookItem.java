@@ -61,14 +61,16 @@ public class TextbookItem extends BookItem {
     
     //own mehtods implemented from Reuse interface 
     
+    @Override
     public String getCategory(){
         return "Category: TextBook";
     }
     
     
     
+    @Override
     public String getDetails(){
-        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
+        return "[ Title: "+getTitle()+" | Author: " + getAuthor() + " | Genre: " + getGenre() +" | Contact: " + getContact()+" | Subject: "+subject+" | Edition: "+edition+" ]";
     }
     
     
