@@ -65,7 +65,7 @@ public class BookItem extends ReuseItem implements Reuse{
     
     @Override
     public String getDetails(){
-        return "Author: \" + this.author + \" | Contact: \" + getContactInfo();";
+        return "[Author: " + author + " | Contact: " + getContact()+" ]";
     }
 
   

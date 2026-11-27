@@ -4,11 +4,13 @@
  */
 package reuse;
 
+import java.io.Serializable;
+
 /**
  *
  * @author malavikaumamagash
  */
-public abstract class ReuseItem implements Reuse{
+public abstract class ReuseItem implements Reuse, Serializable{
     //declare and creating variables
     protected int id;
     protected String title;
