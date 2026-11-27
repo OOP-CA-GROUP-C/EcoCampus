@@ -353,14 +353,14 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 manager.addRecord(p);
                 pointsTF.setText("" + p.computePoints());
                 manager.writeToFile();
-                displayTA.append("Record added! Points:" + p.computePoints() + " \nClick Clear to add in a new record");
+                displayTA.setText("Record added! Points:" + p.computePoints());
             }else if(material.equals("Paper")){
                 PaperRecord pa = new PaperRecord();
                 pa.setWeightKg(weight);
                 manager.addRecord(pa);
                 pointsTF.setText("" + pa.computePoints());
                 manager.writeToFile();
-                displayTA.append("Record added! Points:" + pa.computePoints() + " \nClick Clear to add in a new record");
+                displayTA.setText("Record added! Points:" + pa.computePoints());
             }else if(material.equals("NewsPaper")){
                 boolean bundled;
                 if(trueBTN.isSelected()) {
@@ -377,7 +377,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 manager.addRecord(np);
                 pointsTF.setText("" + np.computePoints());
                 manager.writeToFile();        
-                displayTA.append("Record added! Points:" + np.computePoints() + " \nClick Clear to add in a new record");
+                displayTA.setText("Record added! Points:" + np.computePoints());
             }else if(material.equals("Bottle")){
                 boolean capOn;
                 if(trueBTN.isSelected()) {
@@ -394,7 +394,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 manager.addRecord(b);
                 pointsTF.setText("" + b.computePoints());
                 manager.writeToFile();
-                displayTA.append("Record added! Points:" + b.computePoints() + " \nClick Clear to add in a new record");
+                displayTA.setText("Record added! Points:" + b.computePoints());
             }else if(material.equals("Can")){
                 boolean crushed;
                 if(trueBTN.isSelected()) {
@@ -412,7 +412,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 pointsTF.setText("" + c.computePoints());
                 manager.writeToFile();
                 DisplayPane.setVisible(true);  
-                displayTA.append("Record added! Points" + c.computePoints() + " \nClick Clear to add in a new record");
+                displayTA.setText("Record added! Points" + c.computePoints());
             }else if(material.equals("Cardboard")){
                 boolean flattened;
                 if(trueBTN.isSelected()) {
@@ -429,9 +429,9 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
                 manager.addRecord(cb);
                 pointsTF.setText("" + cb.computePoints());
                 manager.writeToFile();
-                displayTA.append("Record added! Points:" + cb.computePoints() + " \nClick Clear to add in a new record");
+                displayTA.setText("Record added! Points:" + cb.computePoints());
             }else{
-                displayTA.append("You have selected material type please select the material type \nClick on Clear and try again!!");
+                displayTA.setText("You have selected material type please select the material type \nClick on Clear and try again!!");
             }
         }else if(weight < 0){
              displayTA.setText("You have entered a negative number for weight \nPlease enter a valid number for weight. \nClick on Clear and try again!!");
