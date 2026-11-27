@@ -25,7 +25,6 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
         manager = new RecyclingManager();
         manager.readFromFile();
         loadRecords(manager.showAll());
-        totalLBL.setText("Total Records: " + manager.getCount());
     }
 
     /**
@@ -244,6 +243,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
             }
         }
         displayTA.setText(msge);
+        totalLBL.setText("Total Records: " + records.size());
     }
 
     private void totalLBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalLBLActionPerformed
