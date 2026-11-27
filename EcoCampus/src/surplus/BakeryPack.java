@@ -34,6 +34,24 @@ public class BakeryPack extends FreshFoodItem {
         this.itemCount = itemCount;
         this.allergenInfo = allergenInfo;
     }
+
+    public int getItemCount() {
+        return itemCount;
+    }
+
+    public void setItemCount(int itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    public String getAllergenInfo() {
+        return allergenInfo;
+    }
+
+    public void setAllergenInfo(String allergenInfo) {
+        this.allergenInfo = allergenInfo;
+    }
+    
+    
     
     
 }
