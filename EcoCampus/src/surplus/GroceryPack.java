@@ -6,7 +6,7 @@ package surplus;
 
 /**
  *
- * @author HP
+ * @author UtkarshMishra
  */
 public class GroceryPack extends SurplusItem {
     
@@ -34,6 +34,24 @@ public class GroceryPack extends SurplusItem {
         this.bestBeforeDate = bestBeforeDate;
         this.storageType = storageType;
     }
+
+    public String getBestBeforeDate() {
+        return bestBeforeDate;
+    }
+
+    public void setBestBeforeDate(String bestBeforeDate) {
+        this.bestBeforeDate = bestBeforeDate;
+    }
+
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    
 
     // Overriding Methods 
 
