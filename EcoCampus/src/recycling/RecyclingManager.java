@@ -42,8 +42,8 @@ public class RecyclingManager implements Serializable{
     
     public ArrayList<RecyclingRecord> searchByMaterial(String material){
         ArrayList<RecyclingRecord> temp = new ArrayList<>();
-        for (RecyclingRecord r : records) {
-            if (r.getMaterial() != null && r.getMaterial().equalsIgnoreCase(material)){
+        for(RecyclingRecord r : records){
+            if(r.getMaterial() != null && r.getMaterial().equalsIgnoreCase(material)){
                 temp.add(r);
             }
         }
@@ -67,7 +67,7 @@ public class RecyclingManager implements Serializable{
     }
     
     public void deleteRecord(int index){
-        if (index >= 0 && index < records.size()) {
+        if(index >= 0 && index < records.size()){
             records.remove(index);
         }else{
             JOptionPane.showInputDialog(null, "The record does not exist");
