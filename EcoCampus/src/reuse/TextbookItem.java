@@ -63,14 +63,14 @@ public class TextbookItem extends BookItem {
     
     @Override
     public String getCategory(){
-        return "Category: TextBook";
+        return "TextBooks";
     }
     
     
     
     @Override
     public String getDetails(){
-        return "[ Title: "+getTitle()+" | Author: " + getAuthor() + " | Genre: " + getGenre() +" | Contact: " + getContact()+" | Subject: "+subject+" | Edition: "+edition+" ]";
+        return "[ Author: " + getAuthor() + " | Genre: " + getGenre() +" | Contact: " + getContact()+" | Subject: "+subject+" | Edition: "+edition+" ]";
     }
     
     

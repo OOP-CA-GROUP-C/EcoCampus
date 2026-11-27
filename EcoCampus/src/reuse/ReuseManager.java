@@ -22,7 +22,7 @@ public class ReuseManager implements Serializable {
 
     //declaring ArrayList
     private static ArrayList<ReuseItem> items = new ArrayList<>();
-    private static int id = 0;
+    private static int id = 1;
 
     // creating a arraylist
     public ReuseManager() {
@@ -53,25 +53,9 @@ public class ReuseManager implements Serializable {
         }
 
         for (ReuseItem reuse : items) {
-
-            if (category.equals("Books") && reuse instanceof BookItem) {
+            
+            if(reuse.getCategory().equals(category)){
                 search.add(reuse);
-
-            } else if (category.equals("Textbooks") && reuse instanceof TextbookItem) {
-                search.add(reuse);
-
-            } else if (category.equals("Novels") && reuse instanceof NovelItem) {
-                search.add(reuse);
-
-            } else if (category.equals("Clothes") && reuse instanceof ClothingItem) {
-                search.add(reuse);
-
-            } else if (category.equals("Jackets") && reuse instanceof JacketItem) {
-                search.add(reuse);
-
-            } else if (category.equals("Footwears") && reuse instanceof FootwearItem) {
-                search.add(reuse);
-
             }
 
         }
@@ -88,12 +72,8 @@ public class ReuseManager implements Serializable {
                 writeFile();
                 JOptionPane.showMessageDialog(null, "Deleted the item at index " + i);
                 return;
-
             }
-
-        }
-
-        JOptionPane.showMessageDialog(null, "Sorry the item could not be found, please try again");
+        }        
     }
 
     //display item:
@@ -105,21 +85,22 @@ public class ReuseManager implements Serializable {
 
         String display = "";
 
-        for (ReuseItem item : items){
+        for(ReuseItem item : items){
             display = display + "ID: " + item.getId() + " | Title: " + item.getTitle() + " | Condition: " + item.getCondition() + " |Details: " + item.getDetails() + "\n";
         }
-
         return display;
-
     }
-
+    
+    
+    
+    //file handling
     public static void writeFile() {
+        
+        File outFile;
+        FileOutputStream outStream;
+        ObjectOutputStream outObj;
 
         try{
-            File outFile;
-            FileOutputStream outStream;
-            ObjectOutputStream outObj;
-
             outFile = new File("reuse.dat");
             outStream = new FileOutputStream(outFile);
             outObj = new ObjectOutputStream(outStream);
@@ -127,9 +108,8 @@ public class ReuseManager implements Serializable {
             outObj.writeObject(items);
             outObj.close();
 
-        }catch (IOException e) {
-            
-            JOptionPane.showMessageDialog(null,"Couldnt save items");
+        }catch (IOException e) {            
+            JOptionPane.showMessageDialog(null, e);
 
         }
         
@@ -138,12 +118,11 @@ public class ReuseManager implements Serializable {
     
     
     public static void readFile(){
+        
+        File inputFile;
+        FileInputStream inputStream;
+        ObjectInputStream inputObj;
         try{
-            
-            File inputFile;
-            FileInputStream inputStream;
-            ObjectInputStream inputObj;
-            
             inputFile = new File("reuse.dat");
             inputStream = new FileInputStream(inputFile);
             inputObj = new ObjectInputStream(inputStream);
@@ -159,9 +138,11 @@ public class ReuseManager implements Serializable {
             }
             
             
-        }catch (IOException | ClassNotFoundException e){
-            JOptionPane.showMessageDialog(null,"Could not load the items");
+        }catch (IOException  e){
+            JOptionPane.showMessageDialog(null,e);
             
+        }catch(ClassNotFoundException e){
+            JOptionPane.showMessageDialog(null, e);
         }
         
         

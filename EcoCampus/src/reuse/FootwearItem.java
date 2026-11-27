@@ -40,7 +40,7 @@ public class FootwearItem extends ClothingItem implements Reuse {
         this.shoeSize = shoeSize;
     }
 
-    public void setFType(String type) {
+    public void setFType(String fType) {
         this.fType = fType;
     }
     
@@ -60,7 +60,7 @@ public class FootwearItem extends ClothingItem implements Reuse {
     
     @Override
     public String getCategory(){
-        return "Footwear";
+        return "Footwears";
     }
     
     @Override

@@ -54,12 +54,12 @@ public class NovelItem extends BookItem implements Reuse{
     
     @Override
     public String getCategory(){
-       return "Category: Novel";
+       return "Novels";
     }
     
     @Override
     public String getDetails(){
-        return "[ Title: "+getTitle()+" | Author: " + getAuthor() + " | Genre: " + getGenre() +" | Contact: " + getContact()+" ]";
+        return "[ Author: " + getAuthor() + " | Genre: " + getGenre() +" | Contact: " + getContact()+" ]";
     }
     
 }
