@@ -63,7 +63,7 @@ public class TextbookItem extends BookItem {
     
     @Override
     public String getCategory(){
-        return "TextBooks";
+        return "Textbooks";
     }
     
     
