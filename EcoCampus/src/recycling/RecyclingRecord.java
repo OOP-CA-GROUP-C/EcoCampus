@@ -11,10 +11,12 @@ import java.io.Serializable;
  * @author Shan Narayanan
  */
 public abstract class RecyclingRecord implements RecyclingOperations, Serializable{
+    //declaring variables
     protected int id;
     protected String date;
     protected double weightKg;
 
+    //overloaded constructor
     public RecyclingRecord(int id, String date, double weightKg) {
         this.id = id;
         this.date = date;
@@ -22,10 +24,12 @@ public abstract class RecyclingRecord implements RecyclingOperations, Serializab
         this.date = java.time.LocalDate.now().toString();
     }
 
+    //default constructor
     public RecyclingRecord() {
         this.date = java.time.LocalDate.now().toString();
     }
 
+    //set methods
     public void setId(int id) {
         this.id = id;
     }
@@ -43,6 +47,7 @@ public abstract class RecyclingRecord implements RecyclingOperations, Serializab
         this.weightKg = weightKg;
     }
 
+    //get methods
     public int getId() {
         return id;
     }
@@ -55,6 +60,7 @@ public abstract class RecyclingRecord implements RecyclingOperations, Serializab
         return weightKg;
     }
     
+    //abstract methods
     public abstract double computePoints();
     
     public abstract String getMaterial();

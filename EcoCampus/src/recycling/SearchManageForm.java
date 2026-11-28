@@ -24,7 +24,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
         initComponents();
         manager = new RecyclingManager();
         manager.readFromFile();
-        loadRecords(manager.showAll());
+        loadRecords(manager.getRecords());
     }
 
     /**
@@ -257,7 +257,7 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
             int id = Integer.parseInt(input);
             manager.deleteRecord(id);
             manager.writeToFile();
-            loadRecords(manager.showAll());
+            loadRecords(manager.getRecords());
         }else{
             JOptionPane.showMessageDialog(null, "You haven't entered any value!");
             return;
@@ -268,14 +268,14 @@ public class SearchManageForm extends javax.swing.JFrame implements Serializable
     private void showAllBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAllBTNActionPerformed
         // TODO add your handling code here:
         searchMaterialTF.setText("");
-        loadRecords(manager.showAll());
+        loadRecords(manager.getRecords());
     }//GEN-LAST:event_showAllBTNActionPerformed
 
     private void materialSearchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialSearchBTNActionPerformed
         // TODO add your handling code here:
         String search = searchMaterialTF.getText().trim();
         if(search.isEmpty()){
-            loadRecords(manager.showAll());
+            loadRecords(manager.getRecords());
         }else{
             loadRecords(manager.searchByMaterial(search));
         }

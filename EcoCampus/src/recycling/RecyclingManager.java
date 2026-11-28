@@ -19,14 +19,17 @@ import javax.swing.JOptionPane;
  * @author Shan Narayanan
  */
 public class RecyclingManager implements Serializable{
+    //declaring variables
     private ArrayList<RecyclingRecord> records;
     private double totalWeight; 
 
+    //defalut constructor
     public RecyclingManager() {
         records = new ArrayList<>();
         
     }
-    //
+    
+    //adding records
     public void addRecord(RecyclingRecord record){
         if(record != null){
             record.setId(records.size() + 1);
@@ -36,10 +39,12 @@ public class RecyclingManager implements Serializable{
         }
     }
     
+    //getting records
     public ArrayList<RecyclingRecord> getRecords(){
         return records;
     }
     
+    //searching by material
     public ArrayList<RecyclingRecord> searchByMaterial(String material){
         ArrayList<RecyclingRecord> temp = new ArrayList<>();
         for(RecyclingRecord r : records){
@@ -50,6 +55,7 @@ public class RecyclingManager implements Serializable{
         return temp;
     }
     
+    //gettting total points
     public double getTotalPoints(){
         double total = 0;
         for(RecyclingRecord r : records){
@@ -58,14 +64,12 @@ public class RecyclingManager implements Serializable{
         return total;
     }
     
+    //getting total number of entries
     public int getCount(){
         return records.size();
     }
     
-    public ArrayList<RecyclingRecord> showAll(){
-        return records;
-    }
-    
+    //deleting from records with id
     public void deleteRecord(int id){
         int count = 0;
         for(RecyclingRecord r : records){
@@ -81,6 +85,7 @@ public class RecyclingManager implements Serializable{
         }
     }
 
+    //writting to file
     public void writeToFile(){
        File outFile;
        FileOutputStream fStream;
@@ -99,6 +104,7 @@ public class RecyclingManager implements Serializable{
        }
     }
     
+    //reading from file
     public void readFromFile(){
         File inFile;
         FileInputStream fStream;
@@ -119,6 +125,7 @@ public class RecyclingManager implements Serializable{
         
     }
     
+    //getting total weight
     public double getTotalWeight(){ 
         for(RecyclingRecord r : records){
             totalWeight += r.getWeightKg();

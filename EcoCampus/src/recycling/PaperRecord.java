@@ -11,9 +11,11 @@ import java.io.Serializable;
  * @author Shan Narayanan
  */
 public class PaperRecord extends RecyclingRecord implements Serializable, RecyclingOperations{
+    //declare variables
     private double pointsPerKg, points;
     private String material;
 
+    //overloaded constructor
     public PaperRecord(int id, String date, double weightKg) {
         super(id, date, weightKg);
         pointsPerKg = 7.0;
@@ -21,11 +23,13 @@ public class PaperRecord extends RecyclingRecord implements Serializable, Recycl
         material = "Paper";
     }
 
+    //defalut constructor
     public PaperRecord() {
         pointsPerKg = 7.0;
         material = "Paper";
     }
 
+    //override methods
     @Override
     public String getMaterial() {
         return material;

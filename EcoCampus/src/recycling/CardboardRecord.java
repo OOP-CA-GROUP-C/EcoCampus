@@ -11,27 +11,33 @@ import java.io.Serializable;
  * @author Shan Narayanan
  */
 public class CardboardRecord extends PaperRecord implements Serializable{
+    //declare variables
     private boolean flattened;
     private String material;
 
+    //overloaded constructor
     public CardboardRecord(boolean flattened, int id, String date, double weightKg) {
         super(id, date, weightKg);
         this.flattened = flattened;
         material = "Cardboard";
     }
 
+    //defalut constructor
     public CardboardRecord() {
         material = "Cardboard";
     }
-
+    
+    //set method
+    public void setFlattened(boolean flattened) {
+        this.flattened = flattened;
+    }
+    
+    //get method
     public boolean getFlattened() {
         return flattened;
     }
 
-    public void setFlattened(boolean flattened) {
-        this.flattened = flattened;
-    }
-
+    //override method
     @Override
     public String printDetails() {
         return super.printDetails() + " | Type: " + material + " | flattened: " + flattened;
