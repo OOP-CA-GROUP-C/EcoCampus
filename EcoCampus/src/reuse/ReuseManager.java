@@ -126,16 +126,25 @@ public class ReuseManager implements Serializable {
         FileInputStream inputStream;
         ObjectInputStream inputObj;
         
+        inputFile = new File("reuse.dat");
+        if(!inputFile.exists()){
+            return;
+        }
+        
         try{
-            inputFile = new File("reuse.dat");
-            if(!inputFile.exists()){
-                return;
-            }
+            
             inputStream = new FileInputStream(inputFile);
             inputObj = new ObjectInputStream(inputStream);
             
             items = (ArrayList<ReuseItem>) inputObj.readObject();
-            inputObj.close();            
+            inputObj.close();
+            
+            // continue the ids after the highest saved one, so no id is used twice
+            for (ReuseItem item : items) {
+                if (item.getId() >= id) {
+                    id = item.getId() + 1;
+                }
+            }
             
         }catch (IOException  e){
             JOptionPane.showMessageDialog(null,e);
