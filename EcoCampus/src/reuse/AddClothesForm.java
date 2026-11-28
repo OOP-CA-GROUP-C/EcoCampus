@@ -448,9 +448,14 @@ public class AddClothesForm extends javax.swing.JFrame {
             
         }
         
-        if (type.equals("None selected")) {
+        if(type.equals("None selected")){
            JOptionPane.showMessageDialog(this, "Please select a Book Type");
            return;
+        }
+        
+        if(contact.equals(ReuseManager.isContactValid(contact))){
+            JOptionPane.showMessageDialog(null,"Please enter a valid Email Id for contact");
+            return;
         }
    
         if(type.equals("Clothes")){
