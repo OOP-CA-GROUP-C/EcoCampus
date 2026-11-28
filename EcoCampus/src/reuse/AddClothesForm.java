@@ -447,6 +447,11 @@ public class AddClothesForm extends javax.swing.JFrame {
             return;            
             
         }
+        
+        if (type.equals("None selected")) {
+           JOptionPane.showMessageDialog(this, "Please select a Book Type");
+           return;
+        }
    
         if(type.equals("Clothes")){
             

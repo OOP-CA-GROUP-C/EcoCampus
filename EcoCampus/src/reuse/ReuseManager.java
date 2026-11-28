@@ -119,6 +119,31 @@ public class ReuseManager implements Serializable {
 
     }
     
+    public static boolean isContactValid(String contact){
+        boolean hasAt = false;
+        boolean hasDot = false;
+        
+        for(int i = 0;i <contact.length();i++){
+            if(contact.charAt(i) == '@'){
+                hasAt = true;
+            }
+            
+            if(contact.charAt(i) == '.'){
+                hasDot =  true;
+            }
+        }
+        
+        if(hasAt){
+            if(hasDot){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        
+    }
     
     public static void readFile(){
         
