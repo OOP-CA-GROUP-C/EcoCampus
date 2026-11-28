@@ -4,11 +4,13 @@
  */
 package reuse;
 
+import java.io.Serializable;
+
 /**
  *
  * @author malavikaumamagash
  */
-public class TextbookItem extends BookItem {
+public class TextbookItem extends BookItem implements Serializable {
     
     //variable
     
