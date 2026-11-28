@@ -14,6 +14,11 @@ import java.util.Iterator;
  *
  * @author UtkarshMishra
  */
-public class SurplusManager {
+public class SurplusManager implements SurplusOperations {
     
+    private static SurplusManager instance;
+
+    private ArrayList<SurplusItem> listings;
+    private SurplusFileHandler fileHandler;
+    private int nextId;
 }
