@@ -101,6 +101,8 @@ public class AddClothesForm extends javax.swing.JFrame {
         contactLBL.setText("Contact");
         contactLBL.setToolTipText("e.g x@gmail.com");
 
+        contactTF.setToolTipText("e.g x@gmail.com");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -512,6 +514,7 @@ public class AddClothesForm extends javax.swing.JFrame {
                 shoeSize = Double.parseDouble(num);
                 if(shoeSize <= 0 || shoeSize > 60){
                     JOptionPane.showMessageDialog(null,"Please enter a valid shoe size it should be between 1 and 60");
+                    return;
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, e);

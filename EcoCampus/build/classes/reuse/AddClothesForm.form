@@ -289,6 +289,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="contactTF">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="e.g x@gmail.com"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
