@@ -441,24 +441,23 @@ public class AddClothesForm extends javax.swing.JFrame {
             return;
               
         }
-        
-        if(size.trim().equals("None selected")){
-            JOptionPane.showMessageDialog(null,"Please select a Size to add this item");
-            return;            
-            
-        }
-        
+             
         if(type.equals("None selected")){
-           JOptionPane.showMessageDialog(this, "Please select a Book Type");
+           JOptionPane.showMessageDialog(this, "Please select a Cothes Type");
            return;
         }
         
-        if(contact.equals(ReuseManager.isContactValid(contact))){
+        if(!ReuseManager.isContactValid(contact)){
             JOptionPane.showMessageDialog(null,"Please enter a valid Email Id for contact");
             return;
         }
    
         if(type.equals("Clothes")){
+            
+            if(size.equals("None selected")){
+            JOptionPane.showMessageDialog(null,"Please select a Size to add this item");
+            return;            
+            }
             
             ClothingItem clothes = new ClothingItem();
             
@@ -473,6 +472,13 @@ public class AddClothesForm extends javax.swing.JFrame {
             
             
         }else if (type.equals("Jacket")){
+            
+            if(size.equals("None selected")){
+            JOptionPane.showMessageDialog(null,"Please select a Size to add this item");
+            return;            
+            }
+            
+            
             
             JacketItem jacket = new JacketItem();
             
@@ -504,8 +510,11 @@ public class AddClothesForm extends javax.swing.JFrame {
             
             try {
                 shoeSize = Double.parseDouble(num);
+                if(shoeSize <= 0 || shoeSize > 60){
+                    JOptionPane.showMessageDialog(null,"Please enter a valid shoe size it should be between 1 and 60");
+                }
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Please enter a valid number for the shoe size");
+                JOptionPane.showMessageDialog(null, e);
                 return; 
             }
             
