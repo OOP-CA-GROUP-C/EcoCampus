@@ -28,6 +28,8 @@ public class SurplusFileHandler {
         this.fileName = fileName;
     }
     
+    //writes SurplusItem objects in ArrayList to text file
+    
     public void saveItems(ArrayList<SurplusItem> items) {
         try {
             File file = new File(fileName);
@@ -43,6 +45,9 @@ public class SurplusFileHandler {
         } catch (IOException e) {
             System.out.println("Error saving surplus listings to file: " + e.getMessage());
         }
-        
     }
+    
+    //read saved files from text files 
+    
+    
 }
