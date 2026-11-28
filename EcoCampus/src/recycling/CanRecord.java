@@ -11,10 +11,12 @@ import java.io.Serializable;
  * @author Shan Narayanan
  */
 public class CanRecord extends RecyclingRecord implements Serializable, RecyclingOperations{
+    //decalre variables
     private double pointsPerKg, points;
     private String material;
     private boolean crushed;
 
+    //overloaded constructor
     public CanRecord(boolean crushed, int id, String date, double weightKg) {
         super(id, date, weightKg);
         this.crushed = crushed;
@@ -23,19 +25,23 @@ public class CanRecord extends RecyclingRecord implements Serializable, Recyclin
         material = "Can";
     }
 
+    //constructor
     public CanRecord() {
        pointsPerKg = 5.0;
        material = "Can";
     }
 
-    public boolean getCrushed() {
-        return crushed;
-    }
-
+    //set method
     public void setCrushed(boolean crushed) {
         this.crushed = crushed;
     }
     
+    //get method
+    public boolean getCrushed() {
+        return crushed;
+    }
+
+    //override methods
     @Override
     public String getMaterial() {
         return material;
