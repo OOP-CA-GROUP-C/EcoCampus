@@ -453,6 +453,12 @@ public class AddBookForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please enter a Author to add this item");
             return;
         }
+        
+        if (type.equals("None selected")) {
+            JOptionPane.showMessageDialog(this, "Please select a Book Type");
+            return;
+            
+        }
 
 
         //setting items for their respective category    
