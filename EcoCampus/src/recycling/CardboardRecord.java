@@ -39,6 +39,11 @@ public class CardboardRecord extends PaperRecord implements Serializable{
 
     //override method
     @Override
+    public String getMaterial(){
+        return material;
+    }
+    
+    @Override
     public String printDetails() {
         return super.printDetails() + " | Type: " + material + " | flattened: " + flattened;
     }
