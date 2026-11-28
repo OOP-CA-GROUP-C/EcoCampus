@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author Shan Narayanan
  */
 public class BottleRecord extends PlasticRecord implements Serializable{
-    //declaring var
+    //declaring variables
     private boolean capOn;
     private String material;
 
@@ -37,6 +37,7 @@ public class BottleRecord extends PlasticRecord implements Serializable{
         return capOn;
     }
 
+    //override method
     @Override
     public String printDetails() {
         return super.printDetails() + " | Type: " + material + " | CapOn: " + capOn ;
