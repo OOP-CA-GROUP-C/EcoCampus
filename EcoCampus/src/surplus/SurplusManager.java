@@ -29,4 +29,11 @@ public class SurplusManager implements SurplusOperations {
         nextId = 1;
         loadFromFile();
     }
+    
+    public static SurplusManager getInstance() {
+        if (instance == null) {
+            instance = new SurplusManager();
+        }
+        return instance;
+    }
 }
