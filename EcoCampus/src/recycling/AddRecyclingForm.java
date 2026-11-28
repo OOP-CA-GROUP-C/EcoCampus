@@ -23,6 +23,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         manager = new RecyclingManager();
         manager.readFromFile();
         question(false);
+        loadIndex();
     }
 
     /**
@@ -295,6 +296,10 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
             falseBTN.setEnabled(t);
     }
     
+    private void loadIndex(){
+        displayTA.setText("Index (Points per Kg) \nPlastic: 10.0 \nBottle: 10.0 \nPaper: 7.0 \nNewsPaper: 7.0 \nCardboard: 7.0 \nCan(crushed):7.0 \nCan(not crushed):5.0");
+    }
+    
     private void materialCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialCBActionPerformed
         // TODO add your handling code here:
         String selectedType = materialCB.getSelectedItem().toString();
@@ -327,7 +332,7 @@ public class AddRecyclingForm extends javax.swing.JFrame implements Serializable
         weightTF.setText("");
         pointsTF.setText("");
         materialCB.setSelectedIndex(0);
-        displayTA.setText("");
+        loadIndex();
     }//GEN-LAST:event_clearBTNActionPerformed
 
     private void pointsTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointsTFActionPerformed
