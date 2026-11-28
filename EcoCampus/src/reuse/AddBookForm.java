@@ -459,6 +459,11 @@ public class AddBookForm extends javax.swing.JFrame {
             return;
             
         }
+        
+        if(contact.equals(ReuseManager.isContactValid(contact))){
+            JOptionPane.showMessageDialog(null,"Please enter a valid Email Id for contact");
+            return;
+        }
 
 
         //setting items for their respective category    
