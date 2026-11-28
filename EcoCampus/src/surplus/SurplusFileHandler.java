@@ -81,5 +81,52 @@ public class SurplusFileHandler {
     
     //method that converts one line from txt file back to SurplusItem subclass
     
-    
+    private SurplusItem parseLine(String line) {
+        if (line == null || line.trim().isEmpty()) {
+            return null;
+        }
+
+        String[] parts = line.split(";");
+
+        try {
+            String type = parts[0];
+
+            if (type.equals("PreparedMeal") && parts.length >= 9) {
+                int id = Integer.parseInt(parts[1]);
+                String title = parts[2];
+                double price = Double.parseDouble(parts[3]);
+                String deadline = parts[4];
+                String status = parts[5];
+                boolean sameDay = Boolean.parseBoolean(parts[6]);
+                String dietaryType = parts[7];
+                int portions = Integer.parseInt(parts[8]);
+                return new PreparedMeal(id, title, price, deadline, status, sameDay, dietaryType, portions);
+
+            } else if (type.equals("BakeryPack") && parts.length >= 9) {
+                int id = Integer.parseInt(parts[1]);
+                String title = parts[2];
+                double price = Double.parseDouble(parts[3]);
+                String deadline = parts[4];
+                String status = parts[5];
+                boolean sameDay = Boolean.parseBoolean(parts[6]);
+                int itemCount = Integer.parseInt(parts[7]);
+                String allergenInfo = parts[8];
+                return new BakeryPack(id, title, price, deadline, status, sameDay, itemCount, allergenInfo);
+
+            } else if (type.equals("GroceryPack") && parts.length >= 8) {
+                int id = Integer.parseInt(parts[1]);
+                String title = parts[2];
+                double price = Double.parseDouble(parts[3]);
+                String deadline = parts[4];
+                String status = parts[5];
+                String bestBefore = parts[6];
+                String storageType = parts[7];
+                return new GroceryPack(id, title, price, deadline, status, bestBefore, storageType);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Skipping corrupted line in file: " + line);
+        }
+
+        return null;
+    }
 }
